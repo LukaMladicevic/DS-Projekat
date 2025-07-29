@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DS-Projekat\\DS_Projekat\\DS_Projekat.csproj": {}
+    "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DS-Projekat\\DS_Projekat\\DSBooking.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DS-Projekat\\DS_Projekat\\DS_Projekat.csproj": {
+    "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DS-Projekat\\DS_Projekat\\DSBooking.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DS-Projekat\\DS_Projekat\\DS_Projekat.csproj",
-        "projectName": "DS_Projekat",
-        "projectPath": "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DS-Projekat\\DS_Projekat\\DS_Projekat.csproj",
+        "projectUniqueName": "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DS-Projekat\\DS_Projekat\\DSBooking.csproj",
+        "projectName": "DSBooking",
+        "projectPath": "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DS-Projekat\\DS_Projekat\\DSBooking.csproj",
         "packagesPath": "C:\\Users\\lukam\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DS-Projekat\\DS_Projekat\\obj\\",
         "projectStyle": "PackageReference",

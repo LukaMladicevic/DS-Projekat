@@ -11,12 +11,12 @@
 using System;
 using System.Reflection;
 
-[assembly: System.Reflection.AssemblyCompanyAttribute("DS_Projekat")]
+[assembly: System.Reflection.AssemblyCompanyAttribute("DSBooking")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5e1d8777d01945b9ab75f7ed2852fd677ddd304b")]
-[assembly: System.Reflection.AssemblyProductAttribute("DS_Projekat")]
-[assembly: System.Reflection.AssemblyTitleAttribute("DS_Projekat")]
+[assembly: System.Reflection.AssemblyProductAttribute("DSBooking")]
+[assembly: System.Reflection.AssemblyTitleAttribute("DSBooking")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
 [assembly: System.Runtime.Versioning.TargetPlatformAttribute("Windows7.0")]
 [assembly: System.Runtime.Versioning.SupportedOSPlatformAttribute("Windows7.0")]
