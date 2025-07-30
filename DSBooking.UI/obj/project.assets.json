@@ -27,23 +27,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\novak\\.nuget\\packages\\": {},
+    "C:\\Users\\lukam\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat\\DSBooking.UI\\DSBooking.UI.csproj",
+      "projectUniqueName": "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DSPravi\\DS-Projekat\\DSBooking.UI\\DSBooking.UI.csproj",
       "projectName": "DSBooking.UI",
-      "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat\\DSBooking.UI\\DSBooking.UI.csproj",
-      "packagesPath": "C:\\Users\\novak\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat\\DSBooking.UI\\obj\\",
+      "projectPath": "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DSPravi\\DS-Projekat\\DSBooking.UI\\DSBooking.UI.csproj",
+      "packagesPath": "C:\\Users\\lukam\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DSPravi\\DS-Projekat\\DSBooking.UI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\novak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\lukam\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -58,8 +58,8 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\novak\\Source\\Repos\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj": {
-              "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj"
+            "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DSPravi\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj": {
+              "projectPath": "C:\\Users\\lukam\\OneDrive\\Desktop\\Faks\\DS Projekat\\DSPravi\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj"
             }
           }
         }
@@ -74,7 +74,7 @@
         "auditLevel": "low",
         "auditMode": "direct"
       },
-      "SdkAnalysisLevel": "9.0.100"
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
       "net8.0-windows7.0": {
@@ -98,7 +98,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
