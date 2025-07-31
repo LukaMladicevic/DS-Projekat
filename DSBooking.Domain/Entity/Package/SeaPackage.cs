@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Packets
+namespace DSBooking.Domain.Entity.Package
 {
-    internal class SeaPacket : Packets
+    internal class SeaPackage : Package
     {
         private String _destination;
         private String _transferType;

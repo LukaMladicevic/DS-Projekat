@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Packets
+namespace DSBooking.Domain.Entity.Package
 {
-    internal class CruisePacket : Packets
+    internal class CruisePackage : Package
     {
         private string _boatName;
         private string _route; //? niz?

@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Packets
+namespace DSBooking.Domain.Entity.Package
 {
-    internal class SeaPacketBuilder : IPacketBuilder
+    internal class MountainPackageBuilder
     {
-        SeaPacket p;
+        MountainPackage p;
 
-        public SeaPacketBuilder()
+        public MountainPackageBuilder()
         {
-            p = new SeaPacket();
+            p = new MountainPackage();
         }
 
         public void reset()
         {
-            p = new SeaPacket();
+            p = new MountainPackage();
         }
 
         public void setID(int id)
@@ -49,10 +49,14 @@ namespace DSBooking.Domain.Packets
         {
             p.AccomodationType = accomodation;
         }
-
-        public Packets returnPacket()
+        public void activities(String activities)
         {
-            Packets product = p;
+            p.Activities = activities;
+        }
+
+        public Package returnPacket()
+        {
+            Package product = p;
             this.reset();
             return product;
         }

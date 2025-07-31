@@ -1,4 +1,4 @@
-﻿using DSBooking.Domain.Entity;
+﻿using DSBooking.Domain.Entity.Client;
 using DSBooking.Domain.Repository;
 
 namespace DSBooking.Infrastructure

@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Packets
+namespace DSBooking.Domain.Entity.Package
 {
-    internal class MountainPacket : Packets
+    internal class MountainPackage : Package
     {
         private string _destination;
         private string _transferType;

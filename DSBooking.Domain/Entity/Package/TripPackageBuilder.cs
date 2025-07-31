@@ -4,20 +4,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Packets
+namespace DSBooking.Domain.Entity.Package
 {
-    internal class CruisePacketBuilder
+    internal class TripPackageBuilder
     {
-        CruisePacket p;
+        TripPackage p;
 
-        public CruisePacketBuilder()
+        public TripPackageBuilder()
         {
-            p = new CruisePacket();
+            p = new TripPackage();
         }
 
         public void reset()
         {
-            p = new CruisePacket();
+            p = new TripPackage();
         }
 
         public void setID(int id)
@@ -35,29 +35,24 @@ namespace DSBooking.Domain.Packets
             p.Price = price;
         }
 
-        public void boatName(String boatName)
+        public void destination(String destination)
         {
-            p.BoatName = boatName;
+            p.Destination = destination;
         }
 
-        public void route(String route)
+        public void transferType(String transferType)
         {
-            p.Route = route;
+            p.TransferType = transferType;
         }
 
-        public void date(String date)
+        public void guide(String guide)
         {
-            p.Date = date;
+            p.Guide = guide;
         }
 
-        public void cabineType(String cabineType)
+        public Package returnPacket()
         {
-            p.CabineType = cabineType;
-        }
-
-        public Packets returnPacket()
-        {
-            Packets product = p;
+            Package product = p;
             this.reset();
             return product;
         }

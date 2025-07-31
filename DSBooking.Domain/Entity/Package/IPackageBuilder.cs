@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Packets
+namespace DSBooking.Domain.Entity.Package
 {
-    internal interface IPacketBuilder
+    internal interface IPackageBuilder
     {
         public void reset();
         public void setID(int id);
         public void setPacketName(string name);
         public void setPrice(float price);
 
-        public Packets returnPacket();
+        public Package returnPacket();
         
     }
 }
