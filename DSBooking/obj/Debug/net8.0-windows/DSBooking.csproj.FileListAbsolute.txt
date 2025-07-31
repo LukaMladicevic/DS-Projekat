@@ -120,9 +120,7 @@ C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\bin\Debug\net8.0-windows\runt
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\bin\Debug\net8.0-windows\DSBooking.Domain.dll
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\bin\Debug\net8.0-windows\DSBooking.Infrastructure.dll
-C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\bin\Debug\net8.0-windows\DSBooking.UI.dll
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\bin\Debug\net8.0-windows\DSBooking.Infrastructure.pdb
-C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\bin\Debug\net8.0-windows\DSBooking.UI.pdb
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\bin\Debug\net8.0-windows\DSBooking.Domain.pdb
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\obj\Debug\net8.0-windows\DSBooking.csproj.AssemblyReference.cache
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\obj\Debug\net8.0-windows\DSBooking.GeneratedMSBuildEditorConfig.editorconfig
@@ -136,3 +134,5 @@ C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\obj\Debug\net8.0-windows\refi
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\obj\Debug\net8.0-windows\DSBooking.pdb
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\obj\Debug\net8.0-windows\DSBooking.genruntimeconfig.cache
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\obj\Debug\net8.0-windows\ref\DSBooking.dll
+C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\bin\Debug\net8.0-windows\DSBooking.Presentation.dll
+C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking\bin\Debug\net8.0-windows\DSBooking.Presentation.pdb

@@ -9,7 +9,7 @@
       "DSBooking/1.0.0": {
         "dependencies": {
           "DSBooking.Infrastructure": "1.0.0",
-          "DSBooking.UI": "1.0.0"
+          "DSBooking.Presentation": "1.0.0"
         },
         "runtime": {
           "DSBooking.dll": {}
@@ -434,12 +434,12 @@
           }
         }
       },
-      "DSBooking.UI/1.0.0": {
+      "DSBooking.Presentation/1.0.0": {
         "dependencies": {
           "DSBooking.Domain": "1.0.0"
         },
         "runtime": {
-          "DSBooking.UI.dll": {
+          "DSBooking.Presentation.dll": {
             "assemblyVersion": "1.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -708,7 +708,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "DSBooking.UI/1.0.0": {
+    "DSBooking.Presentation/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSBooking.Infrastructure", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSBooking.Domain", "DSBooking.Domain\DSBooking.Domain.csproj", "{4FDC59EC-2E5B-46CE-8740-46CEBE9821E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSBooking.UI", "DSBooking.UI\DSBooking.UI.csproj", "{92D6BF76-4B06-4674-AE05-BF8FE7393D68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSBooking.Presentation", "DSBooking.UI\DSBooking.Presentation.csproj", "{92D6BF76-4B06-4674-AE05-BF8FE7393D68}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DSBooking", "DSBooking\DSBooking.csproj", "{2B970432-F681-4D44-BCE7-6AF4AB3D5F36}"
 EndProject

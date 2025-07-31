@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DSBooking.Infrastructure\DSBooking.Infrastructure.csproj" />
-    <ProjectReference Include="..\DSBooking.UI\DSBooking.UI.csproj" />
+    <ProjectReference Include="..\DSBooking.UI\DSBooking.Presentation.csproj" />
   </ItemGroup>
 
 </Project>

@@ -144,12 +144,12 @@
         }
       }
     },
-    "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.UI.csproj": {
+    "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.UI.csproj",
-        "projectName": "DSBooking.UI",
-        "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.UI.csproj",
+        "projectUniqueName": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.Presentation.csproj",
+        "projectName": "DSBooking.Presentation",
+        "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.Presentation.csproj",
         "packagesPath": "C:\\Users\\novak\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\obj\\",
         "projectStyle": "PackageReference",
@@ -247,8 +247,8 @@
               "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj": {
                 "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj"
               },
-              "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.UI.csproj": {
-                "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.UI.csproj"
+              "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.Presentation.csproj": {
+                "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.Presentation.csproj"
               }
             }
           }
