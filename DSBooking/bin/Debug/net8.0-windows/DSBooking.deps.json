@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v8.0": {
       "DSBooking/1.0.0": {
         "dependencies": {
+          "DSBooking.Application": "1.0.0",
           "DSBooking.Infrastructure": "1.0.0",
           "DSBooking.Presentation": "1.0.0"
         },
@@ -414,6 +415,17 @@
       },
       "System.Text.Json/8.0.5": {},
       "System.Threading.Tasks.Extensions/4.5.4": {},
+      "DSBooking.Application/1.0.0": {
+        "dependencies": {
+          "DSBooking.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DSBooking.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      },
       "DSBooking.Domain/1.0.0": {
         "runtime": {
           "DSBooking.Domain.dll": {
@@ -697,6 +709,11 @@
       "sha512": "sha512-zteT+G8xuGu6mS+mzDzYXbzS7rd3K6Fjb9RiZlYlJPam2/hU7JCBZBVEcywNuR+oZ1ncTvc/cq0faRr3P01OVg==",
       "path": "system.threading.tasks.extensions/4.5.4",
       "hashPath": "system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+    },
+    "DSBooking.Application/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "DSBooking.Domain/1.0.0": {
       "type": "project",

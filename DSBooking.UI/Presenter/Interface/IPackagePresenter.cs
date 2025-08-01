@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Presentation.Presenter
+namespace DSBooking.Presentation.Presenter.Interface
 {
     public interface IPackagePresenter
     {

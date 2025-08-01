@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Domain.Entity.Package;
 
-namespace DSBooking.Presentation.View
+namespace DSBooking.Presentation.View.Interface
 {
     public interface IPackageView
     {

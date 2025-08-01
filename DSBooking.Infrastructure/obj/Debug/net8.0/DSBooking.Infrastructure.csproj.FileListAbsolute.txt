@@ -39,3 +39,10 @@ C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\obj\Deb
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.dll
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\obj\Debug\net8.0\refint\DSBooking.Infrastructure.dll
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.pdb
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\bin\Debug\net8.0\DSBooking.Infrastructure.deps.json
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\bin\Debug\net8.0\DSBooking.Infrastructure.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\bin\Debug\net8.0\DSBooking.Infrastructure.pdb
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\bin\Debug\net8.0\DSBooking.Domain.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\bin\Debug\net8.0\DSBooking.Domain.pdb
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\obj\Debug\net8.0\DSBookin.7FCA1B55.Up2Date
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Infrastructure\obj\Debug\net8.0\ref\DSBooking.Infrastructure.dll

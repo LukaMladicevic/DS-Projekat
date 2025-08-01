@@ -32,9 +32,9 @@ namespace DSBooking
             ReservationControlView reservationControlView = new ReservationControlView();
             PackageControlView packageControlView = new PackageControlView();
 
-            MainForm mainForm = new MainForm(clientControlView, reservationControlView, packageControlView);
+            // MainForm mainForm = new MainForm(clientControlView, reservationControlView, packageControlView);
 
-            Application.Run(mainForm);
+            // Application.Run(mainForm);
         }
     }
 }

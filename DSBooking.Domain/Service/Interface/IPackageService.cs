@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Domain.Entity.Package;
 
-namespace DSBooking.Domain.Service
+namespace DSBooking.Domain.Service.Interface
 {
     public interface IPackageService
     {

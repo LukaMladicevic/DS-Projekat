@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "DSBooking.Domain/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/DSBooking.Domain.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DSBooking.Domain.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "DSBooking.Domain/1.0.0": {
+      "type": "project",
+      "path": "../DSBooking.Domain/DSBooking.Domain.csproj",
+      "msbuildProject": "../DSBooking.Domain/DSBooking.Domain.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "DSBooking.Domain >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\novak\\.nuget\\packages\\": {},
@@ -14,9 +33,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\Application\\Application.csproj",
-      "projectName": "Application",
-      "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\Application\\Application.csproj",
+      "projectUniqueName": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\Application\\DSBooking.Application.csproj",
+      "projectName": "DSBooking.Application",
+      "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\Application\\DSBooking.Application.csproj",
       "packagesPath": "C:\\Users\\novak\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\Application\\obj\\",
       "projectStyle": "PackageReference",
@@ -38,7 +57,11 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Domain\\DSBooking.Domain.csproj": {
+              "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Domain\\DSBooking.Domain.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

@@ -205,3 +205,5 @@ C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windo
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windows\DSBooking.pdb
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windows\DSBooking.genruntimeconfig.cache
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windows\ref\DSBooking.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Application.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Application.pdb

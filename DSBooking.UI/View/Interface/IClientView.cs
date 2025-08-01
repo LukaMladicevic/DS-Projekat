@@ -5,15 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Domain.Entity.Client;
 
-namespace DSBooking.Presentation.View
+namespace DSBooking.Presentation.View.Interface
 {
     public interface IClientView
     {
         event EventHandler<Client>? OnClientSelection;
-        event EventHandler<String>? OnFilterChange;
+        event EventHandler<string>? OnFilterChange;
 
         void HighlightSelectedClient(Client c);
-        
+
         void ShowClients(IEnumerable<Client> clients);
     }
 }

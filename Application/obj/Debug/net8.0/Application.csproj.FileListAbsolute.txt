@@ -1,0 +1,5 @@
+C:\Users\novak\source\repos\DS-Projekat-Emilija\Application\obj\Debug\net8.0\Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\novak\source\repos\DS-Projekat-Emilija\Application\obj\Debug\net8.0\Application.AssemblyInfoInputs.cache
+C:\Users\novak\source\repos\DS-Projekat-Emilija\Application\obj\Debug\net8.0\Application.AssemblyInfo.cs
+C:\Users\novak\source\repos\DS-Projekat-Emilija\Application\obj\Debug\net8.0\Application.csproj.CoreCompileInputs.cache
+C:\Users\novak\source\repos\DS-Projekat-Emilija\Application\obj\Debug\net8.0\Application.sourcelink.json

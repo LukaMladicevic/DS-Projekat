@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Domain.Entity.Client;
 
-namespace DSBooking.Presentation.Presenter
+namespace DSBooking.Presentation.Presenter.Interface
 {
     public interface IReservationPresenter
     {

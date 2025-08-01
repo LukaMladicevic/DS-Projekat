@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Entity;
 using DSBooking.Domain.Entity.Client;
+using DSBooking.Domain.Entity.Reservation;
 
-namespace DSBooking.Domain.Service
+namespace DSBooking.Domain.Service.Interface
 {
     public interface IReservationService
     {

@@ -39,7 +39,6 @@ C:\Users\novak\Source\Repos\DS-Projekat\DSBooking.UI\obj\Debug\net8.0-windows\DS
 C:\Users\novak\Source\Repos\DS-Projekat\DSBooking.UI\obj\Debug\net8.0-windows\DSBooking.Presentation.View.PackageControlView.resources
 C:\Users\novak\Source\Repos\DS-Projekat\DSBooking.UI\obj\Debug\net8.0-windows\DSBooking.Presentation.View.ReservationControlView.resources
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\DSBooking.Presentation.csproj.AssemblyReference.cache
-C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\DSBooking.Presentation.MainForm.resources
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\DSBooking.Presentation.Presenter.ClientControlView.resources
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\DSBooking.Presentation.View.PackageControlView.resources
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\DSBooking.Presentation.View.ReservationControlView.resources
@@ -52,3 +51,11 @@ C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-wi
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\DSBooking.Presentation.dll
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\refint\DSBooking.Presentation.dll
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\DSBooking.Presentation.pdb
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\bin\Debug\net8.0-windows\DSBooking.Presentation.deps.json
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\bin\Debug\net8.0-windows\DSBooking.Presentation.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\bin\Debug\net8.0-windows\DSBooking.Presentation.pdb
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\bin\Debug\net8.0-windows\DSBooking.Domain.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\bin\Debug\net8.0-windows\DSBooking.Domain.pdb
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\DSBooking.Presentation.View.Implementation.MainView.resources
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\DSBookin.A771C8BE.Up2Date
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.UI\obj\Debug\net8.0-windows\ref\DSBooking.Presentation.dll

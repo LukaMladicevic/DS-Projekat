@@ -1,5 +1,6 @@
-﻿using DSBooking.Domain.Entity;
-using DSBooking.Domain.Entity.Client;
+﻿using DSBooking.Domain.Entity.Client;
+using DSBooking.Domain.Entity.Reservation;
+using DSBooking.Presentation.View.Interface;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;

@@ -1,12 +1,12 @@
-﻿using DSBooking.Domain.Entity;
-using DSBooking.Domain.Entity.Client;
+﻿using DSBooking.Domain.Entity.Client;
+using DSBooking.Domain.Entity.Reservation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Presentation.View
+namespace DSBooking.Presentation.View.Interface
 {
     public interface IReservationView
     {

@@ -1,13 +1,14 @@
 ﻿using DSBooking.Domain.Entity.Client;
 using DSBooking.Domain.Repository;
-using DSBooking.Presentation.View;
+using DSBooking.Presentation.Presenter.Interface;
+using DSBooking.Presentation.View.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Presentation.Presenter
+namespace DSBooking.Presentation.Presenter.Implementation
 {
     public class MainPresenter : IMainPresenter
     {
@@ -22,11 +23,11 @@ namespace DSBooking.Presentation.Presenter
 
         public MainPresenter()
         {
-            
+
         }
         public void selectClient(Client c)
         {
-         
+
         }
     }
 }
