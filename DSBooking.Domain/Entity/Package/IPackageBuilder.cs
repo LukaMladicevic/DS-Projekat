@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSBooking.Domain.Entity.Package
 {
-    internal interface IPackageBuilder
+    public interface IPackageBuilder
     {
         public void reset();
         public void setID(int id);

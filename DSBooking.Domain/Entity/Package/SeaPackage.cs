@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSBooking.Domain.Entity.Package
 {
-    internal class SeaPackage : Package
+    public class SeaPackage : Package
     {
         private String _destination;
         private String _transferType;

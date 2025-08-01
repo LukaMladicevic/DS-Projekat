@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Domain.Entity.Package;
 using DSBooking.Domain.Repository;
-using DSBooking.Domain.Service.Interface;
 
 namespace DSBooking.Domain.Service.Implementation
 {
@@ -20,12 +19,7 @@ namespace DSBooking.Domain.Service.Implementation
 
         public IEnumerable<Package> GetAllPackages()
         {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<Package> GetAvailablePackages()
-        {
-            throw new NotImplementedException();
+            return _packageRepository.GetAllPackages();
         }
     }
 }

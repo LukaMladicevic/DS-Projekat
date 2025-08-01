@@ -15,10 +15,15 @@ namespace DSBooking.Infrastructure
         public ReservationRepository() 
         {
             reservations.Add(new Reservation(1, 1, 1));
-            reservations.Add(new Reservation(2, 1, 3));
+            reservations.Add(new Reservation(2, 1, 2));
         }
 
-        public IEnumerable<Reservation> getReservationsForClient(Client c)
+        public IEnumerable<Reservation> GetAllReservations()
+        {
+            return reservations;
+        }
+
+        public IEnumerable<Reservation> GetReservationsForClient(Client c)
         {
             return (from r in reservations
                     where r.ClientId == c.Id

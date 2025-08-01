@@ -29,9 +29,8 @@
         private void InitializeComponent()
         {
             searchTextBox = new TextBox();
-            clientsDataGridView = new DataGridView();
             comboBox1 = new ComboBox();
-            addClientButton = new Button();
+            clientsDataGridView = new DataGridView();
             ((System.ComponentModel.ISupportInitialize)clientsDataGridView).BeginInit();
             SuspendLayout();
             // 
@@ -41,16 +40,7 @@
             searchTextBox.Name = "searchTextBox";
             searchTextBox.Size = new Size(100, 23);
             searchTextBox.TabIndex = 0;
-            searchTextBox.Text = "Search...";
             searchTextBox.TextChanged += searchTextBox_TextChanged;
-            // 
-            // clientsDataGridView
-            // 
-            clientsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            clientsDataGridView.Location = new Point(0, 64);
-            clientsDataGridView.Name = "clientsDataGridView";
-            clientsDataGridView.Size = new Size(502, 474);
-            clientsDataGridView.TabIndex = 1;
             // 
             // comboBox1
             // 
@@ -60,26 +50,26 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 23);
             comboBox1.TabIndex = 2;
+            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
-            // addClientButton
+            // clientsDataGridView
             // 
-            addClientButton.Location = new Point(301, 17);
-            addClientButton.Name = "addClientButton";
-            addClientButton.Size = new Size(75, 23);
-            addClientButton.TabIndex = 3;
-            addClientButton.Text = "Add Client";
-            addClientButton.UseVisualStyleBackColor = true;
+            clientsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            clientsDataGridView.Location = new Point(0, 64);
+            clientsDataGridView.Name = "clientsDataGridView";
+            clientsDataGridView.Size = new Size(418, 374);
+            clientsDataGridView.TabIndex = 1;
             // 
-            // ClientViewControl
+            // ClientControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(addClientButton);
             Controls.Add(comboBox1);
             Controls.Add(clientsDataGridView);
             Controls.Add(searchTextBox);
-            Name = "ClientViewControl";
+            Name = "ClientControlView";
             Size = new Size(418, 438);
+            Load += ClientControlView_Load;
             ((System.ComponentModel.ISupportInitialize)clientsDataGridView).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -88,8 +78,7 @@
         #endregion
 
         private TextBox searchTextBox;
-        private DataGridView clientsDataGridView;
         private ComboBox comboBox1;
-        private Button addClientButton;
+        private DataGridView clientsDataGridView;
     }
 }

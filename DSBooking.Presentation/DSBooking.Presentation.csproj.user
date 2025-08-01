@@ -9,7 +9,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="View\Implementation\PackageControlView.cs">
-      <SubType>Form</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Update="View\Implementation\ReservationControlView.cs">
       <SubType>UserControl</SubType>

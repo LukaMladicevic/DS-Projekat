@@ -5,13 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Domain.Entity.Package;
 
-namespace DSBooking.Domain.Service.Interface
+namespace DSBooking.Domain.Service
 {
     public interface IPackageService
     {
         IEnumerable<Package> GetAllPackages();
-        IEnumerable<Package> GetAvailablePackages();
-
         /// ???
     }
 }

@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace DSBooking.Presentation.Presenter.Interface
 {
-    public interface IMainPresenter
+    public interface IMainPresenter : IPresenter
     {
-        void selectClient(Client c);
+        void SelectClient(Client? client);
+        void SelectAction(int action);
+
+        int Action { get; }
     }
 }

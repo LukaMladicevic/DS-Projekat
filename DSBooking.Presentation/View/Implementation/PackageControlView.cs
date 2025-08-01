@@ -12,20 +12,21 @@ using DSBooking.Presentation.View.Interface;
 
 namespace DSBooking.Presentation.View
 {
-    public partial class PackageControlView : Form, IPackageControlView
+    public partial class PackageControlView : UserControl, IPackageControlView
     {
         public PackageControlView()
         {
             InitializeComponent();
         }
 
-        public Control Control => throw new NotImplementedException();
+        public Control Control => this;
 
         public event EventHandler<Package>? OnSelectedPackage;
 
         public void ShowPackages(IEnumerable<Package> packages)
         {
-            throw new NotImplementedException();
+            packageDataGridView.DataSource = packages;
+            packageDataGridView.Refresh();
         }
     }
 }

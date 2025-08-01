@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSBooking.Domain.Entity.Package
 {
-    internal class CruisePackage : Package
+    public class CruisePackage : Package
     {
         private string _boatName;
         private string _route; //? niz?

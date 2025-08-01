@@ -9,12 +9,14 @@ namespace DSBooking.Presentation.View.Interface
     public interface IMainView
     {
         event EventHandler? OnClientAddViewOpen;
-
         // action - reserve or remove reservation
-        event EventHandler<int>? OnActionChange; // invalid eventhandler param
+        event EventHandler<int>? OnActionChange; // invalid eventhandler param type
 
-        void ShowClientAddView();
+        void ShowReservations();
+        void ShowPackages();
 
-        void ProcessActionChange(int action); // invalid param type
+        IClientView ClientView { get; }
+        IReservationView ReservationView { get; }
+        IPackageView PackageView { get; }
     }
 }

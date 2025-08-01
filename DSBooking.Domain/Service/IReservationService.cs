@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using DSBooking.Domain.Entity.Client;
 using DSBooking.Domain.Entity.Reservation;
 
-namespace DSBooking.Domain.Service.Interface
+namespace DSBooking.Domain.Service
 {
     public interface IReservationService
     {
-        IEnumerable<Reservation> GetAll();
+        IEnumerable<Reservation> GetAllReservations();
+
         IEnumerable<Reservation> GetReservationsForClient(Client client);
     }
 }

@@ -10,9 +10,8 @@ namespace DSBooking.Presentation.View.Interface
 {
     public interface IReservationView
     {
-        event EventHandler<Client>? OnSelectedReservation;
+        event EventHandler<Reservation>? OnSelectedReservation;
 
         void ShowReservations(IEnumerable<Reservation> reservations);
-
     }
 }

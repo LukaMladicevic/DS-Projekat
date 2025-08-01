@@ -18,28 +18,37 @@ namespace DSBooking.Presentation.Presenter
         {
             InitializeComponent();
 
-            clientsDataGridView.Visible = false;
+            //clientsDataGridView.Visible = false;
         }
 
         public Control Control => this;
 
         public event EventHandler<Client>? OnClientSelection;
-        public event EventHandler<Client>? OnClientAdd;
         public event EventHandler<string>? OnFilterChange;
 
-        public void HighlightSelectedClient(Client c)
+        public void HighlightClient(Client? client)
         {
-            throw new NotImplementedException();
         }
 
         public void ShowClients(IEnumerable<Client> clients)
         {
-            throw new NotImplementedException();
+            clientsDataGridView.DataSource = clients;
+            clientsDataGridView.Refresh();
+        }
+
+        private void ClientControlView_Load(object sender, EventArgs e)
+        {
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
-
+            //MessageBox.Show($"Kliknuo si");
+            OnFilterChange?.Invoke(this, ((TextBox)sender).Text);
         }
     }
 }

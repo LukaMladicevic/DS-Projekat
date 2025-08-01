@@ -18,29 +18,16 @@ namespace DSBooking.Presentation.View
         public ReservationControlView()
         {
             InitializeComponent();
-
-            reservationsGridView.ColumnCount = 3;
-            reservationsGridView.Columns[0].Name = "ID";
-            reservationsGridView.Columns[1].Name = "Name";
-            reservationsGridView.Columns[2].Name = "Age";
-
-            // Add a row and set cell values
-            reservationsGridView.Rows.Add("1", "Alice", "25");
-            //reservationsGridView.Visible = false;
         }
 
-        public Control Control => throw new NotImplementedException();
+        public Control Control => this;
 
-        public event EventHandler<Client>? OnSelectedReservation;
+        public event EventHandler<Reservation>? OnSelectedReservation;
 
         public void ShowReservations(IEnumerable<Reservation> reservations)
         {
-            throw new NotImplementedException();
-        }
-
-        private void ReservationControlView_Load(object sender, EventArgs e)
-        {
-
+            reservationsGridView.DataSource = reservations;
+            reservationsGridView.Refresh();
         }
     }
 }

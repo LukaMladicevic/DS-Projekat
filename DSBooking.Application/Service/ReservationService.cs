@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using DSBooking.Domain.Entity.Client;
 using DSBooking.Domain.Entity.Reservation;
 using DSBooking.Domain.Repository;
-using DSBooking.Domain.Service.Interface;
 
 namespace DSBooking.Domain.Service.Implementation
 {
@@ -19,14 +18,14 @@ namespace DSBooking.Domain.Service.Implementation
             _reservationRepository = reservationRepository;
         }
 
-        public IEnumerable<Reservation> GetAll()
+        public IEnumerable<Reservation> GetAllReservations()
         {
-            throw new NotImplementedException();
+            return _reservationRepository.GetAllReservations();
         }
 
         public IEnumerable<Reservation> GetReservationsForClient(Client client)
         {
-            throw new NotImplementedException();
+            return _reservationRepository.GetReservationsForClient(client);
         }
     }
 }

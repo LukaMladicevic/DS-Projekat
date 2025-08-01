@@ -56,6 +56,7 @@
             actionComboBox.Name = "actionComboBox";
             actionComboBox.Size = new Size(250, 48);
             actionComboBox.TabIndex = 1;
+            actionComboBox.SelectedIndexChanged += actionComboBox_SelectedIndexChanged;
             // 
             // agencyNameLabel
             // 
@@ -76,6 +77,7 @@
             addClientButton.TabIndex = 0;
             addClientButton.Text = "Dodaj klijenta...";
             addClientButton.UseVisualStyleBackColor = true;
+            addClientButton.Click += addClientButton_Click;
             // 
             // MainView
             // 
@@ -88,6 +90,7 @@
             Controls.Add(mainSplitContainer);
             Name = "MainView";
             Text = "MainView";
+            Load += MainView_Load;
             ((System.ComponentModel.ISupportInitialize)mainSplitContainer).EndInit();
             mainSplitContainer.ResumeLayout(false);
             ResumeLayout(false);

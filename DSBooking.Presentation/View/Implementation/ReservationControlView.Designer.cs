@@ -41,22 +41,19 @@
             reservationsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             reservationsGridView.Enabled = false;
             reservationsGridView.Location = new Point(0, 0);
-            reservationsGridView.Margin = new Padding(3, 4, 3, 4);
             reservationsGridView.MultiSelect = false;
             reservationsGridView.Name = "reservationsGridView";
             reservationsGridView.RowHeadersWidth = 51;
-            reservationsGridView.Size = new Size(122, 159);
+            reservationsGridView.Size = new Size(354, 461);
             reservationsGridView.TabIndex = 0;
             // 
             // ReservationControlView
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             Controls.Add(reservationsGridView);
-            Margin = new Padding(3, 4, 3, 4);
             Name = "ReservationControlView";
-            Size = new Size(405, 615);
-            Load += ReservationControlView_Load;
+            Size = new Size(354, 461);
             ((System.ComponentModel.ISupportInitialize)reservationsGridView).EndInit();
             ResumeLayout(false);
         }

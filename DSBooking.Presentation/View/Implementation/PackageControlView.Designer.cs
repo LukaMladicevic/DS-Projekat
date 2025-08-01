@@ -37,20 +37,19 @@
             packageDataGridView.AllowUserToAddRows = false;
             packageDataGridView.AllowUserToDeleteRows = false;
             packageDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            packageDataGridView.Location = new Point(3, 12);
+            packageDataGridView.Location = new Point(0, -1);
             packageDataGridView.Name = "packageDataGridView";
             packageDataGridView.ReadOnly = true;
-            packageDataGridView.Size = new Size(785, 426);
+            packageDataGridView.Size = new Size(540, 480);
             packageDataGridView.TabIndex = 0;
             // 
             // PackageControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
             Controls.Add(packageDataGridView);
             Name = "PackageControlView";
-            Text = "PackageControlView";
+            Size = new Size(540, 479);
             ((System.ComponentModel.ISupportInitialize)packageDataGridView).EndInit();
             ResumeLayout(false);
         }

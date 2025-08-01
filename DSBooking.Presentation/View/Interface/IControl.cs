@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace DSBooking.Presentation.View.Interface
 {
-    internal interface IMainControlView : IMainView, IControl
+    public interface IControl
     {
+        Control Control { get; }
     }
 }

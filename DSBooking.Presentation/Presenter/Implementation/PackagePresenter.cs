@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Domain.Entity.Package;
-using DSBooking.Domain.Service.Interface;
+using DSBooking.Domain.Service;
 using DSBooking.Presentation.Presenter.Interface;
 using DSBooking.Presentation.View.Interface;
 
@@ -15,17 +15,29 @@ namespace DSBooking.Presentation.Presenter.Implementation
         IPackageView _view;
         IPackageService _service;
 
-        public PackagePresenter(IPackageView view, IPackageService packageService)
+        IEnumerable<Package> _packages;
+
+        public PackagePresenter(IPackageView view, IPackageService service)
         {
             _view = view;
-            _service = packageService;
+            _service = service;
+
+            _packages = new List<Package>();
         }
 
-        public void ShowAvailablePackages(object? sender, EventArgs e)
-        {
-            IEnumerable<Package> availablePackages = _service.GetAvailablePackages();
+        public IEnumerable<Package> Packages => _packages;
 
-            _view.ShowPackages(availablePackages);
+        public void Initialize()
+        {
+        }
+
+        public void ShowPackages()
+        {
+            IEnumerable<Package> packages = _service.GetAllPackages();
+
+            _packages = packages;
+
+            _view.ShowPackages(packages);
         }
     }
 }

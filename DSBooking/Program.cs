@@ -42,13 +42,21 @@ namespace DSBooking
             // Presenters
 
             ClientPresenter clientPresenter = new ClientPresenter(clientControlView, clientService);
+            clientPresenter.Initialize();
             PackagePresenter packagePresenter = new PackagePresenter(packageControlView, packageService);
+            packagePresenter.Initialize();
             ReservationPresenter reservationPresenter = new ReservationPresenter(reservationControlView, reservationService);
-
+            reservationPresenter.Initialize();
 
             // MainView
 
             MainView mainView = new MainView(clientControlView, packageControlView, reservationControlView);
+
+            // MainPresenter
+
+            MainPresenter mainPresenter = new MainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter);
+            mainPresenter.Initialize();
+
 
             Application.Run(mainView);
 

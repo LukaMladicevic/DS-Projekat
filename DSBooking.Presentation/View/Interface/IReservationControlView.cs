@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSBooking.Presentation.View.Interface
 {
-    public interface IReservationControlView : IReservationView
+    public interface IReservationControlView : IReservationView, IControl
     {
-        Control Control { get; }
     }
 }

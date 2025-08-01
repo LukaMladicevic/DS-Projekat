@@ -10,6 +10,8 @@ namespace DSBooking.Domain.Repository
 {
     public interface IReservationRepository
     {
-        IEnumerable<Reservation> getReservationsForClient(Client c);
+        IEnumerable<Reservation> GetReservationsForClient(Client c);
+
+        IEnumerable<Reservation> GetAllReservations();
     }
 }

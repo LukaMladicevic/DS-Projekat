@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Presentation.View.Interface
+namespace DSBooking.Presentation.Presenter.Interface
 {
-    internal interface IMainControlView : IMainView, IControl
+    public interface IPresenter
     {
+        void Initialize();
     }
 }

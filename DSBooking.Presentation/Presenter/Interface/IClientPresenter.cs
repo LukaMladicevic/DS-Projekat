@@ -4,13 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Domain.Entity.Client;
+using DSBooking.Presentation.View.Interface;
 
 namespace DSBooking.Presentation.Presenter.Interface
 {
-    public interface IClientPresenter
+    public interface IClientPresenter : IPresenter
     {
-        void ShowClients(object? sender, string filterString);
+        void SelectClient(Client? c);
+        void ShowClients(string filterString);
 
-        void HighlightSelectedClient(object? sender, Client c);
+        IEnumerable<Client> Clients { get; }
+        Client? SelectedClient { get; }
+        
+        string FilterString { get; }
     }
 }

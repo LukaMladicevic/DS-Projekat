@@ -1,7 +1,7 @@
 ﻿using DSBooking.Domain.Entity.Client;
 using DSBooking.Domain.Entity.Reservation;
 using DSBooking.Domain.Repository;
-using DSBooking.Domain.Service.Interface;
+using DSBooking.Domain.Service;
 using DSBooking.Presentation.Presenter.Interface;
 using DSBooking.Presentation.View.Interface;
 using System;
@@ -17,15 +17,37 @@ namespace DSBooking.Presentation.Presenter.Implementation
         IReservationView _view;
         IReservationService _service;
 
+        IEnumerable<Reservation> _reservations;
+
         public ReservationPresenter(IReservationView view, IReservationService service)
         {
             _view = view;
             _service = service;
+
+            _reservations = new List<Reservation>();
         }
 
-        public void ShowReservationsForClient(object? sender, Client c)
+        public IEnumerable<Reservation> Reservations => _reservations;
+
+        public void Initialize()
         {
-            IEnumerable<Reservation> reservations = _service.GetReservationsForClient(c);
+        }
+
+        public void ShowAllReservations()
+        {
+            IEnumerable<Reservation> reservations = _service.GetAllReservations();
+
+            _reservations = reservations;
+
+            _view.ShowReservations(reservations);
+        }
+
+        public void ShowReservationsFor(Client client)
+        {
+            IEnumerable<Reservation> reservations = _service.GetReservationsForClient(client);
+
+            _reservations = reservations;
+
             _view.ShowReservations(reservations);
         }
     }
