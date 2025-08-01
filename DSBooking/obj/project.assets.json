@@ -1797,8 +1797,8 @@
     },
     "DSBooking.Application/1.0.0": {
       "type": "project",
-      "path": "../Application/DSBooking.Application.csproj",
-      "msbuildProject": "../Application/DSBooking.Application.csproj"
+      "path": "../DSBooking.Application/DSBooking.Application.csproj",
+      "msbuildProject": "../DSBooking.Application/DSBooking.Application.csproj"
     },
     "DSBooking.Domain/1.0.0": {
       "type": "project",
@@ -1812,13 +1812,14 @@
     },
     "DSBooking.Presentation/1.0.0": {
       "type": "project",
-      "path": "../DSBooking.UI/DSBooking.Presentation.csproj",
-      "msbuildProject": "../DSBooking.UI/DSBooking.Presentation.csproj"
+      "path": "../DSBooking.Presentation/DSBooking.Presentation.csproj",
+      "msbuildProject": "../DSBooking.Presentation/DSBooking.Presentation.csproj"
     }
   },
   "projectFileDependencyGroups": {
     "net8.0-windows7.0": [
       "DSBooking.Application >= 1.0.0",
+      "DSBooking.Domain >= 1.0.0",
       "DSBooking.Infrastructure >= 1.0.0",
       "DSBooking.Presentation >= 1.0.0"
     ]
@@ -1855,14 +1856,17 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\Application\\DSBooking.Application.csproj": {
-              "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\Application\\DSBooking.Application.csproj"
+            "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Application\\DSBooking.Application.csproj": {
+              "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Application\\DSBooking.Application.csproj"
+            },
+            "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Domain\\DSBooking.Domain.csproj": {
+              "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Domain\\DSBooking.Domain.csproj"
             },
             "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj": {
               "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj"
             },
-            "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.UI\\DSBooking.Presentation.csproj": {
-              "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.UI\\DSBooking.Presentation.csproj"
+            "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Presentation\\DSBooking.Presentation.csproj": {
+              "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Presentation\\DSBooking.Presentation.csproj"
             }
           }
         }

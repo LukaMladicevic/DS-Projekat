@@ -9,9 +9,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Application\DSBooking.Application.csproj" />
+    <ProjectReference Include="..\DSBooking.Application\DSBooking.Application.csproj" />
+    <ProjectReference Include="..\DSBooking.Domain\DSBooking.Domain.csproj" />
     <ProjectReference Include="..\DSBooking.Infrastructure\DSBooking.Infrastructure.csproj" />
-    <ProjectReference Include="..\DSBooking.UI\DSBooking.Presentation.csproj" />
+    <ProjectReference Include="..\DSBooking.Presentation\DSBooking.Presentation.csproj" />
   </ItemGroup>
 
 </Project>

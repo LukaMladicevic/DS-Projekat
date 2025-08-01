@@ -187,12 +187,14 @@ C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windo
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Application.dll
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Domain.dll
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Infrastructure.dll
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Presentation.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Application.pdb
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Domain.pdb
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Infrastructure.pdb
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Presentation.pdb
-C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Domain.pdb
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windows\DSBooking.csproj.AssemblyReference.cache
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windows\DSBooking.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windows\DSBooking.AssemblyInfoInputs.cache
@@ -205,5 +207,3 @@ C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windo
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windows\DSBooking.pdb
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windows\DSBooking.genruntimeconfig.cache
 C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\obj\Debug\net8.0-windows\ref\DSBooking.dll
-C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Application.dll
-C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking\bin\Debug\net8.0-windows\DSBooking.Application.pdb

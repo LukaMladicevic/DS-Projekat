@@ -9,6 +9,7 @@
       "DSBooking/1.0.0": {
         "dependencies": {
           "DSBooking.Application": "1.0.0",
+          "DSBooking.Domain": "1.0.0",
           "DSBooking.Infrastructure": "1.0.0",
           "DSBooking.Presentation": "1.0.0"
         },
