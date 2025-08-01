@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DSBooking.Domain.Entity.Package;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +9,6 @@ namespace DSBooking.Domain.Repository
 {
     public interface IPackageRepository
     {
+        IEnumerable<Package> GetAllPackages();
     }
 }

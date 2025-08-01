@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.Presentation.csproj": {}
+    "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.UI\\DSBooking.Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.Domain\\DSBooking.Domain.csproj": {
+    "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Domain\\DSBooking.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.Domain\\DSBooking.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Domain\\DSBooking.Domain.csproj",
         "projectName": "DSBooking.Domain",
-        "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.Domain\\DSBooking.Domain.csproj",
+        "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Domain\\DSBooking.Domain.csproj",
         "packagesPath": "C:\\Users\\novak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.Domain\\obj\\",
+        "outputPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -69,14 +69,14 @@
         }
       }
     },
-    "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.Presentation.csproj": {
+    "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.UI\\DSBooking.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.UI\\DSBooking.Presentation.csproj",
         "projectName": "DSBooking.Presentation",
-        "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\DSBooking.Presentation.csproj",
+        "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.UI\\DSBooking.Presentation.csproj",
         "packagesPath": "C:\\Users\\novak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.UI\\obj\\",
+        "outputPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.UI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -97,8 +97,8 @@
           "net8.0-windows7.0": {
             "targetAlias": "net8.0-windows",
             "projectReferences": {
-              "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.Domain\\DSBooking.Domain.csproj": {
-                "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat2\\DSBooking.Domain\\DSBooking.Domain.csproj"
+              "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Domain\\DSBooking.Domain.csproj": {
+                "projectPath": "C:\\Users\\novak\\source\\repos\\DS-Projekat-Emilija\\DSBooking.Domain\\DSBooking.Domain.csproj"
               }
             }
           }

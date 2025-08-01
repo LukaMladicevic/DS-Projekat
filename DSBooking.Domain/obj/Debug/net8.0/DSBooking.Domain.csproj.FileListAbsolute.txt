@@ -22,3 +22,15 @@ C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking.Domain\bin\Debug\net8.0\DSBoo
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.dll
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.pdb
 C:\Users\novak\Source\Repos\DS-Projekat2\DSBooking.Domain\obj\Debug\net8.0\ref\DSBooking.Domain.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.deps.json
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.pdb
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.AssemblyInfoInputs.cache
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.AssemblyInfo.cs
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.csproj.CoreCompileInputs.cache
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.sourcelink.json
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\obj\Debug\net8.0\refint\DSBooking.Domain.dll
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.pdb
+C:\Users\novak\source\repos\DS-Projekat-Emilija\DSBooking.Domain\obj\Debug\net8.0\ref\DSBooking.Domain.dll

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DSBooking.Domain.Entity.Package
 {
-    internal abstract class Package
+    public abstract class Package
     {
         private int _packetID;
         private string _packetName;

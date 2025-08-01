@@ -1,9 +1,9 @@
 using DSBooking.Domain.Repository;
-using DSBooking.Domain.Service;
+using DSBooking.Domain.Service.Implementation;
 using DSBooking.Infrastructure;
 using DSBooking.Presentation;
 using DSBooking.Presentation.Presenter;
-using DSBooking.UI;
+using DSBooking.Presentation.View;
 
 namespace DSBooking
 {
@@ -26,15 +26,15 @@ namespace DSBooking
             // Services
             ClientService clientService = new ClientService(clientRepository);
             ReservationService reservationService = new ReservationService(reservationRepository);
-
+            
             // Views
-            ClientReservationControlView clientReservationControlView = new ClientReservationControlView();
+            ClientControlView clientControlView = new ClientControlView();
+            ReservationControlView reservationControlView = new ReservationControlView();
+            PackageControlView packageControlView = new PackageControlView();
 
-            // Presenters
-            ClientReservationPresenter clientPresenter = new ClientReservationPresenter(clientReservationControlView, clientService, reservationService);
+            MainForm mainForm = new MainForm(clientControlView, reservationControlView, packageControlView);
 
-            MainForm form = new MainForm(clientReservationControlView);
-            Application.Run(form);
+            Application.Run(mainForm);
         }
     }
 }

@@ -10,5 +10,7 @@ namespace DSBooking.Domain.Repository
     public interface IClientRepository
     {
         public void AddClient(Client c);
+
+        public IEnumerable<Client> GetClientsByName(string nameSubstring);
     }
 }

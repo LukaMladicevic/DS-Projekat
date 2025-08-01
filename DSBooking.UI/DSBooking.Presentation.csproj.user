@@ -2,11 +2,17 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup />
   <ItemGroup>
-    <Compile Update="ClientReservationControlView.cs">
+    <Compile Update="View\Implementation\ClientViewControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Update="MainForm.cs">
+    <Compile Update="View\Implementation\MainView.cs">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\Implementation\PackageControlView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="View\Implementation\ReservationControlView.cs">
+      <SubType>UserControl</SubType>
     </Compile>
   </ItemGroup>
 </Project>
