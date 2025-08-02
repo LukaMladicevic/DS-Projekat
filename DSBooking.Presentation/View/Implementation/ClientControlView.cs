@@ -18,13 +18,14 @@ namespace DSBooking.Presentation.Presenter
         {
             InitializeComponent();
 
-            //clientsDataGridView.Visible = false;
+            clientsDataGridView.ScrollBars = ScrollBars.None;
         }
 
         public Control Control => this;
 
         public event EventHandler<Client>? OnClientSelection;
         public event EventHandler<string>? OnFilterChange;
+        public event EventHandler? OnViewLoad;
 
         public void HighlightClient(Client? client)
         {
@@ -38,17 +39,12 @@ namespace DSBooking.Presentation.Presenter
 
         private void ClientControlView_Load(object sender, EventArgs e)
         {
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            OnViewLoad?.Invoke(this, EventArgs.Empty);
         }
 
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
-            //MessageBox.Show($"Kliknuo si");
-            OnFilterChange?.Invoke(this, ((TextBox)sender).Text);
+            OnFilterChange?.Invoke(this, searchTextBox.Text);
         }
     }
 }

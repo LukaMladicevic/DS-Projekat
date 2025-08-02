@@ -7,7 +7,7 @@ using DSBooking.Domain.Entity.Package;
 
 namespace DSBooking.Presentation.View.Interface
 {
-    public interface IPackageView
+    public interface IPackageView : IView
     {
         event EventHandler<Package>? OnSelectedPackage;
 

@@ -28,6 +28,9 @@ namespace DSBooking.Presentation.Presenter.Implementation
             _selectedClient = null;
             _filterString = "";
         }
+        public void Initialize()
+        {
+        }
 
         public IEnumerable<Client> Clients => _clients;
 
@@ -35,19 +38,13 @@ namespace DSBooking.Presentation.Presenter.Implementation
 
         public string FilterString { get => _filterString; }
 
-        public void Initialize()
-        {
-            _view.OnClientSelection += (_, client) => SelectClient(client);
-            _view.OnFilterChange += (_, filterString) => ShowClients(filterString);
-        }
-
         public void SelectClient(Client? c)
         {
             _selectedClient = c;
             _view.HighlightClient(c);
         }
 
-        public void ShowClients(String filterString)
+        public void ShowClientsMatchingFilter(String filterString)
         {
             IEnumerable<Client> clients = _service.GetClientsByName(filterString);
 

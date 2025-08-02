@@ -11,7 +11,7 @@ namespace DSBooking.Presentation.Presenter.Interface
     public interface IClientPresenter : IPresenter
     {
         void SelectClient(Client? c);
-        void ShowClients(string filterString);
+        void ShowClientsMatchingFilter(string filterString);
 
         IEnumerable<Client> Clients { get; }
         Client? SelectedClient { get; }

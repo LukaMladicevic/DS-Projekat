@@ -38,22 +38,28 @@
             reservationsGridView.AllowUserToDeleteRows = false;
             reservationsGridView.AllowUserToResizeColumns = false;
             reservationsGridView.AllowUserToResizeRows = false;
+            reservationsGridView.BorderStyle = BorderStyle.None;
             reservationsGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            reservationsGridView.Dock = DockStyle.Fill;
             reservationsGridView.Enabled = false;
             reservationsGridView.Location = new Point(0, 0);
+            reservationsGridView.Margin = new Padding(0);
             reservationsGridView.MultiSelect = false;
             reservationsGridView.Name = "reservationsGridView";
             reservationsGridView.RowHeadersWidth = 51;
-            reservationsGridView.Size = new Size(354, 461);
+            reservationsGridView.Size = new Size(990, 650);
             reservationsGridView.TabIndex = 0;
             // 
             // ReservationControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(reservationsGridView);
+            Margin = new Padding(0);
             Name = "ReservationControlView";
-            Size = new Size(354, 461);
+            Size = new Size(990, 650);
+            Load += ReservationControlView_Load;
             ((System.ComponentModel.ISupportInitialize)reservationsGridView).EndInit();
             ResumeLayout(false);
         }

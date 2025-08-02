@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DSBooking.Presentation.View.Interface
 {
-    public interface IReservationView
+    public interface IReservationView : IView
     {
         event EventHandler<Reservation>? OnSelectedReservation;
 

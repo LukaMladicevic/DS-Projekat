@@ -29,37 +29,42 @@ namespace DSBooking.Presentation.Presenter.Implementation
             _action = 0;
         }
 
-        public int Action => _action;
-
         public void Initialize()
         {
             _mainView.ClientView.OnClientSelection += (_, client) => SelectClient(client);
-            _mainView.OnActionChange += (_, action) => SelectAction(action);
+            _mainView.ClientView.OnFilterChange += (_, filterString) => _clientPresenter.ShowClientsMatchingFilter(filterString);
+
+            _mainView.OnActionChange += (_, selectedAction) => SelectAction(selectedAction);
+            _mainView.OnViewLoad += (_, _) => ShowOnViewLoad();
         }
+        public void ShowOnViewLoad()
+        {
+            _clientPresenter.ShowClientsMatchingFilter(_clientPresenter.FilterString);
+            _clientPresenter.SelectClient(_clientPresenter.SelectedClient);
+
+            _mainView.SetActionMode(_action);
+            _packagePresenter.ShowPackages();
+        }
+
+        public int Action => _action;
 
         public void SelectAction(int action)
         {
             _action = action;
 
-            if (_action == 0)
-                _mainView.ShowPackages();
-            else
-                _mainView.ShowReservations();
+            _mainView.SetActionMode(action);
 
-            _clientPresenter.ShowClients(_clientPresenter.FilterString);
-
-            if (_action == 0)
-                _packagePresenter.ShowPackages();
-            else
-            {
-                if (_clientPresenter.SelectedClient != null)
-                    _reservationPresenter.ShowReservationsFor(_clientPresenter.SelectedClient);
-                else
-                    _reservationPresenter.ShowAllReservations();
-            }
+            ShowPackagesOrReservations(_clientPresenter.SelectedClient);
         }
 
         public void SelectClient(Client? client)
+        {
+            _clientPresenter.SelectClient(client);
+
+            ShowPackagesOrReservations(client);
+        }
+
+        private void ShowPackagesOrReservations(Client? client)
         {
             if (_action == 0)
                 _packagePresenter.ShowPackages();
@@ -71,5 +76,6 @@ namespace DSBooking.Presentation.Presenter.Implementation
                     _reservationPresenter.ShowAllReservations();
             }
         }
+
     }
 }

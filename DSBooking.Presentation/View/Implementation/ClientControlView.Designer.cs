@@ -28,57 +28,88 @@
         /// </summary>
         private void InitializeComponent()
         {
-            searchTextBox = new TextBox();
-            comboBox1 = new ComboBox();
             clientsDataGridView = new DataGridView();
+            tableLayoutPanel1 = new TableLayoutPanel();
+            searchTextBox = new TextBox();
+            filterComboBox = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)clientsDataGridView).BeginInit();
+            tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
-            // 
-            // searchTextBox
-            // 
-            searchTextBox.Location = new Point(14, 17);
-            searchTextBox.Name = "searchTextBox";
-            searchTextBox.Size = new Size(100, 23);
-            searchTextBox.TabIndex = 0;
-            searchTextBox.TextChanged += searchTextBox_TextChanged;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "emilija", "novak" });
-            comboBox1.Location = new Point(120, 17);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 2;
-            comboBox1.SelectedIndexChanged += comboBox1_SelectedIndexChanged;
             // 
             // clientsDataGridView
             // 
+            clientsDataGridView.AllowUserToAddRows = false;
+            clientsDataGridView.AllowUserToResizeColumns = false;
+            clientsDataGridView.AllowUserToResizeRows = false;
+            clientsDataGridView.BorderStyle = BorderStyle.None;
             clientsDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            clientsDataGridView.Location = new Point(0, 64);
+            clientsDataGridView.Dock = DockStyle.Fill;
+            clientsDataGridView.Enabled = false;
+            clientsDataGridView.Location = new Point(0, 0);
+            clientsDataGridView.Margin = new Padding(0);
             clientsDataGridView.Name = "clientsDataGridView";
-            clientsDataGridView.Size = new Size(418, 374);
+            clientsDataGridView.ReadOnly = true;
+            clientsDataGridView.Size = new Size(1028, 657);
             clientsDataGridView.TabIndex = 1;
+            // 
+            // tableLayoutPanel1
+            // 
+            tableLayoutPanel1.ColumnCount = 2;
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Controls.Add(searchTextBox, 0, 0);
+            tableLayoutPanel1.Controls.Add(filterComboBox, 1, 0);
+            tableLayoutPanel1.Dock = DockStyle.Bottom;
+            tableLayoutPanel1.Location = new Point(0, 582);
+            tableLayoutPanel1.Name = "tableLayoutPanel1";
+            tableLayoutPanel1.RowCount = 1;
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            tableLayoutPanel1.Size = new Size(1028, 75);
+            tableLayoutPanel1.TabIndex = 2;
+            // 
+            // searchTextBox
+            // 
+            searchTextBox.Anchor = AnchorStyles.None;
+            searchTextBox.Font = new Font("Segoe UI", 16F);
+            searchTextBox.Location = new Point(182, 19);
+            searchTextBox.Name = "searchTextBox";
+            searchTextBox.Size = new Size(150, 36);
+            searchTextBox.TabIndex = 0;
+            searchTextBox.TextChanged += searchTextBox_TextChanged;
+            // 
+            // filterComboBox
+            // 
+            filterComboBox.Anchor = AnchorStyles.None;
+            filterComboBox.Font = new Font("Segoe UI", 14F);
+            filterComboBox.FormattingEnabled = true;
+            filterComboBox.Location = new Point(696, 21);
+            filterComboBox.Name = "filterComboBox";
+            filterComboBox.Size = new Size(150, 33);
+            filterComboBox.TabIndex = 1;
             // 
             // ClientControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(comboBox1);
+            BackColor = SystemColors.Control;
+            BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(tableLayoutPanel1);
             Controls.Add(clientsDataGridView);
-            Controls.Add(searchTextBox);
+            Margin = new Padding(0);
             Name = "ClientControlView";
-            Size = new Size(418, 438);
+            Size = new Size(1028, 657);
             Load += ClientControlView_Load;
             ((System.ComponentModel.ISupportInitialize)clientsDataGridView).EndInit();
+            tableLayoutPanel1.ResumeLayout(false);
+            tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private TextBox searchTextBox;
-        private ComboBox comboBox1;
         private DataGridView clientsDataGridView;
+        private TableLayoutPanel tableLayoutPanel1;
+        private TextBox searchTextBox;
+        private ComboBox filterComboBox;
     }
 }

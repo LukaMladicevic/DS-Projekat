@@ -36,20 +36,26 @@
             // 
             packageDataGridView.AllowUserToAddRows = false;
             packageDataGridView.AllowUserToDeleteRows = false;
+            packageDataGridView.BorderStyle = BorderStyle.None;
             packageDataGridView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            packageDataGridView.Location = new Point(0, -1);
+            packageDataGridView.Dock = DockStyle.Fill;
+            packageDataGridView.Location = new Point(0, 0);
+            packageDataGridView.Margin = new Padding(0);
             packageDataGridView.Name = "packageDataGridView";
             packageDataGridView.ReadOnly = true;
-            packageDataGridView.Size = new Size(540, 480);
+            packageDataGridView.Size = new Size(985, 650);
             packageDataGridView.TabIndex = 0;
             // 
             // PackageControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(packageDataGridView);
+            Margin = new Padding(0);
             Name = "PackageControlView";
-            Size = new Size(540, 479);
+            Size = new Size(985, 650);
+            Load += PackageControlView_Load;
             ((System.ComponentModel.ISupportInitialize)packageDataGridView).EndInit();
             ResumeLayout(false);
         }

@@ -28,41 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            mainSplitContainer = new SplitContainer();
-            actionComboBox = new ComboBox();
             agencyNameLabel = new Label();
             addClientButton = new Button();
-            ((System.ComponentModel.ISupportInitialize)mainSplitContainer).BeginInit();
-            mainSplitContainer.SuspendLayout();
+            topPanel = new Panel();
+            bottomLayoutPanel = new TableLayoutPanel();
+            actionButton = new Button();
+            centerLayoutPanel = new TableLayoutPanel();
+            panel1 = new Panel();
+            topPanel.SuspendLayout();
+            bottomLayoutPanel.SuspendLayout();
+            centerLayoutPanel.SuspendLayout();
             SuspendLayout();
-            // 
-            // mainSplitContainer
-            // 
-            mainSplitContainer.Location = new Point(68, 77);
-            mainSplitContainer.Name = "mainSplitContainer";
-            mainSplitContainer.Size = new Size(1080, 386);
-            mainSplitContainer.SplitterDistance = 438;
-            mainSplitContainer.SplitterWidth = 200;
-            mainSplitContainer.TabIndex = 0;
-            // 
-            // actionComboBox
-            // 
-            actionComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
-            actionComboBox.Font = new Font("Segoe UI", 22F);
-            actionComboBox.FormattingEnabled = true;
-            actionComboBox.ItemHeight = 40;
-            actionComboBox.Items.AddRange(new object[] { "Rezervisi", "Ukloni Rezervaciju" });
-            actionComboBox.Location = new Point(482, 503);
-            actionComboBox.Name = "actionComboBox";
-            actionComboBox.Size = new Size(250, 48);
-            actionComboBox.TabIndex = 1;
-            actionComboBox.SelectedIndexChanged += actionComboBox_SelectedIndexChanged;
             // 
             // agencyNameLabel
             // 
+            agencyNameLabel.Anchor = AnchorStyles.None;
             agencyNameLabel.AutoSize = true;
             agencyNameLabel.Font = new Font("Segoe UI", 30F);
-            agencyNameLabel.Location = new Point(12, 9);
+            agencyNameLabel.Location = new Point(507, 22);
             agencyNameLabel.Name = "agencyNameLabel";
             agencyNameLabel.Size = new Size(218, 54);
             agencyNameLabel.TabIndex = 2;
@@ -70,8 +53,9 @@
             // 
             // addClientButton
             // 
+            addClientButton.Anchor = AnchorStyles.Right;
             addClientButton.Font = new Font("Segoe UI", 16F);
-            addClientButton.Location = new Point(960, 12);
+            addClientButton.Location = new Point(919, 24);
             addClientButton.Name = "addClientButton";
             addClientButton.Size = new Size(250, 48);
             addClientButton.TabIndex = 0;
@@ -79,29 +63,92 @@
             addClientButton.UseVisualStyleBackColor = true;
             addClientButton.Click += addClientButton_Click;
             // 
+            // topPanel
+            // 
+            topPanel.Controls.Add(agencyNameLabel);
+            topPanel.Dock = DockStyle.Top;
+            topPanel.Location = new Point(0, 0);
+            topPanel.Name = "topPanel";
+            topPanel.Size = new Size(1222, 93);
+            topPanel.TabIndex = 3;
+            // 
+            // bottomLayoutPanel
+            // 
+            bottomLayoutPanel.ColumnCount = 2;
+            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
+            bottomLayoutPanel.Controls.Add(addClientButton, 1, 0);
+            bottomLayoutPanel.Controls.Add(actionButton, 0, 0);
+            bottomLayoutPanel.Dock = DockStyle.Bottom;
+            bottomLayoutPanel.Location = new Point(0, 466);
+            bottomLayoutPanel.Name = "bottomLayoutPanel";
+            bottomLayoutPanel.Padding = new Padding(50, 0, 50, 0);
+            bottomLayoutPanel.RowCount = 1;
+            bottomLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            bottomLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            bottomLayoutPanel.Size = new Size(1222, 97);
+            bottomLayoutPanel.TabIndex = 0;
+            // 
+            // actionButton
+            // 
+            actionButton.Anchor = AnchorStyles.Left;
+            actionButton.Font = new Font("Segoe UI", 16F);
+            actionButton.Location = new Point(53, 24);
+            actionButton.Name = "actionButton";
+            actionButton.Size = new Size(250, 48);
+            actionButton.TabIndex = 1;
+            actionButton.Text = "Rezervisanje";
+            actionButton.UseVisualStyleBackColor = true;
+            actionButton.Click += actionButton_Click;
+            // 
+            // centerLayoutPanel
+            // 
+            centerLayoutPanel.ColumnCount = 3;
+            centerLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 45F));
+            centerLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 10F));
+            centerLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 45F));
+            centerLayoutPanel.Controls.Add(panel1, 1, 0);
+            centerLayoutPanel.Dock = DockStyle.Fill;
+            centerLayoutPanel.Location = new Point(0, 93);
+            centerLayoutPanel.Name = "centerLayoutPanel";
+            centerLayoutPanel.Padding = new Padding(50, 0, 50, 0);
+            centerLayoutPanel.RowCount = 1;
+            centerLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
+            centerLayoutPanel.Size = new Size(1222, 373);
+            centerLayoutPanel.TabIndex = 4;
+            // 
+            // panel1
+            // 
+            panel1.Location = new Point(557, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(106, 367);
+            panel1.TabIndex = 0;
+            // 
             // MainView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1222, 563);
-            Controls.Add(addClientButton);
-            Controls.Add(agencyNameLabel);
-            Controls.Add(actionComboBox);
-            Controls.Add(mainSplitContainer);
+            Controls.Add(centerLayoutPanel);
+            Controls.Add(topPanel);
+            Controls.Add(bottomLayoutPanel);
             Name = "MainView";
             Text = "MainView";
             Load += MainView_Load;
-            ((System.ComponentModel.ISupportInitialize)mainSplitContainer).EndInit();
-            mainSplitContainer.ResumeLayout(false);
+            topPanel.ResumeLayout(false);
+            topPanel.PerformLayout();
+            bottomLayoutPanel.ResumeLayout(false);
+            centerLayoutPanel.ResumeLayout(false);
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
-
-        private SplitContainer mainSplitContainer;
-        private ComboBox actionComboBox;
         private Label agencyNameLabel;
         private Button addClientButton;
+        private Panel topPanel;
+        private TableLayoutPanel bottomLayoutPanel;
+        private TableLayoutPanel centerLayoutPanel;
+        private Panel panel1;
+        private Button actionButton;
     }
 }

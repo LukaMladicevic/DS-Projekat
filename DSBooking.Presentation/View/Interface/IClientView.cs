@@ -7,7 +7,7 @@ using DSBooking.Domain.Entity.Client;
 
 namespace DSBooking.Presentation.View.Interface
 {
-    public interface IClientView
+    public interface IClientView : IView
     {
         event EventHandler<Client>? OnClientSelection;
         event EventHandler<string>? OnFilterChange;

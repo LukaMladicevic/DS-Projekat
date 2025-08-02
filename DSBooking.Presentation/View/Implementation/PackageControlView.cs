@@ -17,16 +17,24 @@ namespace DSBooking.Presentation.View
         public PackageControlView()
         {
             InitializeComponent();
+
+            packageDataGridView.ScrollBars = ScrollBars.None;
         }
 
         public Control Control => this;
 
         public event EventHandler<Package>? OnSelectedPackage;
+        public event EventHandler? OnViewLoad;
 
         public void ShowPackages(IEnumerable<Package> packages)
         {
             packageDataGridView.DataSource = packages;
             packageDataGridView.Refresh();
+        }
+
+        private void PackageControlView_Load(object sender, EventArgs e)
+        {
+            OnViewLoad?.Invoke(this, EventArgs.Empty);
         }
     }
 }

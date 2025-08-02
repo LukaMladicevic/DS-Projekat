@@ -1,10 +1,7 @@
-using DSBooking.Domain.Repository;
 using DSBooking.Domain.Service.Implementation;
 using DSBooking.Infrastructure;
-using DSBooking.Presentation;
 using DSBooking.Presentation.Presenter;
 using DSBooking.Presentation.Presenter.Implementation;
-using DSBooking.Presentation.Presenter.Interface;
 using DSBooking.Presentation.View;
 using DSBooking.Presentation.View.Implementation;
 
@@ -56,7 +53,6 @@ namespace DSBooking
 
             MainPresenter mainPresenter = new MainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter);
             mainPresenter.Initialize();
-
 
             Application.Run(mainView);
 

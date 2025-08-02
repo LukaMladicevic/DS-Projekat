@@ -19,8 +19,8 @@ namespace DSBooking.Infrastructure
         public IEnumerable<Client> GetClientsByName(string nameSubstring)
         {
             return (from c in _clients
-                where c.Name.Contains(nameSubstring)
-                select c).ToList();
+                    where c.Name.Contains(nameSubstring)
+                    select c).ToList();
         }
     }
 }
