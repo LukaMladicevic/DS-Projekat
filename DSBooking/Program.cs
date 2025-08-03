@@ -1,9 +1,17 @@
-using DSBooking.Domain.Service.Implementation;
-using DSBooking.Infrastructure;
-using DSBooking.Presentation.Presenter;
-using DSBooking.Presentation.Presenter.Implementation;
-using DSBooking.Presentation.View;
-using DSBooking.Presentation.View.Implementation;
+using DSBooking.Application.Service.Client;
+using DSBooking.Application.Service.Package;
+using DSBooking.Application.Service.Reservation;
+using DSBooking.Infrastructure.Repository.Client;
+using DSBooking.Infrastructure.Repository.Package;
+using DSBooking.Infrastructure.Repository.Reservation;
+using DSBooking.Presentation.Presenter.Client;
+using DSBooking.Presentation.Presenter.Main;
+using DSBooking.Presentation.Presenter.Package;
+using DSBooking.Presentation.Presenter.Reservation;
+using DSBooking.Presentation.View.Client;
+using DSBooking.Presentation.View.Main;
+using DSBooking.Presentation.View.Package;
+using DSBooking.Presentation.View.Reservation;
 
 namespace DSBooking
 {
@@ -20,12 +28,13 @@ namespace DSBooking
             ApplicationConfiguration.Initialize();
 
             // Repositories
-            ClientRepository clientRepository = new ClientRepository();
-            PackageRepository packageRepository = new PackageRepository();
-            ReservationRepository reservationRepository = new ReservationRepository();
+            TestClientRepository clientRepository = new TestClientRepository();
+            TestPackageRepository packageRepository = new TestPackageRepository();
+            TestReservationRepository reservationRepository = new TestReservationRepository();
 
             // Services
 
+            
             ClientService clientService = new ClientService(clientRepository);
             PackageService packageService = new PackageService(packageRepository);
             ReservationService reservationService = new ReservationService(reservationRepository);
@@ -47,14 +56,14 @@ namespace DSBooking
 
             // MainView
 
-            MainView mainView = new MainView(clientControlView, packageControlView, reservationControlView);
+            MainControlView mainView = new MainControlView(clientControlView, packageControlView, reservationControlView);
 
             // MainPresenter
 
             MainPresenter mainPresenter = new MainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter);
             mainPresenter.Initialize();
 
-            Application.Run(mainView);
+            System.Windows.Forms.Application.Run(mainView);
 
             // Application.Run(mainForm);
         }

@@ -418,7 +418,8 @@
       "System.Threading.Tasks.Extensions/4.5.4": {},
       "DSBooking.Application/1.0.0": {
         "dependencies": {
-          "DSBooking.Domain": "1.0.0"
+          "DSBooking.Domain": "1.0.0",
+          "DSBooking.Infrastructure": "1.0.0"
         },
         "runtime": {
           "DSBooking.Application.dll": {
@@ -449,7 +450,7 @@
       },
       "DSBooking.Presentation/1.0.0": {
         "dependencies": {
-          "DSBooking.Domain": "1.0.0"
+          "DSBooking.Application": "1.0.0"
         },
         "runtime": {
           "DSBooking.Presentation.dll": {

@@ -8,7 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DSBooking.Domain\DSBooking.Domain.csproj" />
+    <ProjectReference Include="..\DSBooking.Application\DSBooking.Application.csproj" />
   </ItemGroup>
 
 </Project>
