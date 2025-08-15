@@ -1,8 +1,6 @@
-﻿using DSBooking.Application.DTO.Client;
-using DSBooking.Application.DTO.Reservation;
-using DSBooking.Application.Service.Reservation;
-using DSBooking.Domain.Entity;
-using DSBooking.Domain.Entity.Client;
+﻿using DSBooking.Application.Service.Reservation;
+using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Object.Reservation;
 using DSBooking.Presentation.View.Reservation;
 using System;
 using System.Collections.Generic;
@@ -17,17 +15,17 @@ namespace DSBooking.Presentation.Presenter.Reservation
         IReservationView _view;
         IReservationService _service;
 
-        IEnumerable<ReservationDTO> _reservations;
+        IEnumerable<ReservationObject> _reservations;
 
         public ReservationPresenter(IReservationView view, IReservationService service)
         {
             _view = view;
             _service = service;
 
-            _reservations = new List<ReservationDTO>();
+            _reservations = new List<ReservationObject>();
         }
 
-        public IEnumerable<ReservationDTO> Reservations => _reservations;
+        public IEnumerable<ReservationObject> Reservations => _reservations;
 
         public void Initialize()
         {
@@ -35,16 +33,16 @@ namespace DSBooking.Presentation.Presenter.Reservation
 
         public void ShowAllReservations()
         {
-            IEnumerable<ReservationDTO> reservations = _service.GetAllReservations();
+            IEnumerable<ReservationObject> reservations = _service.GetAll();
 
             _reservations = reservations;
 
             _view.ShowReservations(reservations);
         }
 
-        public void ShowReservationsFor(ClientDTO client)
+        public void ShowReservationsFor(ClientObject client)
         {
-            IEnumerable<ReservationDTO> reservations = _service.GetReservationsForClient(client);
+            IEnumerable<ReservationObject> reservations = _service.GetForClient(client.Id);
 
             _reservations = reservations;
 

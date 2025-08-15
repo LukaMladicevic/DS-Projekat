@@ -3,15 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Application.DTO.Package;
-using DSBooking.Domain.Entity.Package;
+using DSBooking.Domain.Object.Package;
 
 namespace DSBooking.Presentation.View.Package
 {
     public interface IPackageView : IView
     {
-        event EventHandler<PackageDTO>? OnSelectedPackage;
+        event EventHandler<PackageObject>? OnSelectedPackage;
 
-        void ShowPackages(IEnumerable<PackageDTO> packages);
+        void ShowPackages(IEnumerable<PackageObject> packages);
     }
 }

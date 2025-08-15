@@ -3,25 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Entity;
-using DSBooking.Domain.Entity.Client;
+using DSBooking.Domain.Object.Reservation;
 
 namespace DSBooking.Infrastructure.Repository.Reservation
 {
-    public class TestReservationRepository : TestRepository<ReservationEntity>, IReservationRepository
+    public class TestReservationRepository : IReservationRepository
     {
-        List<ReservationEntity> reservations = new List<ReservationEntity>();
-        public TestReservationRepository()
+        public void AddReservation(ReservationAddObject reservationAddObject)
         {
-            reservations.Add(new ReservationEntity(1, 1, 1));
-            reservations.Add(new ReservationEntity(2, 1, 2));
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<ReservationEntity> GetReservationsForClient(int clientId)
+        public IEnumerable<ReservationObject> GetReservations(int clientId)
         {
-            return (from r in reservations
-                    where r.ClientId == clientId
-                    select r).ToList();
+            throw new NotImplementedException();
         }
     }
+
 }

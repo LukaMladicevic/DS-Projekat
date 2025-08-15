@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DSBooking.Domain.Entity.Package;
+﻿using DSBooking.Domain.Object.Package;
 
 namespace DSBooking.Infrastructure.Repository.Package
 {
-    public interface IPackageRepository : IRepository<PackageEntity>
+    public interface IPackageRepository
     {
+        PackageObject? Get(int id);
+        IEnumerable<PackageObject> GetAllAvailablePackages(int clientId);
     }
 }

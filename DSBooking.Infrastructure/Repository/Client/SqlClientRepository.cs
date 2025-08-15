@@ -3,40 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Entity.Client;
+using DSBooking.Domain.Object.Client;
 
 namespace DSBooking.Infrastructure.Repository.Client
 {
     public class SqlClientRepository : IClientRepository
     {
-        public void Add(ClientEntity entity)
+        public void AddClient(ClientAddObject clientAddObject)
         {
             throw new NotImplementedException();
         }
 
-        public void Delete(int id)
+        public ClientObject? Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ClientEntity> GetAll()
+        public IEnumerable<ClientObject> GetClientsByName(string nameSubstring)
         {
             throw new NotImplementedException();
         }
-
-        public ClientEntity? GetById(int id)
-        {
-            throw new NotImplementedException();
-        }
-        public void Update(ClientEntity entity)
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<ClientEntity> GetClientsByName(string nameSubstring)
-        {
-            throw new NotImplementedException();
-        }
-
     }
 }

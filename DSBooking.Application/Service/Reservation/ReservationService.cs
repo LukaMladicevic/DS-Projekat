@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Application.DTO.Client;
-using DSBooking.Application.DTO.Package;
-using DSBooking.Application.DTO.Reservation;
-using DSBooking.Domain.Entity;
-using DSBooking.Domain.Entity.Client;
-using DSBooking.Domain.Entity.Package;
+using DSBooking.Domain.Object.Reservation;
 using DSBooking.Infrastructure.Repository.Reservation;
 
 namespace DSBooking.Application.Service.Reservation
@@ -22,22 +17,14 @@ namespace DSBooking.Application.Service.Reservation
             _reservationRepository = reservationRepository;
         }
 
-        public IEnumerable<ReservationDTO> GetAllReservations()
+        public IEnumerable<ReservationObject> GetAll()
         {
-            IEnumerable<ReservationEntity> reservations = _reservationRepository.GetAll();
-            List<ReservationDTO> result = new List<ReservationDTO>();
-
-            // TODO
-            return result;
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<ReservationDTO> GetReservationsForClient(ClientDTO client)
+        public IEnumerable<ReservationObject> GetForClient(int clientId)
         {
-            IEnumerable<ReservationEntity> reservations = _reservationRepository.GetAll();
-            List<ReservationDTO> result = new List<ReservationDTO>();
-
-            // TODO
-            return result;
+            throw new NotImplementedException();
         }
     }
 }

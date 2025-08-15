@@ -1,5 +1,4 @@
-﻿using DSBooking.Application.DTO.Client;
-using DSBooking.Domain.Entity.Client;
+﻿using DSBooking.Domain.Object.Client;
 using DSBooking.Presentation.Presenter.Client;
 using DSBooking.Presentation.Presenter.Package;
 using DSBooking.Presentation.Presenter.Reservation;
@@ -19,7 +18,7 @@ namespace DSBooking.Presentation.Presenter.Main
         IPackagePresenter _packagePresenter;
         IReservationPresenter _reservationPresenter;
 
-        int _action;
+        MainViewMode _mode;
 
         public MainPresenter(IMainView mainView, IClientPresenter clientPresenter, IPackagePresenter packagePresenter, IReservationPresenter reservationPresenter)
         {
@@ -28,7 +27,7 @@ namespace DSBooking.Presentation.Presenter.Main
             _reservationPresenter = reservationPresenter;
             _packagePresenter = packagePresenter;
 
-            _action = 0;
+            _mode = MainViewMode.ShowPackages;
         }
 
         public void Initialize()
@@ -36,7 +35,10 @@ namespace DSBooking.Presentation.Presenter.Main
             _mainView.ClientView.OnClientSelection += (_, client) => SelectClient(client);
             _mainView.ClientView.OnFilterChange += (_, filterString) => _clientPresenter.ShowClientsMatchingFilter(filterString);
 
-            _mainView.OnActionChange += (_, selectedAction) => SelectAction(selectedAction);
+            _mainView.OnModeChange += (_, _) => SelectMode(
+                (_mode == MainViewMode.ShowPackages) ?
+                MainViewMode.ShowReservations :
+                MainViewMode.ShowPackages);
             _mainView.OnViewLoad += (_, _) => ShowOnViewLoad();
         }
         public void ShowOnViewLoad()
@@ -44,31 +46,31 @@ namespace DSBooking.Presentation.Presenter.Main
             _clientPresenter.ShowClientsMatchingFilter(_clientPresenter.FilterString);
             _clientPresenter.SelectClient(_clientPresenter.SelectedClient);
 
-            _mainView.SetActionMode(_action);
+            _mainView.SetMode(_mode);
             _packagePresenter.ShowPackages();
         }
 
-        public int Action => _action;
+        public MainViewMode Mode => _mode;
 
-        public void SelectAction(int action)
+        public void SelectMode(MainViewMode mode)
         {
-            _action = action;
+            _mode = mode;
 
-            _mainView.SetActionMode(action);
+            _mainView.SetMode(mode);
 
             ShowPackagesOrReservations(_clientPresenter.SelectedClient);
         }
 
-        public void SelectClient(ClientDTO? client)
+        public void SelectClient(ClientObject? client)
         {
             _clientPresenter.SelectClient(client);
 
             ShowPackagesOrReservations(client);
         }
 
-        private void ShowPackagesOrReservations(ClientDTO? client)
+        private void ShowPackagesOrReservations(ClientObject? client)
         {
-            if (_action == 0)
+            if (_mode == MainViewMode.ShowPackages)
                 _packagePresenter.ShowPackages();
             else
             {

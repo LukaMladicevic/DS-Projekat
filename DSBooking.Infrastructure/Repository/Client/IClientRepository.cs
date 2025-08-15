@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Entity.Client;
+using DSBooking.Domain.Object.Client;
 
 namespace DSBooking.Infrastructure.Repository.Client
 {
-    public interface IClientRepository : IRepository<ClientEntity>
+    public interface IClientRepository
     {
-        public IEnumerable<ClientEntity> GetClientsByName(string nameSubstring);
+        public ClientObject? Get(int id);
+        public IEnumerable<ClientObject> GetClientsByName(string nameSubstring);
+        public void AddClient(ClientAddObject clientAddObject);
     }
 }

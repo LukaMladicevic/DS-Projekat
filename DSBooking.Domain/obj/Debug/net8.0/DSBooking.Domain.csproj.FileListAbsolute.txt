@@ -70,3 +70,15 @@ C:\Users\novak\Source\Repos\DS-ProjekatAAA\DSBooking.Domain\bin\Debug\net8.0\DSB
 C:\Users\novak\Source\Repos\DS-ProjekatAAA\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.dll
 C:\Users\novak\Source\Repos\DS-ProjekatAAA\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.pdb
 C:\Users\novak\Source\Repos\DS-ProjekatAAA\DSBooking.Domain\obj\Debug\net8.0\ref\DSBooking.Domain.dll
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.deps.json
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.dll
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.pdb
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.AssemblyInfoInputs.cache
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.AssemblyInfo.cs
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.csproj.CoreCompileInputs.cache
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.sourcelink.json
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.dll
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\obj\Debug\net8.0\refint\DSBooking.Domain.dll
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.pdb
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Domain\obj\Debug\net8.0\ref\DSBooking.Domain.dll

@@ -9,13 +9,14 @@ using DSBooking.Presentation.View.Reservation;
 
 namespace DSBooking.Presentation.View.Main
 {
+    public enum MainViewMode { ShowReservations, ShowPackages }
     public interface IMainView : IView
     {
         event EventHandler? OnClientAddViewOpen;
         // action - reserve or remove reservation
-        event EventHandler<int>? OnActionChange; // invalid eventhandler param type
+        event EventHandler? OnModeChange;
 
-        void SetActionMode(int action);
+        void SetMode(MainViewMode mode);
 
         IClientView ClientView { get; }
         IReservationView ReservationView { get; }

@@ -20,8 +20,6 @@ namespace DSBooking.Presentation.View.Main
         IPackageControlView _packageControlView;
         IReservationControlView _reservationControlView;
 
-        int _action;
-
         public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView)
         {
             _clientControlView = clientView;
@@ -39,7 +37,7 @@ namespace DSBooking.Presentation.View.Main
             ConfigureControl(_reservationControlView.Control);
             //_reservationControlView.Control.Margin = new Padding(200, 0, 0, 0);
 
-            SetActionMode(0); // Just in case the presenter doesn't set it
+            SetMode(MainViewMode.ShowPackages); // Just in case the presenter doesn't set it
             this.Text = "DSBooking";
         }
 
@@ -52,7 +50,7 @@ namespace DSBooking.Presentation.View.Main
         public IPackageView PackageView => _packageControlView;
 
         public event EventHandler? OnClientAddViewOpen;
-        public event EventHandler<int>? OnActionChange;
+        public event EventHandler? OnModeChange;
         public event EventHandler? OnViewLoad;
 
         private void ShowPackages()
@@ -89,14 +87,12 @@ namespace DSBooking.Presentation.View.Main
 
         private void actionButton_Click(object sender, EventArgs e)
         {
-            _action = (_action == 0) ? 1 : 0;
-            OnActionChange?.Invoke(this, _action);
+            OnModeChange?.Invoke(this, EventArgs.Empty);
         }
 
-        public void SetActionMode(int action)
+        public void SetMode(MainViewMode mode)
         {
-            _action = action;
-            if(action == 0) ShowPackages();
+            if(mode == MainViewMode.ShowPackages) ShowPackages();
             else ShowReservations();
         }
     }

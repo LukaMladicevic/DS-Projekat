@@ -1,16 +1,15 @@
-﻿using DSBooking.Domain.Entity;
-using DSBooking.Domain.Entity.Client;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DSBooking.Domain.Object.Reservation;
 
 namespace DSBooking.Infrastructure.Repository.Reservation
 {
-    public interface IReservationRepository : IRepository<ReservationEntity>
+    public interface IReservationRepository
     {
-        // ???
-        IEnumerable<ReservationEntity> GetReservationsForClient(int clientId);
+        IEnumerable<ReservationObject> GetReservations(int clientId);
+        void AddReservation(ReservationAddObject reservationAddObject);
     }
 }

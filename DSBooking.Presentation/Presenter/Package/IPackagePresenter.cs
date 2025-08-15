@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Application.DTO.Package;
-using DSBooking.Domain.Entity.Package;
+using DSBooking.Domain.Object.Package;
 
 namespace DSBooking.Presentation.Presenter.Package
 {
@@ -12,6 +11,6 @@ namespace DSBooking.Presentation.Presenter.Package
     {
         void ShowPackages();
 
-        IEnumerable<PackageDTO> Packages { get; }
+        IEnumerable<PackageObject> Packages { get; }
     }
 }

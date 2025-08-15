@@ -1,22 +1,23 @@
-﻿using DSBooking.Domain.Entity.Client;
+﻿using DSBooking.Domain.Object.Client;
 
 namespace DSBooking.Infrastructure.Repository.Client
 {
-    public class TestClientRepository : TestRepository<ClientEntity>, IClientRepository
+    public class TestClientRepository : IClientRepository
     {
-        List<ClientEntity> _clients = new List<ClientEntity>();
-        public TestClientRepository()
+        public void AddClient(ClientAddObject clientAddObject)
         {
-            _clients.Add(new ClientEntity(1, "Novak", "Stevanovic", "1", new DateOnly(2003, 10, 24), "novakst24@gmail.com", "0603498540"));
-            _clients.Add(new ClientEntity(2, "Emilija", "Djordjevic", "2", new DateOnly(2003, 7, 29), "emilijadjordjevic.com@gmail.com", "555333"));
+            throw new NotImplementedException();
         }
 
-        public IEnumerable<ClientEntity> GetClientsByName(string nameSubstring)
+        public ClientObject? Get(int id)
         {
-            return (from c in _clients
-                    where c.Name.Contains(nameSubstring)
-                    select c).ToList();
+            throw new NotImplementedException();
         }
 
+        public IEnumerable<ClientObject> GetClientsByName(string nameSubstring)
+        {
+            throw new NotImplementedException();
+        }
     }
+
 }
