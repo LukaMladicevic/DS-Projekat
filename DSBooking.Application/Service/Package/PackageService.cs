@@ -15,10 +15,13 @@ namespace DSBooking.Application.Service.Package
         {
             _packageRepository = packageRepository;
         }
-
         public IEnumerable<PackageObject> GetAll()
         {
-            throw new NotImplementedException();
+            return _packageRepository.GetAll();
+        }
+        public IEnumerable<PackageObject> GetAllAvailableForClient(int clientId)
+        {
+            return _packageRepository.GetAllAvailableForClient(clientId);
         }
     }
 }

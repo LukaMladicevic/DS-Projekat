@@ -19,12 +19,12 @@ namespace DSBooking.Application.Service.Reservation
 
         public IEnumerable<ReservationObject> GetAll()
         {
-            throw new NotImplementedException();
+            return _reservationRepository.GetAll();
         }
 
         public IEnumerable<ReservationObject> GetForClient(int clientId)
         {
-            throw new NotImplementedException();
+            return _reservationRepository.GetForClient(clientId);
         }
     }
 }

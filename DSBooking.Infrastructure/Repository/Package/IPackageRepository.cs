@@ -5,6 +5,8 @@ namespace DSBooking.Infrastructure.Repository.Package
     public interface IPackageRepository
     {
         PackageObject? Get(int id);
-        IEnumerable<PackageObject> GetAllAvailablePackages(int clientId);
+
+        IEnumerable<PackageObject> GetAll();
+        IEnumerable<PackageObject> GetAllAvailableForClient(int clientId);
     }
 }

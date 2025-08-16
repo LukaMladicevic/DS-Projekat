@@ -10,8 +10,8 @@ namespace DSBooking.Presentation.Presenter.Reservation
 {
     public interface IReservationPresenter : IPresenter
     {
-        void ShowReservationsFor(ClientObject clientObject);
-        void ShowAllReservations();
+        void ShowForClient(int clientId);
+        void ShowAll();
 
         IEnumerable<ReservationObject> Reservations { get; }
     }

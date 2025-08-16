@@ -6,17 +6,16 @@ namespace DSBooking.Infrastructure.Repository.Client
     {
         public void AddClient(ClientAddObject clientAddObject)
         {
-            throw new NotImplementedException();
         }
 
         public ClientObject? Get(int id)
         {
-            throw new NotImplementedException();
+            return null;
         }
 
         public IEnumerable<ClientObject> GetClientsByName(string nameSubstring)
         {
-            throw new NotImplementedException();
+            return new List<ClientObject>();
         }
     }
 

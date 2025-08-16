@@ -9,7 +9,8 @@ namespace DSBooking.Infrastructure.Repository.Reservation
 {
     public interface IReservationRepository
     {
-        IEnumerable<ReservationObject> GetReservations(int clientId);
+        IEnumerable<ReservationObject> GetForClient(int clientId);
+        IEnumerable<ReservationObject> GetAll();
         void AddReservation(ReservationAddObject reservationAddObject);
     }
 }

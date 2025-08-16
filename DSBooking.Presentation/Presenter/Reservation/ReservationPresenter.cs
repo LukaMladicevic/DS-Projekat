@@ -31,7 +31,7 @@ namespace DSBooking.Presentation.Presenter.Reservation
         {
         }
 
-        public void ShowAllReservations()
+        public void ShowAll()
         {
             IEnumerable<ReservationObject> reservations = _service.GetAll();
 
@@ -40,9 +40,9 @@ namespace DSBooking.Presentation.Presenter.Reservation
             _view.ShowReservations(reservations);
         }
 
-        public void ShowReservationsFor(ClientObject client)
+        public void ShowForClient(int clientId)
         {
-            IEnumerable<ReservationObject> reservations = _service.GetForClient(client.Id);
+            IEnumerable<ReservationObject> reservations = _service.GetForClient(clientId);
 
             _reservations = reservations;
 

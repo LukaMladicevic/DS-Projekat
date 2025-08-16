@@ -11,12 +11,16 @@ namespace DSBooking.Infrastructure.Repository.Reservation
     {
         public void AddReservation(ReservationAddObject reservationAddObject)
         {
-            throw new NotImplementedException();
         }
 
-        public IEnumerable<ReservationObject> GetReservations(int clientId)
+        public IEnumerable<ReservationObject> GetAll()
         {
-            throw new NotImplementedException();
+            return new List<ReservationObject>();
+        }
+
+        public IEnumerable<ReservationObject> GetForClient(int clientId)
+        {
+            return new List<ReservationObject>();
         }
     }
 

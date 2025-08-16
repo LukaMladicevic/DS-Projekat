@@ -19,7 +19,7 @@ namespace DSBooking.Application.Service.Client
 
         public IEnumerable<ClientObject> GetByName(string name)
         {
-            throw new NotImplementedException();
+            return _clientRepository.GetClientsByName(name);
         }
     }
 }

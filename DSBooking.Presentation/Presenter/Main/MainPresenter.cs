@@ -47,7 +47,7 @@ namespace DSBooking.Presentation.Presenter.Main
             _clientPresenter.SelectClient(_clientPresenter.SelectedClient);
 
             _mainView.SetMode(_mode);
-            _packagePresenter.ShowPackages();
+            _packagePresenter.ShowAll();
         }
 
         public MainViewMode Mode => _mode;
@@ -71,13 +71,18 @@ namespace DSBooking.Presentation.Presenter.Main
         private void ShowPackagesOrReservations(ClientObject? client)
         {
             if (_mode == MainViewMode.ShowPackages)
-                _packagePresenter.ShowPackages();
-            else
             {
                 if (client != null)
-                    _reservationPresenter.ShowReservationsFor(client);
+                    _packagePresenter.ShowForClient(client.Id);
                 else
-                    _reservationPresenter.ShowAllReservations();
+                    _packagePresenter.ShowAll();
+            }
+            else
+            {
+                if(client != null)
+                    _reservationPresenter.ShowForClient(client.Id);
+                else
+                    _reservationPresenter.ShowAll();
             }
         }
 

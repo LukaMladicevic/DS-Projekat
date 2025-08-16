@@ -19,6 +19,8 @@ namespace DSBooking.Presentation.View.Reservation
             InitializeComponent();
 
             reservationsGridView.ScrollBars = ScrollBars.None;
+            reservationsGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
         }
 
         public Control Control => this;

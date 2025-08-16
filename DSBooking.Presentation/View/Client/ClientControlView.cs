@@ -19,6 +19,7 @@ namespace DSBooking.Presentation.View.Client
             InitializeComponent();
 
             clientsDataGridView.ScrollBars = ScrollBars.None;
+            clientsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         public Control Control => this;

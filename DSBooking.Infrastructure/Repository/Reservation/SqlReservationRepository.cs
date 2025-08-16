@@ -14,7 +14,12 @@ namespace DSBooking.Infrastructure.Repository.Reservation
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ReservationObject> GetReservations(int clientId)
+        public IEnumerable<ReservationObject> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<ReservationObject> GetForClient(int clientId)
         {
             throw new NotImplementedException();
         }

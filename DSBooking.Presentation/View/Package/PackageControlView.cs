@@ -18,6 +18,7 @@ namespace DSBooking.Presentation.View.Package
             InitializeComponent();
 
             packageDataGridView.ScrollBars = ScrollBars.None;
+            packageDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
         }
 
         public Control Control => this;

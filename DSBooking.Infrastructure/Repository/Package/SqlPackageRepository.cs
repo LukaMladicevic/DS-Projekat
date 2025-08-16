@@ -14,7 +14,12 @@ namespace DSBooking.Infrastructure.Repository.Package
             throw new NotImplementedException();
         }
 
-        public IEnumerable<PackageObject> GetAllAvailablePackages(int clientId)
+        public IEnumerable<PackageObject> GetAll()
+        {
+            throw new NotImplementedException();
+        }
+
+        public IEnumerable<PackageObject> GetAllAvailableForClient(int clientId)
         {
             throw new NotImplementedException();
         }
