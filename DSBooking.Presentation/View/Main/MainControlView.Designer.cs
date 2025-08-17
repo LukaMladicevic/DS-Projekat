@@ -35,6 +35,7 @@
             actionButton = new Button();
             centerLayoutPanel = new TableLayoutPanel();
             panel1 = new Panel();
+            sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
             topPanel.SuspendLayout();
             bottomLayoutPanel.SuspendLayout();
             centerLayoutPanel.SuspendLayout();
@@ -124,7 +125,12 @@
             panel1.Size = new Size(106, 367);
             panel1.TabIndex = 0;
             // 
-            // MainView
+            // sqlCommand1
+            // 
+            sqlCommand1.CommandTimeout = 30;
+            sqlCommand1.EnableOptimizedParameterBinding = false;
+            // 
+            // MainControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -132,7 +138,7 @@
             Controls.Add(centerLayoutPanel);
             Controls.Add(topPanel);
             Controls.Add(bottomLayoutPanel);
-            Name = "MainView";
+            Name = "MainControlView";
             Text = "MainView";
             Load += MainView_Load;
             topPanel.ResumeLayout(false);
@@ -150,5 +156,6 @@
         private TableLayoutPanel centerLayoutPanel;
         private Panel panel1;
         private Button actionButton;
+        private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
     }
 }

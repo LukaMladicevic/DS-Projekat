@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DSBooking.Presentation.View.Client;
+using DSBooking.Presentation.View.ClientAdd;
 using DSBooking.Presentation.View.Package;
 using DSBooking.Presentation.View.Reservation;
 
@@ -19,12 +20,14 @@ namespace DSBooking.Presentation.View.Main
         IClientControlView _clientControlView;
         IPackageControlView _packageControlView;
         IReservationControlView _reservationControlView;
+        IClientAddFormView _clientAddFormView;
 
-        public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView)
+        public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView, IClientAddFormView clientAddForm)
         {
             _clientControlView = clientView;
             _packageControlView = packageView;
             _reservationControlView = reservationView;
+            _clientAddFormView = clientAddForm;
 
             InitializeComponent();
 
@@ -48,6 +51,8 @@ namespace DSBooking.Presentation.View.Main
         public IReservationView ReservationView => _reservationControlView;
 
         public IPackageView PackageView => _packageControlView;
+
+        public IClientAddView ClientAddView => _clientAddFormView;
 
         public event EventHandler? OnClientAddViewOpen;
         public event EventHandler? OnModeChange;
@@ -94,6 +99,11 @@ namespace DSBooking.Presentation.View.Main
         {
             if(mode == MainViewMode.ShowPackages) ShowPackages();
             else ShowReservations();
+        }
+
+        public DialogResult ShowAddClientDialog()
+        {
+            return _clientAddFormView.Form.ShowDialog();
         }
     }
 }

@@ -172,3 +172,5 @@ C:\Users\novak\source\repos\DS-ProjekatAB\DSBooking.Presentation\obj\Debug\net8.
 C:\Users\novak\source\repos\DS-ProjekatAB\DSBooking.Presentation\obj\Debug\net8.0-windows\refint\DSBooking.Presentation.dll
 C:\Users\novak\source\repos\DS-ProjekatAB\DSBooking.Presentation\obj\Debug\net8.0-windows\DSBooking.Presentation.pdb
 C:\Users\novak\source\repos\DS-ProjekatAB\DSBooking.Presentation\obj\Debug\net8.0-windows\ref\DSBooking.Presentation.dll
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Presentation\obj\Debug\net8.0-windows\DSBooking.Presentation.View.ClientAdd.ClientAddFormView.resources
+C:\Users\novak\Source\Repos\DS-ProjekatAB\DSBooking.Presentation\obj\Debug\net8.0-windows\DSBooking.Presentation.View.ClientAdd.IClientAddFormView.resources

@@ -17,6 +17,11 @@ namespace DSBooking.Application.Service.Client
             _clientRepository = clientRepository;
         }
 
+        public void AddClient(ClientAddObject client)
+        {
+            _clientRepository.AddClient(client);
+        }
+
         public IEnumerable<ClientObject> GetByName(string name)
         {
             return _clientRepository.GetClientsByName(name);

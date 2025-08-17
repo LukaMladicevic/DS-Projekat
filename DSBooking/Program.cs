@@ -9,6 +9,7 @@ using DSBooking.Presentation.Presenter.Main;
 using DSBooking.Presentation.Presenter.Package;
 using DSBooking.Presentation.Presenter.Reservation;
 using DSBooking.Presentation.View.Client;
+using DSBooking.Presentation.View.ClientAdd;
 using DSBooking.Presentation.View.Main;
 using DSBooking.Presentation.View.Package;
 using DSBooking.Presentation.View.Reservation;
@@ -44,6 +45,7 @@ namespace DSBooking
             ClientControlView clientControlView = new ClientControlView();
             PackageControlView packageControlView = new PackageControlView();
             ReservationControlView reservationControlView = new ReservationControlView();
+            ClientAddFormView clientAddView = new ClientAddFormView();
 
             // Presenters
 
@@ -56,11 +58,11 @@ namespace DSBooking
 
             // MainView
 
-            MainControlView mainView = new MainControlView(clientControlView, packageControlView, reservationControlView);
+            MainControlView mainView = new MainControlView(clientControlView, packageControlView, reservationControlView, clientAddView);
 
             // MainPresenter
 
-            MainPresenter mainPresenter = new MainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter);
+            MainPresenter mainPresenter = new MainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter, clientService);
             mainPresenter.Initialize();
 
             System.Windows.Forms.Application.Run(mainView);

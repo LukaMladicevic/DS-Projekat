@@ -10,5 +10,6 @@ namespace DSBooking.Application.Service.Client
     public interface IClientService
     {
         IEnumerable<ClientObject> GetByName(string name);
+        void AddClient(ClientAddObject client);
     }
 }

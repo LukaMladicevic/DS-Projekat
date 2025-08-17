@@ -1,4 +1,5 @@
-﻿using DSBooking.Domain.Object.Client;
+﻿using DSBooking.Application.Service.Client;
+using DSBooking.Domain.Object.Client;
 using DSBooking.Presentation.Presenter.Client;
 using DSBooking.Presentation.Presenter.Package;
 using DSBooking.Presentation.Presenter.Reservation;
@@ -18,14 +19,17 @@ namespace DSBooking.Presentation.Presenter.Main
         IPackagePresenter _packagePresenter;
         IReservationPresenter _reservationPresenter;
 
+        IClientService _clientService;
+
         MainViewMode _mode;
 
-        public MainPresenter(IMainView mainView, IClientPresenter clientPresenter, IPackagePresenter packagePresenter, IReservationPresenter reservationPresenter)
+        public MainPresenter(IMainView mainView, IClientPresenter clientPresenter, IPackagePresenter packagePresenter, IReservationPresenter reservationPresenter, IClientService clientService)
         {
             _mainView = mainView;
             _clientPresenter = clientPresenter;
             _reservationPresenter = reservationPresenter;
             _packagePresenter = packagePresenter;
+            _clientService = clientService;
 
             _mode = MainViewMode.ShowPackages;
         }
@@ -40,6 +44,9 @@ namespace DSBooking.Presentation.Presenter.Main
                 MainViewMode.ShowReservations :
                 MainViewMode.ShowPackages);
             _mainView.OnViewLoad += (_, _) => ShowOnViewLoad();
+            _mainView.OnClientAddViewOpen += (_, _) => _mainView.ShowAddClientDialog();
+            _mainView.ClientAddView.ClientAddSubmitted += (_, newClient) => _clientService.AddClient(newClient);
+
         }
         public void ShowOnViewLoad()
         {
