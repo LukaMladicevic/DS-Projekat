@@ -140,10 +140,10 @@
     <value>203, 50</value>
   </data>
   <data name="discardButton.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
+    <value>7</value>
   </data>
   <data name="discardButton.Text" xml:space="preserve">
-    <value>Discard</value>
+    <value>Otkaži</value>
   </data>
   <data name="&gt;&gt;discardButton.Name" xml:space="preserve">
     <value>discardButton</value>
@@ -173,10 +173,10 @@
     <value>203, 50</value>
   </data>
   <data name="confirmButton.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+    <value>8</value>
   </data>
   <data name="confirmButton.Text" xml:space="preserve">
-    <value>Confirm</value>
+    <value>Potvrdi</value>
   </data>
   <data name="&gt;&gt;confirmButton.Name" xml:space="preserve">
     <value>confirmButton</value>
@@ -299,7 +299,7 @@
     <value>173, 29</value>
   </data>
   <data name="passportNoTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>5</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;passportNoTextBox.Name" xml:space="preserve">
     <value>passportNoTextBox</value>
@@ -312,36 +312,6 @@
   </data>
   <data name="&gt;&gt;passportNoTextBox.ZOrder" xml:space="preserve">
     <value>2</value>
-  </data>
-  <data name="dateOfBirthPicker.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
-    <value>None</value>
-  </data>
-  <data name="dateOfBirthPicker.Font" type="System.Drawing.Font, System.Drawing">
-    <value>Segoe UI, 12pt</value>
-  </data>
-  <data name="dateOfBirthPicker.Location" type="System.Drawing.Point, System.Drawing">
-    <value>293, 212</value>
-  </data>
-  <data name="dateOfBirthPicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>40, 20, 40, 20</value>
-  </data>
-  <data name="dateOfBirthPicker.Size" type="System.Drawing.Size, System.Drawing">
-    <value>173, 29</value>
-  </data>
-  <data name="dateOfBirthPicker.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;dateOfBirthPicker.Name" xml:space="preserve">
-    <value>dateOfBirthPicker</value>
-  </data>
-  <data name="&gt;&gt;dateOfBirthPicker.Type" xml:space="preserve">
-    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;dateOfBirthPicker.Parent" xml:space="preserve">
-    <value>inputLayoutPanel</value>
-  </data>
-  <data name="&gt;&gt;dateOfBirthPicker.ZOrder" xml:space="preserve">
-    <value>3</value>
   </data>
   <data name="emailAddressTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -359,7 +329,7 @@
     <value>173, 29</value>
   </data>
   <data name="emailAddressTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
+    <value>5</value>
   </data>
   <data name="&gt;&gt;emailAddressTextBox.Name" xml:space="preserve">
     <value>emailAddressTextBox</value>
@@ -371,7 +341,7 @@
     <value>inputLayoutPanel</value>
   </data>
   <data name="&gt;&gt;emailAddressTextBox.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>3</value>
   </data>
   <data name="phoneNoTextBox.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
@@ -389,7 +359,7 @@
     <value>173, 29</value>
   </data>
   <data name="phoneNoTextBox.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
+    <value>6</value>
   </data>
   <data name="phoneNoTextBox.Text" xml:space="preserve">
     <value> </value>
@@ -404,7 +374,7 @@
     <value>inputLayoutPanel</value>
   </data>
   <data name="&gt;&gt;phoneNoTextBox.ZOrder" xml:space="preserve">
-    <value>5</value>
+    <value>4</value>
   </data>
   <data name="firstNameLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -416,19 +386,19 @@
     <value>Segoe UI, 12pt</value>
   </data>
   <data name="firstNameLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>83, 21</value>
+    <value>108, 21</value>
   </data>
   <data name="firstNameLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>40, 20, 40, 20</value>
   </data>
   <data name="firstNameLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>86, 21</value>
+    <value>36, 21</value>
   </data>
   <data name="firstNameLabel.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
   <data name="firstNameLabel.Text" xml:space="preserve">
-    <value>First Name</value>
+    <value>Ime</value>
   </data>
   <data name="&gt;&gt;firstNameLabel.Name" xml:space="preserve">
     <value>firstNameLabel</value>
@@ -440,7 +410,7 @@
     <value>inputLayoutPanel</value>
   </data>
   <data name="&gt;&gt;firstNameLabel.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>5</value>
   </data>
   <data name="passportNoLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -464,7 +434,7 @@
     <value>8</value>
   </data>
   <data name="passportNoLabel.Text" xml:space="preserve">
-    <value>Passport Number</value>
+    <value>Broj pasoša</value>
   </data>
   <data name="passportNoLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -479,7 +449,7 @@
     <value>inputLayoutPanel</value>
   </data>
   <data name="&gt;&gt;passportNoLabel.ZOrder" xml:space="preserve">
-    <value>7</value>
+    <value>6</value>
   </data>
   <data name="lastNameLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -503,7 +473,7 @@
     <value>7</value>
   </data>
   <data name="lastNameLabel.Text" xml:space="preserve">
-    <value>Last Name</value>
+    <value>Prezime</value>
   </data>
   <data name="lastNameLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -518,7 +488,7 @@
     <value>inputLayoutPanel</value>
   </data>
   <data name="&gt;&gt;lastNameLabel.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>7</value>
   </data>
   <data name="dateOfBirthLabel.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
     <value>None</value>
@@ -530,19 +500,19 @@
     <value>Segoe UI, 12pt</value>
   </data>
   <data name="dateOfBirthLabel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>78, 213</value>
+    <value>70, 213</value>
   </data>
   <data name="dateOfBirthLabel.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>40, 20, 40, 20</value>
   </data>
   <data name="dateOfBirthLabel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>97, 21</value>
+    <value>112, 21</value>
   </data>
   <data name="dateOfBirthLabel.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="dateOfBirthLabel.Text" xml:space="preserve">
-    <value>Date of Birth</value>
+    <value>Vreme rođenja</value>
   </data>
   <data name="dateOfBirthLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -557,7 +527,7 @@
     <value>inputLayoutPanel</value>
   </data>
   <data name="&gt;&gt;dateOfBirthLabel.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>8</value>
   </data>
   <data name="emailAddressLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -581,7 +551,7 @@
     <value>10</value>
   </data>
   <data name="emailAddressLabel.Text" xml:space="preserve">
-    <value>E-mail Address</value>
+    <value>Imejl adresa</value>
   </data>
   <data name="emailAddressLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -596,7 +566,7 @@
     <value>inputLayoutPanel</value>
   </data>
   <data name="&gt;&gt;emailAddressLabel.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>9</value>
   </data>
   <data name="phoneNoLabel.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
@@ -620,7 +590,7 @@
     <value>11</value>
   </data>
   <data name="phoneNoLabel.Text" xml:space="preserve">
-    <value>Phone Number</value>
+    <value>Broj telefona</value>
   </data>
   <data name="phoneNoLabel.TextAlign" type="System.Drawing.ContentAlignment, System.Drawing">
     <value>MiddleCenter</value>
@@ -635,6 +605,42 @@
     <value>inputLayoutPanel</value>
   </data>
   <data name="&gt;&gt;phoneNoLabel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="dateOfBirthPicker.Anchor" type="System.Windows.Forms.AnchorStyles, System.Windows.Forms">
+    <value>None</value>
+  </data>
+  <data name="dateOfBirthPicker.CalendarFont" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="dateOfBirthPicker.CustomFormat" xml:space="preserve">
+    <value>dd.MM.yyyy HH:mm</value>
+  </data>
+  <data name="dateOfBirthPicker.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Segoe UI, 12pt</value>
+  </data>
+  <data name="dateOfBirthPicker.Location" type="System.Drawing.Point, System.Drawing">
+    <value>293, 212</value>
+  </data>
+  <data name="dateOfBirthPicker.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>40, 20, 40, 20</value>
+  </data>
+  <data name="dateOfBirthPicker.Size" type="System.Drawing.Size, System.Drawing">
+    <value>173, 29</value>
+  </data>
+  <data name="dateOfBirthPicker.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;dateOfBirthPicker.Name" xml:space="preserve">
+    <value>dateOfBirthPicker</value>
+  </data>
+  <data name="&gt;&gt;dateOfBirthPicker.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DateTimePicker, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dateOfBirthPicker.Parent" xml:space="preserve">
+    <value>inputLayoutPanel</value>
+  </data>
+  <data name="&gt;&gt;dateOfBirthPicker.ZOrder" xml:space="preserve">
     <value>11</value>
   </data>
   <data name="inputLayoutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -665,7 +671,7 @@
     <value>0</value>
   </data>
   <data name="inputLayoutPanel.LayoutSettings" type="System.Windows.Forms.TableLayoutSettings, System.Windows.Forms">
-    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="firstNameTextBox" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lastNameTextBox" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="passportNoTextBox" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="dateOfBirthPicker" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="emailAddressTextBox" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="phoneNoTextBox" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="firstNameLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="passportNoLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lastNameLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="dateOfBirthLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="emailAddressLabel" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="phoneNoLabel" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,16.666664,Percent,16.666664,Percent,16.666664,Percent,16.666664,Percent,16.666664,Percent,16.666664" /&gt;&lt;/TableLayoutSettings&gt;</value>
+    <value>&lt;?xml version="1.0" encoding="utf-16"?&gt;&lt;TableLayoutSettings&gt;&lt;Controls&gt;&lt;Control Name="firstNameTextBox" Row="0" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="lastNameTextBox" Row="1" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="passportNoTextBox" Row="2" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="emailAddressTextBox" Row="4" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="phoneNoTextBox" Row="5" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;Control Name="firstNameLabel" Row="0" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="passportNoLabel" Row="2" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="lastNameLabel" Row="1" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="dateOfBirthLabel" Row="3" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="emailAddressLabel" Row="4" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="phoneNoLabel" Row="5" RowSpan="1" Column="0" ColumnSpan="1" /&gt;&lt;Control Name="dateOfBirthPicker" Row="3" RowSpan="1" Column="1" ColumnSpan="1" /&gt;&lt;/Controls&gt;&lt;Columns Styles="Percent,50,Percent,50" /&gt;&lt;Rows Styles="Percent,16.666664,Percent,16.666664,Percent,16.666664,Percent,16.666664,Percent,16.666664,Percent,16.666664" /&gt;&lt;/TableLayoutSettings&gt;</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
@@ -677,7 +683,7 @@
     <value>506, 484</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
-    <value>Add Client...</value>
+    <value>Dodaj klijenta...</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>ClientAddFormView</value>

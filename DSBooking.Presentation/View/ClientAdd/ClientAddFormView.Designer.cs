@@ -36,7 +36,6 @@
             firstNameTextBox = new TextBox();
             lastNameTextBox = new TextBox();
             passportNoTextBox = new TextBox();
-            dateOfBirthPicker = new DateTimePicker();
             emailAddressTextBox = new TextBox();
             phoneNoTextBox = new TextBox();
             firstNameLabel = new Label();
@@ -45,6 +44,7 @@
             dateOfBirthLabel = new Label();
             emailAddressLabel = new Label();
             phoneNoLabel = new Label();
+            dateOfBirthPicker = new DateTimePicker();
             tableLayoutPanel2.SuspendLayout();
             inputLayoutPanel.SuspendLayout();
             SuspendLayout();
@@ -75,7 +75,6 @@
             inputLayoutPanel.Controls.Add(firstNameTextBox, 1, 0);
             inputLayoutPanel.Controls.Add(lastNameTextBox, 1, 1);
             inputLayoutPanel.Controls.Add(passportNoTextBox, 1, 2);
-            inputLayoutPanel.Controls.Add(dateOfBirthPicker, 1, 3);
             inputLayoutPanel.Controls.Add(emailAddressTextBox, 1, 4);
             inputLayoutPanel.Controls.Add(phoneNoTextBox, 1, 5);
             inputLayoutPanel.Controls.Add(firstNameLabel, 0, 0);
@@ -84,6 +83,7 @@
             inputLayoutPanel.Controls.Add(dateOfBirthLabel, 0, 3);
             inputLayoutPanel.Controls.Add(emailAddressLabel, 0, 4);
             inputLayoutPanel.Controls.Add(phoneNoLabel, 0, 5);
+            inputLayoutPanel.Controls.Add(dateOfBirthPicker, 1, 3);
             inputLayoutPanel.Name = "inputLayoutPanel";
             // 
             // firstNameTextBox
@@ -100,11 +100,6 @@
             // 
             resources.ApplyResources(passportNoTextBox, "passportNoTextBox");
             passportNoTextBox.Name = "passportNoTextBox";
-            // 
-            // dateOfBirthPicker
-            // 
-            resources.ApplyResources(dateOfBirthPicker, "dateOfBirthPicker");
-            dateOfBirthPicker.Name = "dateOfBirthPicker";
             // 
             // emailAddressTextBox
             // 
@@ -145,6 +140,13 @@
             // 
             resources.ApplyResources(phoneNoLabel, "phoneNoLabel");
             phoneNoLabel.Name = "phoneNoLabel";
+            // 
+            // dateOfBirthPicker
+            // 
+            resources.ApplyResources(dateOfBirthPicker, "dateOfBirthPicker");
+            dateOfBirthPicker.Format = DateTimePickerFormat.Custom;
+            dateOfBirthPicker.Name = "dateOfBirthPicker";
+            dateOfBirthPicker.ShowUpDown = true;
             // 
             // ClientAddFormView
             // 

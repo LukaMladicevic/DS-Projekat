@@ -48,5 +48,10 @@ namespace DSBooking.Presentation.View.Client
         {
             OnFilterChange?.Invoke(this, searchTextBox.Text);
         }
+
+        private void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

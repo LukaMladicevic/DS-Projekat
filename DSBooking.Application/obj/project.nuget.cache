@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rC/lCUMt62c=",
+  "dgSpecHash": "F61pxjjo/XY=",
   "success": true,
-  "projectFilePath": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatAB\\DSBooking.Application\\DSBooking.Application.csproj",
+  "projectFilePath": "C:\\Users\\novak\\Source\\Repos\\DS-Projekat123\\DSBooking.Application\\DSBooking.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\novak\\.nuget\\packages\\azure.core\\1.44.1\\azure.core.1.44.1.nupkg.sha512",
     "C:\\Users\\novak\\.nuget\\packages\\azure.identity\\1.13.2\\azure.identity.1.13.2.nupkg.sha512",

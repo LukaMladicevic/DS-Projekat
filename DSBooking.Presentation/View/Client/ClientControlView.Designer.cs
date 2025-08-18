@@ -81,12 +81,15 @@
             // filterComboBox
             // 
             filterComboBox.Anchor = AnchorStyles.None;
+            filterComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             filterComboBox.Font = new Font("Segoe UI", 14F);
             filterComboBox.FormattingEnabled = true;
+            filterComboBox.Items.AddRange(new object[] { "Ime", "Prezime", "Broj pasoša" });
             filterComboBox.Location = new Point(696, 21);
             filterComboBox.Name = "filterComboBox";
             filterComboBox.Size = new Size(150, 33);
             filterComboBox.TabIndex = 1;
+            filterComboBox.SelectedIndexChanged += filterComboBox_SelectedIndexChanged;
             // 
             // ClientControlView
             // 
