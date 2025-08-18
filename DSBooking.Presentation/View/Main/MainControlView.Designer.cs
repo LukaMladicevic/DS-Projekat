@@ -32,7 +32,7 @@
             addClientButton = new Button();
             topPanel = new Panel();
             bottomLayoutPanel = new TableLayoutPanel();
-            actionButton = new Button();
+            modeComboBox = new ComboBox();
             centerLayoutPanel = new TableLayoutPanel();
             panel1 = new Panel();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
@@ -54,11 +54,12 @@
             // 
             // addClientButton
             // 
-            addClientButton.Anchor = AnchorStyles.Right;
-            addClientButton.Font = new Font("Segoe UI", 16F);
-            addClientButton.Location = new Point(919, 24);
+            addClientButton.Dock = DockStyle.Fill;
+            addClientButton.Font = new Font("Segoe UI", 18F);
+            addClientButton.Location = new Point(911, 20);
+            addClientButton.Margin = new Padding(300, 20, 50, 20);
             addClientButton.Name = "addClientButton";
-            addClientButton.Size = new Size(250, 48);
+            addClientButton.Size = new Size(211, 57);
             addClientButton.TabIndex = 0;
             addClientButton.Text = "Dodaj klijenta...";
             addClientButton.UseVisualStyleBackColor = true;
@@ -79,7 +80,7 @@
             bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
             bottomLayoutPanel.Controls.Add(addClientButton, 1, 0);
-            bottomLayoutPanel.Controls.Add(actionButton, 0, 0);
+            bottomLayoutPanel.Controls.Add(modeComboBox, 0, 0);
             bottomLayoutPanel.Dock = DockStyle.Bottom;
             bottomLayoutPanel.Location = new Point(0, 466);
             bottomLayoutPanel.Name = "bottomLayoutPanel";
@@ -90,17 +91,20 @@
             bottomLayoutPanel.Size = new Size(1222, 97);
             bottomLayoutPanel.TabIndex = 0;
             // 
-            // actionButton
+            // modeComboBox
             // 
-            actionButton.Anchor = AnchorStyles.Left;
-            actionButton.Font = new Font("Segoe UI", 16F);
-            actionButton.Location = new Point(53, 24);
-            actionButton.Name = "actionButton";
-            actionButton.Size = new Size(250, 48);
-            actionButton.TabIndex = 1;
-            actionButton.Text = "Rezervisanje";
-            actionButton.UseVisualStyleBackColor = true;
-            actionButton.Click += actionButton_Click;
+            modeComboBox.Dock = DockStyle.Fill;
+            modeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
+            modeComboBox.Font = new Font("Segoe UI", 24F);
+            modeComboBox.FormattingEnabled = true;
+            modeComboBox.IntegralHeight = false;
+            modeComboBox.ItemHeight = 45;
+            modeComboBox.Location = new Point(100, 20);
+            modeComboBox.Margin = new Padding(50, 20, 300, 20);
+            modeComboBox.Name = "modeComboBox";
+            modeComboBox.Size = new Size(211, 53);
+            modeComboBox.TabIndex = 1;
+            modeComboBox.SelectedIndexChanged += modeComboBox_SelectedIndexChanged;
             // 
             // centerLayoutPanel
             // 
@@ -155,7 +159,7 @@
         private TableLayoutPanel bottomLayoutPanel;
         private TableLayoutPanel centerLayoutPanel;
         private Panel panel1;
-        private Button actionButton;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
+        private ComboBox modeComboBox;
     }
 }

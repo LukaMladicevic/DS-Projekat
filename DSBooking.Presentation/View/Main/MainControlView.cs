@@ -12,6 +12,7 @@ using DSBooking.Presentation.View.Client;
 using DSBooking.Presentation.View.ClientAdd;
 using DSBooking.Presentation.View.Package;
 using DSBooking.Presentation.View.Reservation;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DSBooking.Presentation.View.Main
 {
@@ -40,6 +41,15 @@ namespace DSBooking.Presentation.View.Main
             ConfigureControl(_reservationControlView.Control);
             //_reservationControlView.Control.Margin = new Padding(200, 0, 0, 0);
 
+            modeComboBox.DataSource = new[]
+            {
+                new KeyValuePair<MainViewMode, string>(MainViewMode.ShowPackages, "Rezervisi"),
+                new KeyValuePair<MainViewMode, string>(MainViewMode.ShowReservations, "Otkaži"),
+            };
+            modeComboBox.DisplayMember = "Value";
+            modeComboBox.ValueMember = "Key";
+            modeComboBox.SelectedIndex = 0;
+
             SetMode(MainViewMode.ShowPackages); // Just in case the presenter doesn't set it
             this.Text = "DSBooking";
         }
@@ -55,19 +65,17 @@ namespace DSBooking.Presentation.View.Main
         public IClientAddView ClientAddView => _clientAddFormView;
 
         public event EventHandler? OnClientAddViewOpen;
-        public event EventHandler? OnModeChange;
+        public event EventHandler<MainViewMode>? OnModeChange;
         public event EventHandler? OnViewLoad;
 
         private void ShowPackages()
         {
-            actionButton.Text = "Rezervisanje";
             centerLayoutPanel.Controls.Remove(_reservationControlView.Control);
             centerLayoutPanel.Controls.Add(_packageControlView.Control);
         }
 
         private void ShowReservations()
         {
-            actionButton.Text = "Otkazivanje";
             centerLayoutPanel.Controls.Remove(_packageControlView.Control);
             centerLayoutPanel.Controls.Add(_reservationControlView.Control);
         }
@@ -90,20 +98,23 @@ namespace DSBooking.Presentation.View.Main
             OnClientAddViewOpen?.Invoke(this, EventArgs.Empty);
         }
 
-        private void actionButton_Click(object sender, EventArgs e)
-        {
-            OnModeChange?.Invoke(this, EventArgs.Empty);
-        }
-
         public void SetMode(MainViewMode mode)
         {
-            if(mode == MainViewMode.ShowPackages) ShowPackages();
+            if (mode == MainViewMode.ShowPackages) ShowPackages();
             else ShowReservations();
         }
 
         public DialogResult ShowAddClientDialog()
         {
             return _clientAddFormView.Form.ShowDialog();
+        }
+
+        private void modeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (modeComboBox.SelectedValue is MainViewMode mode)
+            {
+                OnModeChange?.Invoke(this, mode);
+            }
         }
     }
 }

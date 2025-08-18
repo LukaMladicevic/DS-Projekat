@@ -15,7 +15,7 @@ namespace DSBooking.Presentation.View.Main
     {
         event EventHandler? OnClientAddViewOpen;
         // action - reserve or remove reservation
-        event EventHandler? OnModeChange;
+        event EventHandler<MainViewMode>? OnModeChange;
 
         void SetMode(MainViewMode mode);
         DialogResult ShowAddClientDialog();
