@@ -11,7 +11,7 @@ namespace DSBooking.Presentation.Presenter.Client
     {
         void SelectClient(ClientObject? c);
         void ShowClientsMatchingFilter(string filterString);
-
+        void FilterChange(string filterType);
         IEnumerable<ClientObject> Clients { get; }
         ClientObject? SelectedClient { get; }
 

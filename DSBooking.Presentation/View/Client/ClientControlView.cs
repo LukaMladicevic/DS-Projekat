@@ -26,7 +26,9 @@ namespace DSBooking.Presentation.View.Client
 
         public event EventHandler<ClientObject>? OnClientSelection;
         public event EventHandler<string>? OnFilterChange;
+        public event EventHandler<string>? OnFilterStrategyChange;
         public event EventHandler? OnViewLoad;
+        
 
         public void HighlightClient(ClientObject? client)
         {
@@ -50,6 +52,16 @@ namespace DSBooking.Presentation.View.Client
         }
 
         private void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var selected = filterComboBox.SelectedItem as string;
+
+            if (!string.IsNullOrEmpty(selected))
+            {
+                OnFilterStrategyChange?.Invoke(this, selected);
+            }
+        }
+
+        private void clientsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -38,6 +38,7 @@ namespace DSBooking.Presentation.Presenter.Main
         {
             _mainView.ClientView.OnClientSelection += (_, client) => SelectClient(client);
             _mainView.ClientView.OnFilterChange += (_, filterString) => _clientPresenter.ShowClientsMatchingFilter(filterString);
+            _mainView.ClientView.OnFilterStrategyChange += (_, filterStrategy) => _clientPresenter.FilterChange(filterStrategy);
 
             _mainView.OnModeChange += (_, _) => SelectMode(
                 (_mode == MainViewMode.ShowPackages) ?
