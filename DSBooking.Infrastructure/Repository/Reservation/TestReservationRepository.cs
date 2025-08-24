@@ -9,8 +9,14 @@ namespace DSBooking.Infrastructure.Repository.Reservation
 {
     public class TestReservationRepository : IReservationRepository
     {
-        public void AddReservation(ReservationAddObject reservationAddObject)
+        public int AddReservation(ReservationAddObject reservationAddObject)
         {
+            return 0;
+        }
+
+        public ReservationObject? Get(int id)
+        {
+            throw new NotImplementedException();
         }
 
         public IEnumerable<ReservationObject> GetAll()
@@ -21,6 +27,11 @@ namespace DSBooking.Infrastructure.Repository.Reservation
         public IEnumerable<ReservationObject> GetForClient(int clientId)
         {
             return new List<ReservationObject>();
+        }
+
+        public void RemoveReservation(int reservationId)
+        {
+            throw new NotImplementedException();
         }
     }
 

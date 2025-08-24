@@ -8,11 +8,7 @@ using DSBooking.Presentation.View.Main;
 
 namespace DSBooking.Presentation.Presenter.Main
 {
-    public interface IMainPresenter : IPresenter
+    public interface IMainPresenter
     {
-        void SelectClient(ClientObject? client);
-        void SelectMode(MainViewMode mode);
-
-        MainViewMode Mode { get; }
     }
 }

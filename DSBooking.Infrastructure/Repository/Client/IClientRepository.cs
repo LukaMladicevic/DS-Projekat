@@ -10,7 +10,13 @@ namespace DSBooking.Infrastructure.Repository.Client
     public interface IClientRepository
     {
         public ClientObject? Get(int id);
-        public IEnumerable<ClientObject> GetClientsByName(string nameSubstring);
-        public void AddClient(ClientAddObject clientAddObject);
+        IEnumerable<ClientObject> GetByFirstName(string filterString);
+
+        IEnumerable<ClientObject> GetByLastName(string filterString);
+        IEnumerable<ClientObject> GetByPassportNo(string filterString);
+
+        // returns ID
+        int AddClient(ClientAddObject clientAddObject);
+        void RemoveClient(int clientId);
     }
 }

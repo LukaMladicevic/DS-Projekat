@@ -27,9 +27,6 @@ namespace DSBooking.Presentation.Presenter.Reservation
 
         public IEnumerable<ReservationObject> Reservations => _reservations;
 
-        public void Initialize()
-        {
-        }
 
         public void ShowAll()
         {

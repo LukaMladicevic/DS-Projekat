@@ -50,11 +50,8 @@ namespace DSBooking
             // Presenters
 
             ClientPresenter clientPresenter = new ClientPresenter(clientControlView, clientService);
-            clientPresenter.Initialize();
             PackagePresenter packagePresenter = new PackagePresenter(packageControlView, packageService);
-            packagePresenter.Initialize();
             ReservationPresenter reservationPresenter = new ReservationPresenter(reservationControlView, reservationService);
-            reservationPresenter.Initialize();
 
             // MainView
 
@@ -62,8 +59,7 @@ namespace DSBooking
 
             // MainPresenter
 
-            MainPresenter mainPresenter = new MainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter, clientService);
-            mainPresenter.Initialize();
+            MainPresenter mainPresenter = new MainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter, clientService, reservationService);
 
             System.Windows.Forms.Application.Run(mainView);
 

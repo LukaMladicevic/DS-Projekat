@@ -9,7 +9,12 @@ namespace DSBooking.Application.Service.Client
 {
     public interface IClientService
     {
-        IEnumerable<ClientObject> GetByName(string name);
-        void AddClient(ClientAddObject client);
+        IEnumerable<ClientObject> GetByFirstName(string filterString);
+        IEnumerable<ClientObject> GetByLastName(string filterString);
+        IEnumerable<ClientObject> GetByPassportNo(string filterString);
+
+        // returns ID
+        int AddClient(ClientAddObject client);
+        void RemoveClient(int clientId);
     }
 }

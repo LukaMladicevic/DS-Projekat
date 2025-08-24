@@ -4,10 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Presentation.Presenter
+namespace DSBooking.Presentation.Presenter.Command
 {
-    public interface IPresenter
+    internal interface ICommand
     {
-        void Initialize();
+        void Execute();
+        void Undo();
     }
 }

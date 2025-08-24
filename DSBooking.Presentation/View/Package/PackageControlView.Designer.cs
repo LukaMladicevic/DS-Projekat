@@ -43,18 +43,19 @@
             packageDataGridView.Margin = new Padding(0);
             packageDataGridView.Name = "packageDataGridView";
             packageDataGridView.ReadOnly = true;
-            packageDataGridView.Size = new Size(985, 650);
+            packageDataGridView.Size = new Size(1050, 686);
             packageDataGridView.TabIndex = 0;
             // 
             // PackageControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Control;
             BorderStyle = BorderStyle.FixedSingle;
             Controls.Add(packageDataGridView);
             Margin = new Padding(0);
             Name = "PackageControlView";
-            Size = new Size(985, 650);
+            Size = new Size(1050, 686);
             Load += PackageControlView_Load;
             ((System.ComponentModel.ISupportInitialize)packageDataGridView).EndInit();
             ResumeLayout(false);
@@ -63,5 +64,8 @@
         #endregion
 
         private DataGridView packageDataGridView;
+        private TableLayoutPanel actionPanel;
+        private Button undoButton;
+        private Button redoButton;
     }
 }

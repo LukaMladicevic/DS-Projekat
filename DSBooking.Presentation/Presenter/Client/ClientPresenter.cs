@@ -5,7 +5,6 @@ using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Application.Service.Client;
 using DSBooking.Domain.Object.Client;
-using DSBooking.Presentation.Presenter.FilterStrategies;
 using DSBooking.Presentation.View.Client;
 
 namespace DSBooking.Presentation.Presenter.Client
@@ -15,60 +14,56 @@ namespace DSBooking.Presentation.Presenter.Client
         IClientView _view;
         IClientService _service;
 
-        IEnumerable<ClientObject> _clients;
-        ClientObject? _selectedClient;
-        IFilterStrategy _filterStrategy;
-        string _filterString;
-        private Dictionary<string, IFilterStrategy> _strategyMap;
-
         public ClientPresenter(IClientView clientView, IClientService clientService)
         {
             _view = clientView;
             _service = clientService;
 
-            _clients = new List<ClientObject>();
-            _selectedClient = null;
-            _filterString = "";
-
-            _strategyMap = new Dictionary<string, IFilterStrategy>
-            {
-                { "Ime", new NameFilterStrategy() },
-                { "Prezime", new LastNameFilterStrategy() },
-                { "Broj pasosa", new PassNoFilterStrategy() }
-            };
-
-            _filterStrategy = _strategyMap["Ime"];
+            Clients = new List<ClientObject>();
+            SelectedClient = null;
+            FilterString = "";
         }
-        public void Initialize()
-        {
+        public IEnumerable<ClientObject> Clients { get; private set; }
 
-        }
+        public ClientObject? SelectedClient { get; private set; }
 
-        public IEnumerable<ClientObject> Clients => _clients;
+        public ClientViewFilterMode SelectedFilterMode { get; private set; }
 
-        public ClientObject? SelectedClient => _selectedClient;
-
-        public string FilterString { get => _filterString; }
+        public string FilterString { get; private set; }
 
         public void SelectClient(ClientObject? c)
         {
-            _selectedClient = c;
+            SelectedClient = c;
             _view.HighlightClient(c);
         }
 
-        public void ShowClientsMatchingFilter(string filterString)
+        public void SelectFilterMode(ClientViewFilterMode mode)
         {
-            IEnumerable<ClientObject> clients = _service.GetByName(filterString);
-            _clients = _filterStrategy.Filter(clients, filterString);
-            _view.ShowClients(clients);
+            SelectedFilterMode = mode;
+            switch (mode)
+            {
+                case ClientViewFilterMode.FilterFirstName:
+                    Clients = _service.GetByFirstName(FilterString);
+                    break;
+                case ClientViewFilterMode.FilterLastName:
+                    Clients = _service.GetByLastName(FilterString);
+                    break;
+                case ClientViewFilterMode.FilterPassportNo:
+                    Clients = _service.GetByPassportNo(FilterString);
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
         }
 
-        public void FilterChange(string filterType)
+        public void SelectFilterString(string filterString)
         {
-            if (_strategyMap.TryGetValue(filterType, out var strategy))
-            {
-                _filterStrategy = strategy;
-            }
+            FilterString = filterString;
+        }
+
+        public void ShowClients()
+        {
+            _view.ShowClients(Clients);
         }
     }
 }

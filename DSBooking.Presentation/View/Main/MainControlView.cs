@@ -12,7 +12,6 @@ using DSBooking.Presentation.View.Client;
 using DSBooking.Presentation.View.ClientAdd;
 using DSBooking.Presentation.View.Package;
 using DSBooking.Presentation.View.Reservation;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace DSBooking.Presentation.View.Main
 {
@@ -43,14 +42,14 @@ namespace DSBooking.Presentation.View.Main
 
             modeComboBox.DataSource = new[]
             {
-                new KeyValuePair<MainViewMode, string>(MainViewMode.ShowPackages, "Rezervisi"),
+                new KeyValuePair<MainViewMode, string>(MainViewMode.ShowPackages, "Rezerviši"),
                 new KeyValuePair<MainViewMode, string>(MainViewMode.ShowReservations, "Otkaži"),
             };
             modeComboBox.DisplayMember = "Value";
             modeComboBox.ValueMember = "Key";
             modeComboBox.SelectedIndex = 0;
 
-            SetMode(MainViewMode.ShowPackages); // Just in case the presenter doesn't set it
+            ShowForMode(MainViewMode.ShowPackages); // Just in case the presenter doesn't set it
             this.Text = "DSBooking";
         }
 
@@ -67,6 +66,8 @@ namespace DSBooking.Presentation.View.Main
         public event EventHandler? OnClientAddViewOpen;
         public event EventHandler<MainViewMode>? OnModeChange;
         public event EventHandler? OnViewLoad;
+        public event EventHandler? UndoPerformed;
+        public event EventHandler? RedoPerformed;
 
         private void ShowPackages()
         {
@@ -98,7 +99,7 @@ namespace DSBooking.Presentation.View.Main
             OnClientAddViewOpen?.Invoke(this, EventArgs.Empty);
         }
 
-        public void SetMode(MainViewMode mode)
+        public void ShowForMode(MainViewMode mode)
         {
             if (mode == MainViewMode.ShowPackages) ShowPackages();
             else ShowReservations();
@@ -115,6 +116,16 @@ namespace DSBooking.Presentation.View.Main
             {
                 OnModeChange?.Invoke(this, mode);
             }
+        }
+
+        private void undoButton_Click(object sender, EventArgs e)
+        {
+            UndoPerformed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void redoButton_Click(object sender, EventArgs e)
+        {
+            RedoPerformed?.Invoke(this, EventArgs.Empty);
         }
     }
 }

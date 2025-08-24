@@ -26,5 +26,20 @@ namespace DSBooking.Application.Service.Reservation
         {
             return _reservationRepository.GetForClient(clientId);
         }
+
+        public int AddReservation(ReservationAddObject reservationAddObject)
+        {
+            return _reservationRepository.AddReservation(reservationAddObject);
+        }
+
+        public void RemoveReservation(int reservationId)
+        {
+            _reservationRepository.RemoveReservation(reservationId);
+        }
+
+        public ReservationObject? Get(int id)
+        {
+            return _reservationRepository.Get(id);
+        }
     }
 }

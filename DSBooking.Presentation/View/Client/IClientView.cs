@@ -7,11 +7,14 @@ using DSBooking.Domain.Object.Client;
 
 namespace DSBooking.Presentation.View.Client
 {
+    public enum ClientViewFilterMode { FilterFirstName, FilterLastName, FilterPassportNo }
     public interface IClientView : IView
     {
         event EventHandler<ClientObject>? OnClientSelection;
+
         event EventHandler<string>? OnFilterChange;
-        event EventHandler<string>? OnFilterStrategyChange;
+
+        event EventHandler<ClientViewFilterMode>? OnFilterModeChange;
 
         void ShowClients(IEnumerable<ClientObject> clients);
         void HighlightClient(ClientObject? client);

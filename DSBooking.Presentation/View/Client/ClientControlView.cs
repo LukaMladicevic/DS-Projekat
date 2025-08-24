@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DSBooking.Domain.Object.Client;
 using DSBooking.Presentation.View.Client;
+using DSBooking.Presentation.View.Main;
 
 namespace DSBooking.Presentation.View.Client
 {
@@ -20,15 +21,25 @@ namespace DSBooking.Presentation.View.Client
 
             clientsDataGridView.ScrollBars = ScrollBars.None;
             clientsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            filterComboBox.DataSource = new[]
+{
+                new KeyValuePair<ClientViewFilterMode, string>(ClientViewFilterMode.FilterFirstName, "Ime"),
+                new KeyValuePair<ClientViewFilterMode, string>(ClientViewFilterMode.FilterLastName, "Prezime"),
+                new KeyValuePair<ClientViewFilterMode, string>(ClientViewFilterMode.FilterPassportNo, "Broj pasoša"),
+            };
+            filterComboBox.DisplayMember = "Value";
+            filterComboBox.ValueMember = "Key";
+            filterComboBox.SelectedIndex = 0;
         }
 
         public Control Control => this;
 
         public event EventHandler<ClientObject>? OnClientSelection;
-        public event EventHandler<string>? OnFilterChange;
-        public event EventHandler<string>? OnFilterStrategyChange;
         public event EventHandler? OnViewLoad;
-        
+        public event EventHandler<ClientViewFilterMode>? OnFilterModeChange;
+
+        public event EventHandler<string>? OnFilterChange;
 
         public void HighlightClient(ClientObject? client)
         {
@@ -46,24 +57,12 @@ namespace DSBooking.Presentation.View.Client
             OnViewLoad?.Invoke(this, EventArgs.Empty);
         }
 
-        private void searchTextBox_TextChanged(object sender, EventArgs e)
-        {
-            OnFilterChange?.Invoke(this, searchTextBox.Text);
-        }
-
         private void filterComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var selected = filterComboBox.SelectedItem as string;
-
-            if (!string.IsNullOrEmpty(selected))
+            if (filterComboBox.SelectedValue is ClientViewFilterMode mode)
             {
-                OnFilterStrategyChange?.Invoke(this, selected);
+                OnFilterModeChange?.Invoke(this, mode);
             }
-        }
-
-        private void clientsDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

@@ -3,16 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Object.Client;
+using DSBooking.Application.Service.Reservation;
 using DSBooking.Domain.Object.Reservation;
+using DSBooking.Presentation.View.Reservation;
 
 namespace DSBooking.Presentation.Presenter.Reservation
 {
-    public interface IReservationPresenter : IPresenter
+    public interface IReservationPresenter
     {
-        void ShowForClient(int clientId);
-        void ShowAll();
-
         IEnumerable<ReservationObject> Reservations { get; }
+        void ShowAll();
+        void ShowForClient(int clientId);
+
     }
 }

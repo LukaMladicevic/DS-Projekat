@@ -47,7 +47,7 @@
             reservationsGridView.MultiSelect = false;
             reservationsGridView.Name = "reservationsGridView";
             reservationsGridView.RowHeadersWidth = 51;
-            reservationsGridView.Size = new Size(990, 650);
+            reservationsGridView.Size = new Size(969, 687);
             reservationsGridView.TabIndex = 0;
             // 
             // ReservationControlView
@@ -58,7 +58,7 @@
             Controls.Add(reservationsGridView);
             Margin = new Padding(0);
             Name = "ReservationControlView";
-            Size = new Size(990, 650);
+            Size = new Size(969, 687);
             Load += ReservationControlView_Load;
             ((System.ComponentModel.ISupportInitialize)reservationsGridView).EndInit();
             ResumeLayout(false);

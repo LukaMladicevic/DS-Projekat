@@ -8,7 +8,7 @@ using DSBooking.Domain.Object.Package;
 
 namespace DSBooking.Presentation.Presenter.Package
 {
-    public interface IPackagePresenter : IPresenter
+    public interface IPackagePresenter
     {
         void ShowForClient(int clientId);
         void ShowAll();

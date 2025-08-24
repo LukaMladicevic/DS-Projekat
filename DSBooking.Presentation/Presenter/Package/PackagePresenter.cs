@@ -27,10 +27,6 @@ namespace DSBooking.Presentation.Presenter.Package
 
         public IEnumerable<PackageObject> Packages => _packages;
 
-        public void Initialize()
-        {
-        }
-
         public void ShowAll()
         {
             IEnumerable<PackageObject> packages = _service.GetAll();

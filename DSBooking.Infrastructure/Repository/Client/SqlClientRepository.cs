@@ -9,7 +9,7 @@ namespace DSBooking.Infrastructure.Repository.Client
 {
     public class SqlClientRepository : IClientRepository
     {
-        public void AddClient(ClientAddObject clientAddObject)
+        public int AddClient(ClientAddObject clientAddObject)
         {
             throw new NotImplementedException();
         }
@@ -19,7 +19,22 @@ namespace DSBooking.Infrastructure.Repository.Client
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ClientObject> GetClientsByName(string nameSubstring)
+        public IEnumerable<ClientObject> GetByFirstName(string filterString)
+        {
+            return new List<ClientObject>();
+        }
+
+        public IEnumerable<ClientObject> GetByLastName(string filterString)
+        {
+            return new List<ClientObject>();
+        }
+
+        public IEnumerable<ClientObject> GetByPassportNo(string filterString)
+        {
+            return new List<ClientObject>();
+        }
+
+        public void RemoveClient(int clientId)
         {
             throw new NotImplementedException();
         }

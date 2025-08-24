@@ -36,6 +36,8 @@
             centerLayoutPanel = new TableLayoutPanel();
             panel1 = new Panel();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            undoButton = new Button();
+            redoButton = new Button();
             topPanel.SuspendLayout();
             bottomLayoutPanel.SuspendLayout();
             centerLayoutPanel.SuspendLayout();
@@ -54,12 +56,12 @@
             // 
             // addClientButton
             // 
-            addClientButton.Dock = DockStyle.Fill;
+            addClientButton.Anchor = AnchorStyles.None;
             addClientButton.Font = new Font("Segoe UI", 18F);
-            addClientButton.Location = new Point(911, 20);
-            addClientButton.Margin = new Padding(300, 20, 50, 20);
+            addClientButton.Location = new Point(863, 20);
+            addClientButton.Margin = new Padding(50, 20, 50, 20);
             addClientButton.Name = "addClientButton";
-            addClientButton.Size = new Size(211, 57);
+            addClientButton.Size = new Size(289, 57);
             addClientButton.TabIndex = 0;
             addClientButton.Text = "Dodaj klijenta...";
             addClientButton.UseVisualStyleBackColor = true;
@@ -76,31 +78,33 @@
             // 
             // bottomLayoutPanel
             // 
-            bottomLayoutPanel.ColumnCount = 2;
-            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 50F));
-            bottomLayoutPanel.Controls.Add(addClientButton, 1, 0);
+            bottomLayoutPanel.ColumnCount = 4;
+            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
             bottomLayoutPanel.Controls.Add(modeComboBox, 0, 0);
+            bottomLayoutPanel.Controls.Add(addClientButton, 3, 0);
+            bottomLayoutPanel.Controls.Add(undoButton, 1, 0);
+            bottomLayoutPanel.Controls.Add(redoButton, 2, 0);
             bottomLayoutPanel.Dock = DockStyle.Bottom;
             bottomLayoutPanel.Location = new Point(0, 466);
             bottomLayoutPanel.Name = "bottomLayoutPanel";
-            bottomLayoutPanel.Padding = new Padding(50, 0, 50, 0);
             bottomLayoutPanel.RowCount = 1;
-            bottomLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
-            bottomLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 50F));
+            bottomLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             bottomLayoutPanel.Size = new Size(1222, 97);
             bottomLayoutPanel.TabIndex = 0;
             // 
             // modeComboBox
             // 
-            modeComboBox.Dock = DockStyle.Fill;
+            modeComboBox.Anchor = AnchorStyles.None;
             modeComboBox.DropDownStyle = ComboBoxStyle.DropDownList;
             modeComboBox.Font = new Font("Segoe UI", 24F);
             modeComboBox.FormattingEnabled = true;
             modeComboBox.IntegralHeight = false;
             modeComboBox.ItemHeight = 45;
-            modeComboBox.Location = new Point(100, 20);
-            modeComboBox.Margin = new Padding(50, 20, 300, 20);
+            modeComboBox.Location = new Point(108, 22);
+            modeComboBox.Margin = new Padding(50, 20, 50, 20);
             modeComboBox.Name = "modeComboBox";
             modeComboBox.Size = new Size(211, 53);
             modeComboBox.TabIndex = 1;
@@ -134,6 +138,32 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
+            // undoButton
+            // 
+            undoButton.Anchor = AnchorStyles.None;
+            undoButton.Font = new Font("Segoe UI", 18F);
+            undoButton.Location = new Point(447, 20);
+            undoButton.Margin = new Padding(20);
+            undoButton.Name = "undoButton";
+            undoButton.Size = new Size(143, 57);
+            undoButton.TabIndex = 2;
+            undoButton.Text = "Poništi";
+            undoButton.UseVisualStyleBackColor = true;
+            undoButton.Click += undoButton_Click;
+            // 
+            // redoButton
+            // 
+            redoButton.Anchor = AnchorStyles.None;
+            redoButton.Font = new Font("Segoe UI", 18F);
+            redoButton.Location = new Point(630, 20);
+            redoButton.Margin = new Padding(20);
+            redoButton.Name = "redoButton";
+            redoButton.Size = new Size(143, 57);
+            redoButton.TabIndex = 3;
+            redoButton.Text = "Ponovi";
+            redoButton.UseVisualStyleBackColor = true;
+            redoButton.Click += redoButton_Click;
+            // 
             // MainControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -161,5 +191,7 @@
         private Panel panel1;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private ComboBox modeComboBox;
+        private Button undoButton;
+        private Button redoButton;
     }
 }

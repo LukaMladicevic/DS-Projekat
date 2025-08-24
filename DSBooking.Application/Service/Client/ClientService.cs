@@ -17,14 +17,29 @@ namespace DSBooking.Application.Service.Client
             _clientRepository = clientRepository;
         }
 
-        public void AddClient(ClientAddObject client)
+        public int AddClient(ClientAddObject client)
         {
-            _clientRepository.AddClient(client);
+            return _clientRepository.AddClient(client);
         }
 
-        public IEnumerable<ClientObject> GetByName(string name)
+        public IEnumerable<ClientObject> GetByFirstName(string filterString)
         {
-            return _clientRepository.GetClientsByName(name);
+            return _clientRepository.GetByFirstName(filterString);
+        }
+
+        public IEnumerable<ClientObject> GetByLastName(string filterString)
+        {
+            return _clientRepository.GetByLastName(filterString);
+        }
+
+        public IEnumerable<ClientObject> GetByPassportNo(string filterString)
+        {
+            return _clientRepository.GetByPassportNo(filterString);
+        }
+
+        public void RemoveClient(int clientId)
+        {
+            _clientRepository.RemoveClient(clientId);
         }
     }
 }
