@@ -27,8 +27,6 @@ namespace DSBooking.Presentation.View.Reservation
 
         public event EventHandler<ReservationObject>? OnSelectedReservation;
         public event EventHandler? OnViewLoad;
-        public event EventHandler? UndoPerformed;
-        public event EventHandler? RedoPerformed;
 
         public void ShowReservations(IEnumerable<ReservationObject> reservations)
         {

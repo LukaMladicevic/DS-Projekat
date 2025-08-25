@@ -1,31 +1,44 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Dynamic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DSBooking.Infrastructure.Factory;
 using Microsoft.Data.SqlClient;
 
 namespace DSBooking.Infrastructure
 {
-    internal class DbConnection
+    public class DbConnection
     {
-        private static DbConnection _instance = new DbConnection();
+        private static DbConnection? _instance = null;
         private IDbConnection _connection;
 
+        public static void Initialize(IDbConnectionFactory factory)
+        {
+            IDbConnection connection = factory.Create();
+            _instance = new DbConnection(connection);
+        }
+        
         internal static DbConnection Instance
         {
-            get { return _instance; }
+            get { return _instance ?? throw new DbConnectionNotInitializedException(); }
         }
 
-        internal IDbConnection Connection 
-        { 
+        internal IDbConnection Connection
+        {
+            // using (connection = DbConnection.Connection)
+            // {
+            //   
+            // } ???
             get { return _connection; }
         }
 
-        private DbConnection()
+        private DbConnection(IDbConnection connection)
         {
-            _connection = new SqlConnection();
+            _connection = connection;
         }
     }
+
 }

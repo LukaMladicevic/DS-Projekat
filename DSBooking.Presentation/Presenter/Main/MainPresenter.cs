@@ -1,6 +1,7 @@
 ﻿using DSBooking.Application.Service.Client;
 using DSBooking.Application.Service.Reservation;
 using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Object.Package;
 using DSBooking.Domain.Object.Reservation;
 using DSBooking.Presentation.Presenter.Client;
 using DSBooking.Presentation.Presenter.Command;
@@ -10,6 +11,8 @@ using DSBooking.Presentation.View.Main;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -41,37 +44,40 @@ namespace DSBooking.Presentation.Presenter.Main
 
             _mode = MainViewMode.ShowPackages;
 
+            _mainView.OnModeChange += (_, mode) => OnModeChange(mode);
+            _mainView.OnViewLoad += (_, _) => ShowOnViewLoad();
+            _mainView.OnClientAddViewOpen += (_, _) => _mainView.ShowAddClientDialog();
+            _mainView.ClientAddView.ClientAddSubmitted += (_, newClient) => OnClientAddSubmitted(newClient);
+            _mainView.UndoPerformed += (_, _) => _commandManager.Undo();
+            _mainView.RedoPerformed += (_, _) => _commandManager.Redo();
+
+            _mainView.ReservationView.OnSelectedReservation += (_, reservation) => OnSelectedReservation(reservation);
+
+            _mainView.PackageView.OnSelectedPackage += (_, package) => OnSelectedPackage(package);
+
             _mainView.ClientView.OnClientSelection += (_, client) => SelectClient(client);
             _mainView.ClientView.OnFilterChange += (_, filterString) => _clientPresenter.SelectFilterString(filterString);
             _mainView.ClientView.OnFilterModeChange += (_, mode) => _clientPresenter.SelectFilterMode(mode);
+        }
 
-            _mainView.OnModeChange += (_, _) => SelectMode(
-                (_mode == MainViewMode.ShowPackages) ?
-                MainViewMode.ShowReservations :
-                MainViewMode.ShowPackages);
-            _mainView.OnViewLoad += (_, _) => ShowOnViewLoad();
-            _mainView.OnClientAddViewOpen += (_, _) => _mainView.ShowAddClientDialog();
-            _mainView.ClientAddView.ClientAddSubmitted += (_, newClient) =>
-            {
-                AddClientCommand command = new AddClientCommand(_clientService, newClient);
-                _commandManager.ExecuteCommand(command);
-            };
+        private void OnClientAddSubmitted(ClientAddObject newClient)
+        {
+            AddClientCommand command = new AddClientCommand(_clientService, newClient);
+            _commandManager.ExecuteCommand(command);
+        }
 
-            _mainView.ReservationView.OnSelectedReservation += (_, reservation) =>
-            {
-                RemoveReservationCommand command = new RemoveReservationCommand(_reservationService, reservation.Id);
-                _commandManager.ExecuteCommand(command);
-            };
+        private void OnSelectedReservation(ReservationObject reservation)
+        {
+            RemoveReservationCommand command = new RemoveReservationCommand(_reservationService, reservation.Id);
+            _commandManager.ExecuteCommand(command);
+        }
 
-            _mainView.PackageView.OnSelectedPackage += (_, package) =>
-            {
-                if (_clientPresenter.SelectedClient == null) throw new NullReferenceException();
-                ReservationAddObject addObject = new ReservationAddObject(DateTime.Now, _clientPresenter.SelectedClient.Id, package.Id);
-                AddReservationCommand command = new AddReservationCommand(_reservationService, addObject);
-                _commandManager.ExecuteCommand(command);
-            };
-            _mainView.UndoPerformed += (_, _) => _commandManager.Undo();
-            _mainView.RedoPerformed += (_, _) => _commandManager.Redo();
+        private void OnSelectedPackage(PackageObject package)
+        {
+            if (_clientPresenter.SelectedClient == null) throw new NullReferenceException();
+            ReservationAddObject addObject = new ReservationAddObject(DateTime.Now, _clientPresenter.SelectedClient.Id, package.Id);
+            AddReservationCommand command = new AddReservationCommand(_reservationService, addObject);
+            _commandManager.ExecuteCommand(command);
         }
 
         private void ShowOnViewLoad()
@@ -83,24 +89,22 @@ namespace DSBooking.Presentation.Presenter.Main
             _packagePresenter.ShowAll();
         }
 
-        private void SelectMode(MainViewMode mode)
+        private void OnModeChange(MainViewMode mode)
         {
             _mode = mode;
-
-            _mainView.ShowForMode(mode);
-
-            ShowPackagesOrReservations(_clientPresenter.SelectedClient);
+            ShowPackagesOrReservations();
         }
 
         private void SelectClient(ClientObject? client)
         {
             _clientPresenter.SelectClient(client);
-
-            ShowPackagesOrReservations(client);
+            ShowPackagesOrReservations();
         }
 
-        private void ShowPackagesOrReservations(ClientObject? client)
+        private void ShowPackagesOrReservations()
         {
+            ClientObject? client = _clientPresenter.SelectedClient;
+            _mainView.ShowForMode(_mode);
             if (_mode == MainViewMode.ShowPackages)
             {
                 if (client != null)

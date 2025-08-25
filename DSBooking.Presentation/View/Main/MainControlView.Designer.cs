@@ -33,11 +33,11 @@
             topPanel = new Panel();
             bottomLayoutPanel = new TableLayoutPanel();
             modeComboBox = new ComboBox();
+            undoButton = new Button();
+            redoButton = new Button();
             centerLayoutPanel = new TableLayoutPanel();
             panel1 = new Panel();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
-            undoButton = new Button();
-            redoButton = new Button();
             topPanel.SuspendLayout();
             bottomLayoutPanel.SuspendLayout();
             centerLayoutPanel.SuspendLayout();
@@ -48,7 +48,7 @@
             agencyNameLabel.Anchor = AnchorStyles.None;
             agencyNameLabel.AutoSize = true;
             agencyNameLabel.Font = new Font("Segoe UI", 30F);
-            agencyNameLabel.Location = new Point(507, 22);
+            agencyNameLabel.Location = new Point(12, 19);
             agencyNameLabel.Name = "agencyNameLabel";
             agencyNameLabel.Size = new Size(218, 54);
             agencyNameLabel.TabIndex = 2;
@@ -110,6 +110,32 @@
             modeComboBox.TabIndex = 1;
             modeComboBox.SelectedIndexChanged += modeComboBox_SelectedIndexChanged;
             // 
+            // undoButton
+            // 
+            undoButton.Anchor = AnchorStyles.None;
+            undoButton.Font = new Font("Segoe UI", 18F);
+            undoButton.Location = new Point(447, 20);
+            undoButton.Margin = new Padding(20);
+            undoButton.Name = "undoButton";
+            undoButton.Size = new Size(143, 57);
+            undoButton.TabIndex = 2;
+            undoButton.Text = "Poništi";
+            undoButton.UseVisualStyleBackColor = true;
+            undoButton.Click += undoButton_Click;
+            // 
+            // redoButton
+            // 
+            redoButton.Anchor = AnchorStyles.None;
+            redoButton.Font = new Font("Segoe UI", 18F);
+            redoButton.Location = new Point(630, 20);
+            redoButton.Margin = new Padding(20);
+            redoButton.Name = "redoButton";
+            redoButton.Size = new Size(143, 57);
+            redoButton.TabIndex = 3;
+            redoButton.Text = "Ponovi";
+            redoButton.UseVisualStyleBackColor = true;
+            redoButton.Click += redoButton_Click;
+            // 
             // centerLayoutPanel
             // 
             centerLayoutPanel.ColumnCount = 3;
@@ -137,32 +163,6 @@
             // 
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
-            // 
-            // undoButton
-            // 
-            undoButton.Anchor = AnchorStyles.None;
-            undoButton.Font = new Font("Segoe UI", 18F);
-            undoButton.Location = new Point(447, 20);
-            undoButton.Margin = new Padding(20);
-            undoButton.Name = "undoButton";
-            undoButton.Size = new Size(143, 57);
-            undoButton.TabIndex = 2;
-            undoButton.Text = "Poništi";
-            undoButton.UseVisualStyleBackColor = true;
-            undoButton.Click += undoButton_Click;
-            // 
-            // redoButton
-            // 
-            redoButton.Anchor = AnchorStyles.None;
-            redoButton.Font = new Font("Segoe UI", 18F);
-            redoButton.Location = new Point(630, 20);
-            redoButton.Margin = new Padding(20);
-            redoButton.Name = "redoButton";
-            redoButton.Size = new Size(143, 57);
-            redoButton.TabIndex = 3;
-            redoButton.Text = "Ponovi";
-            redoButton.UseVisualStyleBackColor = true;
-            redoButton.Click += redoButton_Click;
             // 
             // MainControlView
             // 

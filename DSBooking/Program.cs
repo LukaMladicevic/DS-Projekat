@@ -1,6 +1,9 @@
+using System.Data.Common;
 using DSBooking.Application.Service.Client;
 using DSBooking.Application.Service.Package;
 using DSBooking.Application.Service.Reservation;
+using DSBooking.Infrastructure;
+using DSBooking.Infrastructure.Factory;
 using DSBooking.Infrastructure.Repository.Client;
 using DSBooking.Infrastructure.Repository.Package;
 using DSBooking.Infrastructure.Repository.Reservation;
@@ -28,6 +31,13 @@ namespace DSBooking
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
 
+            ConfigFileParser parser = new ConfigFileParser("config.txt");
+            ConfigFileParseResult result = parser.Parse();
+
+            DbConnectionFactoryMapper mapper = new DbConnectionFactoryMapper(result.ConnectionString);
+            IDbConnectionFactory connectionFactory = mapper.Map();
+            DSBooking.Infrastructure.DbConnection.Initialize(connectionFactory);
+
             // Repositories
             TestClientRepository clientRepository = new TestClientRepository();
             TestPackageRepository packageRepository = new TestPackageRepository();
@@ -35,7 +45,6 @@ namespace DSBooking
 
             // Services
 
-            
             ClientService clientService = new ClientService(clientRepository);
             PackageService packageService = new PackageService(packageRepository);
             ReservationService reservationService = new ReservationService(reservationRepository);
@@ -55,7 +64,7 @@ namespace DSBooking
 
             // MainView
 
-            MainControlView mainView = new MainControlView(clientControlView, packageControlView, reservationControlView, clientAddView);
+            MainControlView mainView = new MainControlView(clientControlView, packageControlView, reservationControlView, clientAddView, result.Name);
 
             // MainPresenter
 

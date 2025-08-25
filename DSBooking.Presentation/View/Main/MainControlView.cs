@@ -22,7 +22,7 @@ namespace DSBooking.Presentation.View.Main
         IReservationControlView _reservationControlView;
         IClientAddFormView _clientAddFormView;
 
-        public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView, IClientAddFormView clientAddForm)
+        public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView, IClientAddFormView clientAddForm, string title)
         {
             _clientControlView = clientView;
             _packageControlView = packageView;
@@ -50,7 +50,8 @@ namespace DSBooking.Presentation.View.Main
             modeComboBox.SelectedIndex = 0;
 
             ShowForMode(MainViewMode.ShowPackages); // Just in case the presenter doesn't set it
-            this.Text = "DSBooking";
+            this.Text = title;
+            agencyNameLabel.Text = title;
         }
 
         public Control Control => this;
@@ -114,6 +115,8 @@ namespace DSBooking.Presentation.View.Main
         {
             if (modeComboBox.SelectedValue is MainViewMode mode)
             {
+                //var res = MessageBox.Show(mode.ToString(), "Potvrda", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
                 OnModeChange?.Invoke(this, mode);
             }
         }
