@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Object.Package;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,21 +12,14 @@ namespace DSBooking.Domain.Object.Reservation
     {
         public int Id { get; }
         public DateTime DateOfReservation { get; }
-        public int ClientId { get; }
-        public string ClientName { get; }
-        public int PackageId { get; }
-        public string PackageName { get; }
-        public double PackagePrice { get; }
-
-        public ReservationObject(int id, DateTime dateOfReservation, int clientId, string clientName, int packageId, string packageName, double packagePrice)
+        public ClientObject Client { get; }          
+        public PackageObject Package { get; }       
+        public ReservationObject(int id, DateTime dateOfReservation, ClientObject client, PackageObject package)
         {
             Id = id;
             DateOfReservation = dateOfReservation;
-            ClientId = clientId;
-            ClientName = clientName;
-            PackageId = packageId;
-            PackageName = packageName;
-            PackagePrice = packagePrice;
+            Client = client;
+            Package = package;
         }
     }
 }

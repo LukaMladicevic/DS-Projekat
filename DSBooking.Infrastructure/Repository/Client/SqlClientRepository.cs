@@ -1,14 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Domain.Object.Client;
+using DSBooking.Infrastructure.Mappers;
 
 namespace DSBooking.Infrastructure.Repository.Client
 {
-    public class SqlClientRepository : IClientRepository
+    public class SqlClientRepository : Repository<ClientObject>, IClientRepository
     {
+        public SqlClientRepository(IDbConnection dbConnection, IMapper<ClientObject> mapper) : base(dbConnection, mapper) { }
         public int AddClient(ClientAddObject clientAddObject)
         {
             throw new NotImplementedException();

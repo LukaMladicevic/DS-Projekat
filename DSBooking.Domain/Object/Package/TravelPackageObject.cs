@@ -11,9 +11,9 @@ namespace DSBooking.Domain.Object.Package
         public string DestinationName { get; }
         public string TravelTypeName { get; }
         public string GuideName { get; }
-        public string Duration { get; }
+        public int Duration { get; }
 
-        public TravelPackageObject(int id, string name, double price, string packageTypeName, string destinationName, string travelTypeName, string guideName, string duration) : base(id, name, price, packageTypeName)
+        public TravelPackageObject(int id, string name, double price, string packageTypeName, string destinationName, string travelTypeName, string guideName, int duration) : base(id, name, price, packageTypeName)
         {
             DestinationName = destinationName;
             TravelTypeName = travelTypeName;
