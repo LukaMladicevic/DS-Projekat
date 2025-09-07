@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DSBooking.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+7d99fc9dd889513bbd6ca999ee45fe14388100c5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+126d918d16e2a38109eb26eaeb0fa492086b04c5")]
 [assembly: System.Reflection.AssemblyProductAttribute("DSBooking.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DSBooking.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

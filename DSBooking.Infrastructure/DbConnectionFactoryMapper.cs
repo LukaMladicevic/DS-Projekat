@@ -19,7 +19,12 @@ namespace DSBooking.Infrastructure
         public IDbConnectionFactory Map()
         {
             // TODO
-            return new SqlConnectionFactory(this._connectionString);
+            if (_connectionString.Contains("sqlite"))
+                return new SqliteConnectionFactory(_connectionString);
+            else if (_connectionString.Contains("sql"))
+                return new SqlConnectionFactory(_connectionString);
+            else 
+                throw new NotImplementedException();
         }
     }
 }

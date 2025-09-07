@@ -704,3 +704,5 @@ C:\Users\novak\Source\Repos\DS-ProjekatEM\DSBooking\obj\Debug\net8.0-windows\ref
 C:\Users\novak\Source\Repos\DS-ProjekatEM\DSBooking\obj\Debug\net8.0-windows\DSBooking.pdb
 C:\Users\novak\Source\Repos\DS-ProjekatEM\DSBooking\obj\Debug\net8.0-windows\DSBooking.genruntimeconfig.cache
 C:\Users\novak\Source\Repos\DS-ProjekatEM\DSBooking\obj\Debug\net8.0-windows\ref\DSBooking.dll
+C:\Users\novak\Source\Repos\DS-ProjekatEM\DSBooking\bin\Debug\net8.0-windows\Microsoft.Data.Sqlite.dll
+C:\Users\novak\Source\Repos\DS-ProjekatEM\DSBooking\bin\Debug\net8.0-windows\SQLitePCLRaw.core.dll
