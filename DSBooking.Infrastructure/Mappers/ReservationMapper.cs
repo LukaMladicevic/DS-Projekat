@@ -13,25 +13,25 @@ namespace DSBooking.Infrastructure.Mappers
     public class ReservationMapper : BaseMapper, IMapper<ReservationObject>
     {
         private IMapper<ClientObject> _clientMapper;
-        private IMapper<PackageObject> _packageFactory;
+        private IMapper<PackageObject> _packageMapper;
 
-        public ReservationMapper(IMapper<ClientObject> clientMapper, IMapper<PackageObject> packageFactory)
+        public ReservationMapper(IMapper<ClientObject> clientMapper, IMapper<PackageObject> packageMapper)
         {
             _clientMapper = clientMapper;
-            _packageFactory = packageFactory;
+            _packageMapper = packageMapper;
         }
 
         public ReservationObject Map(IDataRecord record)
         {
             ClientObject client = _clientMapper.Map(record);
-            PackageObject package = _packageFactory.Map(record);
+            PackageObject package = _packageMapper.Map(record);
 
             return new ReservationObject(
                 GetInt(record, "ReservationId"),
                 GetDateTime(record, "ReservationDate"),
                 client, 
                 package
-             );
+            );
         }
     }
 }

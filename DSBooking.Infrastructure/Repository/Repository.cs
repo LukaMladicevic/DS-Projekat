@@ -11,12 +11,10 @@ namespace DSBooking.Infrastructure.Repository
 {
     public abstract class Repository<T>
     {
-        private IDbConnection _dbConnection;
         private IMapper<T> _mapper;
 
-        public Repository(IDbConnection dbConnection, IMapper<T> mapper)
+        public Repository(IMapper<T> mapper)
         {
-            _dbConnection = dbConnection;
             _mapper = mapper;
         }
     }

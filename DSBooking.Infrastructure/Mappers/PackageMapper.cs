@@ -15,9 +15,9 @@ namespace DSBooking.Infrastructure.Mappers
         Travel = 3,   
         Cruise = 4        
     }
-    public class PackageMapper : BaseMapper, IPackageFactory, IMapper<PackageObject>
+    public class PackageMapper : BaseMapper, IMapper<PackageObject>
     {
-        public PackageObject CreateFromReader(IDataRecord record)
+        public PackageObject Map(IDataRecord record)
         {
             var type = (PackageType)GetInt(record, "PackageType");
             var id = GetInt(record, "PackageId");
@@ -76,11 +76,6 @@ namespace DSBooking.Infrastructure.Mappers
                 default:
                     throw new InvalidOperationException($"Unknown package type: {type}");
             }
-        }
-
-        public PackageObject Map(IDataRecord record)
-        {
-            return CreateFromReader(record);
         }
     }
 }

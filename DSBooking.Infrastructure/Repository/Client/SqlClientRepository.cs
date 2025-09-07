@@ -11,7 +11,7 @@ namespace DSBooking.Infrastructure.Repository.Client
 {
     public class SqlClientRepository : Repository<ClientObject>, IClientRepository
     {
-        public SqlClientRepository(IDbConnection dbConnection, IMapper<ClientObject> mapper) : base(dbConnection, mapper) { }
+        public SqlClientRepository(IMapper<ClientObject> mapper) : base(mapper) { }
         public int AddClient(ClientAddObject clientAddObject)
         {
             throw new NotImplementedException();

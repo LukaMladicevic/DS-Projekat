@@ -11,7 +11,7 @@ namespace DSBooking.Infrastructure.Repository.Reservation
 {
     public class SqlReservationRepository : Repository<ReservationObject>, IReservationRepository
     {
-        public SqlReservationRepository(IDbConnection dbConnection, IMapper<ReservationObject> mapper) : base(dbConnection, mapper) { }
+        public SqlReservationRepository(IMapper<ReservationObject> mapper) : base(mapper) { }
 
         public int AddReservation(ReservationAddObject reservationAddObject)
         {
