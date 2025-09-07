@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Entity.Package
+namespace DSBooking.Domain.Object.Package
 {
-    public class CruisePackageObject : PackageEntity
+    public class CruisePackageObject : PackageObject
     {
         public string ShipName { get; }
         public string RouteName { get; }

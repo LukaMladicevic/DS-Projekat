@@ -1,4 +1,4 @@
-﻿using DSBooking.Domain.Entity.Client;
+﻿using DSBooking.Domain.Object.Client;
 
 namespace DSBooking.Infrastructure.Repository.Client
 {
@@ -9,24 +9,24 @@ namespace DSBooking.Infrastructure.Repository.Client
             throw new NotImplementedException();
         }
 
-        public ClientEntity? Get(int id)
+        public ClientObject? Get(int id)
         {
             return null;
         }
 
-        public IEnumerable<ClientEntity> GetByFirstName(string filterString)
+        public IEnumerable<ClientObject> GetByFirstName(string filterString)
         {
-            return new List<ClientEntity>();
+            return new List<ClientObject>();
         }
 
-        public IEnumerable<ClientEntity> GetByLastName(string filterString)
+        public IEnumerable<ClientObject> GetByLastName(string filterString)
         {
-            return new List<ClientEntity>();
+            return new List<ClientObject>();
         }
 
-        public IEnumerable<ClientEntity> GetByPassportNo(string filterString)
+        public IEnumerable<ClientObject> GetByPassportNo(string filterString)
         {
-            return new List<ClientEntity>();
+            return new List<ClientObject>();
         }
 
         public void RemoveClient(int clientId)

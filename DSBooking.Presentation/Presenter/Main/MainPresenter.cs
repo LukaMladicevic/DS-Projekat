@@ -1,8 +1,8 @@
 ﻿using DSBooking.Application.Service.Client;
 using DSBooking.Application.Service.Reservation;
-using DSBooking.Domain.Entity.Client;
-using DSBooking.Domain.Entity.Package;
-using DSBooking.Domain.Entity.Reservation;
+using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Object.Package;
+using DSBooking.Domain.Object.Reservation;
 using DSBooking.Presentation.Presenter.Client;
 using DSBooking.Presentation.Presenter.Command;
 using DSBooking.Presentation.Presenter.Package;
@@ -66,13 +66,13 @@ namespace DSBooking.Presentation.Presenter.Main
             _commandManager.ExecuteCommand(command);
         }
 
-        private void OnSelectedReservation(ReservationEntity reservation)
+        private void OnSelectedReservation(ReservationObject reservation)
         {
             RemoveReservationCommand command = new RemoveReservationCommand(_reservationService, reservation.Id);
             _commandManager.ExecuteCommand(command);
         }
 
-        private void OnSelectedPackage(PackageEntity package)
+        private void OnSelectedPackage(PackageObject package)
         {
             if (_clientPresenter.SelectedClient == null) throw new NullReferenceException();
             ReservationAddObject addObject = new ReservationAddObject(DateTime.Now, _clientPresenter.SelectedClient.Id, package.Id);
@@ -95,7 +95,7 @@ namespace DSBooking.Presentation.Presenter.Main
             ShowPackagesOrReservations();
         }
 
-        private void SelectClient(ClientEntity? client)
+        private void SelectClient(ClientObject? client)
         {
             _clientPresenter.SelectClient(client);
             ShowPackagesOrReservations();
@@ -103,7 +103,7 @@ namespace DSBooking.Presentation.Presenter.Main
 
         private void ShowPackagesOrReservations()
         {
-            ClientEntity? client = _clientPresenter.SelectedClient;
+            ClientObject? client = _clientPresenter.SelectedClient;
             _mainView.ShowForMode(_mode);
             if (_mode == MainViewMode.ShowPackages)
             {

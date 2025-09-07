@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Entity.Reservation;
+using DSBooking.Domain.Object.Reservation;
 
 namespace DSBooking.Infrastructure.Repository.Reservation
 {
@@ -14,19 +14,19 @@ namespace DSBooking.Infrastructure.Repository.Reservation
             return 0;
         }
 
-        public ReservationEntity? Get(int id)
+        public ReservationObject? Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ReservationEntity> GetAll()
+        public IEnumerable<ReservationObject> GetAll()
         {
-            return new List<ReservationEntity>();
+            return new List<ReservationObject>();
         }
 
-        public IEnumerable<ReservationEntity> GetForClient(int clientId)
+        public IEnumerable<ReservationObject> GetForClient(int clientId)
         {
-            return new List<ReservationEntity>();
+            return new List<ReservationObject>();
         }
 
         public void RemoveReservation(int reservationId)

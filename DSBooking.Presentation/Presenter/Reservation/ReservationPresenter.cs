@@ -1,6 +1,6 @@
 ﻿using DSBooking.Application.Service.Reservation;
-using DSBooking.Domain.Entity.Client;
-using DSBooking.Domain.Entity.Reservation;
+using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Object.Reservation;
 using DSBooking.Presentation.View.Reservation;
 using System;
 using System.Collections.Generic;
@@ -15,22 +15,22 @@ namespace DSBooking.Presentation.Presenter.Reservation
         IReservationView _view;
         IReservationService _service;
 
-        IEnumerable<ReservationEntity> _reservations;
+        IEnumerable<ReservationObject> _reservations;
 
         public ReservationPresenter(IReservationView view, IReservationService service)
         {
             _view = view;
             _service = service;
 
-            _reservations = new List<ReservationEntity>();
+            _reservations = new List<ReservationObject>();
         }
 
-        public IEnumerable<ReservationEntity> Reservations => _reservations;
+        public IEnumerable<ReservationObject> Reservations => _reservations;
 
 
         public void ShowAll()
         {
-            IEnumerable<ReservationEntity> reservations = _service.GetAll();
+            IEnumerable<ReservationObject> reservations = _service.GetAll();
 
             _reservations = reservations;
 
@@ -39,7 +39,7 @@ namespace DSBooking.Presentation.Presenter.Reservation
 
         public void ShowForClient(int clientId)
         {
-            IEnumerable<ReservationEntity> reservations = _service.GetForClient(clientId);
+            IEnumerable<ReservationObject> reservations = _service.GetForClient(clientId);
 
             _reservations = reservations;
 

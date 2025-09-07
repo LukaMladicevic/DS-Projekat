@@ -4,31 +4,31 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Entity.Reservation;
+using DSBooking.Domain.Object.Reservation;
 using DSBooking.Infrastructure.Mappers;
 
 namespace DSBooking.Infrastructure.Repository.Reservation
 {
-    public class SqlReservationRepository : Repository<ReservationEntity>, IReservationRepository
+    public class SqlReservationRepository : Repository<ReservationObject>, IReservationRepository
     {
-        public SqlReservationRepository(IMapper<ReservationEntity> mapper) : base(mapper) { }
+        public SqlReservationRepository(IMapper<ReservationObject> mapper) : base(mapper) { }
 
         public int AddReservation(ReservationAddObject reservationAddObject)
         {
             throw new NotImplementedException();
         }
 
-        public ReservationEntity? Get(int id)
+        public ReservationObject? Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ReservationEntity> GetAll()
+        public IEnumerable<ReservationObject> GetAll()
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ReservationEntity> GetForClient(int clientId)
+        public IEnumerable<ReservationObject> GetForClient(int clientId)
         {
             throw new NotImplementedException();
         }

@@ -1,4 +1,4 @@
-﻿using DSBooking.Domain.Entity.Reservation;
+﻿using DSBooking.Domain.Object.Reservation;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,8 +9,8 @@ namespace DSBooking.Presentation.View.Reservation
 {
     public interface IReservationView : IView
     {
-        event EventHandler<ReservationEntity>? OnSelectedReservation;
+        event EventHandler<ReservationObject>? OnSelectedReservation;
 
-        void ShowReservations(IEnumerable<ReservationEntity> reservations);
+        void ShowReservations(IEnumerable<ReservationObject> reservations);
     }
 }

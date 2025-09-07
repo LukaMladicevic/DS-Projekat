@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Application.Service.Reservation;
-using DSBooking.Domain.Entity.Reservation;
+using DSBooking.Domain.Object.Reservation;
 
 namespace DSBooking.Presentation.Presenter.Command
 {

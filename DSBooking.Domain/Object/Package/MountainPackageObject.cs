@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Entity.Package
+namespace DSBooking.Domain.Object.Package
 {
-    public class MountainPackageObject : PackageEntity
+    public class MountainPackageObject : PackageObject
     {
         public string DestinationName { get; }
         public string TravelTypeName { get; }

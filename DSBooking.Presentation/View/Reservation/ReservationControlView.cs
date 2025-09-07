@@ -1,4 +1,4 @@
-﻿using DSBooking.Domain.Entity.Reservation;
+﻿using DSBooking.Domain.Object.Reservation;
 using DSBooking.Presentation.View.Reservation;
 using System;
 using System.Collections.Generic;
@@ -25,10 +25,10 @@ namespace DSBooking.Presentation.View.Reservation
 
         public Control Control => this;
 
-        public event EventHandler<ReservationEntity>? OnSelectedReservation;
+        public event EventHandler<ReservationObject>? OnSelectedReservation;
         public event EventHandler? OnViewLoad;
 
-        public void ShowReservations(IEnumerable<ReservationEntity> reservations)
+        public void ShowReservations(IEnumerable<ReservationObject> reservations)
         {
             reservationsGridView.DataSource = reservations;
             reservationsGridView.Refresh();

@@ -1,12 +1,12 @@
-﻿using DSBooking.Domain.Entity.Package;
+﻿using DSBooking.Domain.Object.Package;
 
 namespace DSBooking.Infrastructure.Repository.Package
 {
     public interface IPackageRepository
     {
-        PackageEntity? Get(int id);
+        PackageObject? Get(int id);
 
-        IEnumerable<PackageEntity> GetAll();
-        IEnumerable<PackageEntity> GetAllAvailableForClient(int clientId);
+        IEnumerable<PackageObject> GetAll();
+        IEnumerable<PackageObject> GetAllAvailableForClient(int clientId);
     }
 }

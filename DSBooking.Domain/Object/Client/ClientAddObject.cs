@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Entity.Client
+namespace DSBooking.Domain.Object.Client
 {
     public class ClientAddObject
     {

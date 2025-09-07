@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Entity.Reservation;
+using DSBooking.Domain.Object.Reservation;
 
 namespace DSBooking.Infrastructure.Repository.Reservation
 {
     public interface IReservationRepository
     {
-        IEnumerable<ReservationEntity> GetForClient(int clientId);
-        IEnumerable<ReservationEntity> GetAll();
+        IEnumerable<ReservationObject> GetForClient(int clientId);
+        IEnumerable<ReservationObject> GetAll();
 
-        ReservationEntity? Get(int id);
+        ReservationObject? Get(int id);
         
         // returns ID
         int AddReservation(ReservationAddObject reservationAddObject);

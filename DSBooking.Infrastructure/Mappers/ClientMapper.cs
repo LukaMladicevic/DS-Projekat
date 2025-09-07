@@ -1,4 +1,4 @@
-﻿using DSBooking.Domain.Entity.Client;
+﻿using DSBooking.Domain.Object.Client;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace DSBooking.Infrastructure.Mappers
 {
-    public class ClientMapper : BaseMapper, IMapper<ClientEntity>
+    public class ClientMapper : BaseMapper, IMapper<ClientObject>
     {
-        public ClientEntity Map(IDataRecord record)
+        public ClientObject Map(IDataRecord record)
         {
-            return new ClientEntity(
+            return new ClientObject(
                 GetInt(record, "ClientId"),
                 GetString(record, "FirstName"),
                 GetString(record, "LastName"),

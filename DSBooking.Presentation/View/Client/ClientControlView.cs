@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DSBooking.Domain.Entity.Client;
+using DSBooking.Domain.Object.Client;
 using DSBooking.Presentation.View.Client;
 using DSBooking.Presentation.View.Main;
 
@@ -35,18 +35,18 @@ namespace DSBooking.Presentation.View.Client
 
         public Control Control => this;
 
-        public event EventHandler<ClientEntity>? OnClientSelection;
+        public event EventHandler<ClientObject>? OnClientSelection;
         public event EventHandler? OnViewLoad;
         public event EventHandler<ClientViewFilterMode>? OnFilterModeChange;
 
         public event EventHandler<string>? OnFilterChange;
 
-        public void HighlightClient(ClientEntity? client)
+        public void HighlightClient(ClientObject? client)
         {
             // throw new NotImplementedException();
         }
 
-        public void ShowClients(IEnumerable<ClientEntity> clients)
+        public void ShowClients(IEnumerable<ClientObject> clients)
         {
             clientsDataGridView.DataSource = clients;
             clientsDataGridView.Refresh();

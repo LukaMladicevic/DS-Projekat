@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Application.Service.Reservation;
-using DSBooking.Domain.Entity.Reservation;
+using DSBooking.Domain.Object.Reservation;
 
 namespace DSBooking.Presentation.Presenter.Command
 {
@@ -19,7 +19,7 @@ namespace DSBooking.Presentation.Presenter.Command
             _service = service;
             _id = id;
 
-            ReservationEntity reservation = _service.Get(id) ??
+            ReservationObject reservation = _service.Get(id) ??
                 throw new NullReferenceException();
 
             _addObject = new ReservationAddObject(reservation.DateOfReservation, reservation.Client.Id, reservation.Package.Id);

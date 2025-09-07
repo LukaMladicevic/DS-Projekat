@@ -3,25 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Entity.Package;
+using DSBooking.Domain.Object.Package;
 
 namespace DSBooking.Infrastructure.Repository.Package
 {
     public class TestPackageRepository : IPackageRepository
     {
-        public PackageEntity? Get(int id)
+        public PackageObject? Get(int id)
         {
             return null;
         }
 
-        public IEnumerable<PackageEntity> GetAll()
+        public IEnumerable<PackageObject> GetAll()
         {
-            return new List<PackageEntity>();
+            return new List<PackageObject>();
         }
 
-        public IEnumerable<PackageEntity> GetAllAvailableForClient(int clientId)
+        public IEnumerable<PackageObject> GetAllAvailableForClient(int clientId)
         {
-            return new List<PackageEntity>();
+            return new List<PackageObject>();
         }
     }
 }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Entity.Reservation;
+using DSBooking.Domain.Object.Reservation;
 using DSBooking.Infrastructure.Repository.Reservation;
 
 namespace DSBooking.Application.Service.Reservation
@@ -17,12 +17,12 @@ namespace DSBooking.Application.Service.Reservation
             _reservationRepository = reservationRepository;
         }
 
-        public IEnumerable<ReservationEntity> GetAll()
+        public IEnumerable<ReservationObject> GetAll()
         {
             return _reservationRepository.GetAll();
         }
 
-        public IEnumerable<ReservationEntity> GetForClient(int clientId)
+        public IEnumerable<ReservationObject> GetForClient(int clientId)
         {
             return _reservationRepository.GetForClient(clientId);
         }
@@ -37,7 +37,7 @@ namespace DSBooking.Application.Service.Reservation
             _reservationRepository.RemoveReservation(reservationId);
         }
 
-        public ReservationEntity? Get(int id)
+        public ReservationObject? Get(int id)
         {
             return _reservationRepository.Get(id);
         }

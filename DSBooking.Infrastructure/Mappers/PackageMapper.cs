@@ -1,4 +1,4 @@
-﻿using DSBooking.Domain.Entity.Package;
+﻿using DSBooking.Domain.Object.Package;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -15,9 +15,9 @@ namespace DSBooking.Infrastructure.Mappers
         Travel = 3,   
         Cruise = 4        
     }
-    public class PackageMapper : BaseMapper, IMapper<PackageEntity>
+    public class PackageMapper : BaseMapper, IMapper<PackageObject>
     {
-        public PackageEntity Map(IDataRecord record)
+        public PackageObject Map(IDataRecord record)
         {
             var type = (PackageType)GetInt(record, "PackageType");
             var id = GetInt(record, "PackageId");
