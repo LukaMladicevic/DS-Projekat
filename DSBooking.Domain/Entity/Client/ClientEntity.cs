@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Object.Client
+namespace DSBooking.Domain.Entity.Client
 {
-    public class ClientObject
+    public class ClientEntity
     {
         public int Id { get; }
         public string FirstName { get; }
@@ -16,7 +16,7 @@ namespace DSBooking.Domain.Object.Client
         public string Email { get; }
         public string PhoneNo { get; }
 
-        public ClientObject(int id, string firstName, string lastName, string passportNo, DateTime dateOfBirth, string email, string phoneNo)
+        public ClientEntity(int id, string firstName, string lastName, string passportNo, DateTime dateOfBirth, string email, string phoneNo)
         {
             Id = id;
             FirstName = firstName;

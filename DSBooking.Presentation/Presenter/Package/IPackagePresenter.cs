@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Object.Client;
-using DSBooking.Domain.Object.Package;
+using DSBooking.Domain.Entity.Client;
+using DSBooking.Domain.Entity.Package;
 
 namespace DSBooking.Presentation.Presenter.Package
 {
@@ -13,6 +13,6 @@ namespace DSBooking.Presentation.Presenter.Package
         void ShowForClient(int clientId);
         void ShowAll();
 
-        IEnumerable<PackageObject> Packages { get; }
+        IEnumerable<PackageEntity> Packages { get; }
     }
 }

@@ -1,6 +1,6 @@
 ﻿using System;
 using DSBooking.Application.Service.Client;
-using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Entity.Client;
 
 namespace DSBooking.Presentation.Presenter.Command
 {

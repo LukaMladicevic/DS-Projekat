@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Application.Service.Client;
-using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Entity.Client;
 using DSBooking.Presentation.View.Client;
 
 namespace DSBooking.Presentation.Presenter.Client
@@ -19,19 +19,19 @@ namespace DSBooking.Presentation.Presenter.Client
             _view = clientView;
             _service = clientService;
 
-            Clients = new List<ClientObject>();
+            Clients = new List<ClientEntity>();
             SelectedClient = null;
             FilterString = "";
         }
-        public IEnumerable<ClientObject> Clients { get; private set; }
+        public IEnumerable<ClientEntity> Clients { get; private set; }
 
-        public ClientObject? SelectedClient { get; private set; }
+        public ClientEntity? SelectedClient { get; private set; }
 
         public ClientViewFilterMode SelectedFilterMode { get; private set; }
 
         public string FilterString { get; private set; }
 
-        public void SelectClient(ClientObject? c)
+        public void SelectClient(ClientEntity? c)
         {
             SelectedClient = c;
             _view.HighlightClient(c);

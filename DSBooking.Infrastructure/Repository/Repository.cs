@@ -11,11 +11,11 @@ namespace DSBooking.Infrastructure.Repository
 {
     public abstract class Repository<T>
     {
-        private IMapper<T> _mapper;
+        protected IMapper<T> Mapper { get; private set; }
 
         public Repository(IMapper<T> mapper)
         {
-            _mapper = mapper;
+            Mapper = mapper;
         }
     }
 }

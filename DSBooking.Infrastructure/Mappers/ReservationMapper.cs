@@ -1,6 +1,6 @@
-﻿using DSBooking.Domain.Object.Client;
-using DSBooking.Domain.Object.Package;
-using DSBooking.Domain.Object.Reservation;
+﻿using DSBooking.Domain.Entity.Client;
+using DSBooking.Domain.Entity.Package;
+using DSBooking.Domain.Entity.Reservation;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -10,23 +10,23 @@ using System.Threading.Tasks;
 
 namespace DSBooking.Infrastructure.Mappers
 {
-    public class ReservationMapper : BaseMapper, IMapper<ReservationObject>
+    public class ReservationMapper : BaseMapper, IMapper<ReservationEntity>
     {
-        private IMapper<ClientObject> _clientMapper;
-        private IMapper<PackageObject> _packageMapper;
+        private IMapper<ClientEntity> _clientMapper;
+        private IMapper<PackageEntity> _packageMapper;
 
-        public ReservationMapper(IMapper<ClientObject> clientMapper, IMapper<PackageObject> packageMapper)
+        public ReservationMapper(IMapper<ClientEntity> clientMapper, IMapper<PackageEntity> packageMapper)
         {
             _clientMapper = clientMapper;
             _packageMapper = packageMapper;
         }
 
-        public ReservationObject Map(IDataRecord record)
+        public ReservationEntity Map(IDataRecord record)
         {
-            ClientObject client = _clientMapper.Map(record);
-            PackageObject package = _packageMapper.Map(record);
+            ClientEntity client = _clientMapper.Map(record);
+            PackageEntity package = _packageMapper.Map(record);
 
-            return new ReservationObject(
+            return new ReservationEntity(
                 GetInt(record, "ReservationId"),
                 GetDateTime(record, "ReservationDate"),
                 client, 

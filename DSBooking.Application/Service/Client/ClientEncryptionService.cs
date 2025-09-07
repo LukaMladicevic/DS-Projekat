@@ -1,4 +1,4 @@
-﻿using DSBooking.Domain.Object.Client;
+﻿using DSBooking.Domain.Entity.Client;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,17 +46,17 @@ namespace DSBooking.Application.Service.Client
             }
         }
 
-        public IEnumerable<ClientObject> GetByFirstName(string filterString)
+        public IEnumerable<ClientEntity> GetByFirstName(string filterString)
         {
             return _wrapped.GetByFirstName(filterString);
         }
 
-        public IEnumerable<ClientObject> GetByLastName(string filterString)
+        public IEnumerable<ClientEntity> GetByLastName(string filterString)
         {
             return _wrapped.GetByLastName(filterString);
         }
 
-        public IEnumerable<ClientObject> GetByPassportNo(string filterString)
+        public IEnumerable<ClientEntity> GetByPassportNo(string filterString)
         {
             return _wrapped.GetByPassportNo(filterString);
         }

@@ -4,16 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Object.Package
+namespace DSBooking.Domain.Entity.Package
 {
-    public abstract class PackageObject
+    public abstract class PackageEntity
     {
         public int Id { get; }
         public string Name { get; }
         public double Price { get; }
         public string PackageTypeName { get; }
 
-        public PackageObject(int id, string name, double price, string packageTypeName)
+        public PackageEntity(int id, string name, double price, string packageTypeName)
         {
             Id = id;
             Name = name;

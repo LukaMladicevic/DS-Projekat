@@ -3,14 +3,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Object.Client;
-using DSBooking.Domain.Object.Package;
+using DSBooking.Domain.Entity.Client;
+using DSBooking.Domain.Entity.Package;
 
 namespace DSBooking.Application.Service.Package
 {
     public interface IPackageService
     {
-        IEnumerable<PackageObject> GetAllAvailableForClient(int clientId);
-        IEnumerable<PackageObject> GetAll();
+        IEnumerable<PackageEntity> GetAllAvailableForClient(int clientId);
+        IEnumerable<PackageEntity> GetAll();
     }
 }

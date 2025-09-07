@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DSBooking.Domain.Object.Package;
+using DSBooking.Domain.Entity.Package;
 
 namespace DSBooking.Presentation.View.Package
 {
@@ -23,10 +23,10 @@ namespace DSBooking.Presentation.View.Package
 
         public Control Control => this;
 
-        public event EventHandler<PackageObject>? OnSelectedPackage;
+        public event EventHandler<PackageEntity>? OnSelectedPackage;
         public event EventHandler? OnViewLoad;
 
-        public void ShowPackages(IEnumerable<PackageObject> packages)
+        public void ShowPackages(IEnumerable<PackageEntity> packages)
         {
             packageDataGridView.DataSource = packages;
             packageDataGridView.Refresh();

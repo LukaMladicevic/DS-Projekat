@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Entity.Client;
 using DSBooking.Infrastructure.Repository.Client;
 
 namespace DSBooking.Application.Service.Client
@@ -22,17 +22,17 @@ namespace DSBooking.Application.Service.Client
             return _clientRepository.AddClient(client);
         }
 
-        public IEnumerable<ClientObject> GetByFirstName(string filterString)
+        public IEnumerable<ClientEntity> GetByFirstName(string filterString)
         {
             return _clientRepository.GetByFirstName(filterString);
         }
 
-        public IEnumerable<ClientObject> GetByLastName(string filterString)
+        public IEnumerable<ClientEntity> GetByLastName(string filterString)
         {
             return _clientRepository.GetByLastName(filterString);
         }
 
-        public IEnumerable<ClientObject> GetByPassportNo(string filterString)
+        public IEnumerable<ClientEntity> GetByPassportNo(string filterString)
         {
             return _clientRepository.GetByPassportNo(filterString);
         }

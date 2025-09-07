@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Entity.Client;
 
 namespace DSBooking.Presentation.View.ClientAdd
 {

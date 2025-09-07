@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Domain.Object.Reservation
+namespace DSBooking.Domain.Entity.Reservation
 {
     public class ReservationAddObject
     {

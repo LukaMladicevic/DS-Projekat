@@ -4,37 +4,37 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Entity.Client;
 using DSBooking.Infrastructure.Mappers;
 
 namespace DSBooking.Infrastructure.Repository.Client
 {
-    public class SqlClientRepository : Repository<ClientObject>, IClientRepository
+    public class SqlClientRepository : Repository<ClientEntity>, IClientRepository
     {
-        public SqlClientRepository(IMapper<ClientObject> mapper) : base(mapper) { }
+        public SqlClientRepository(IMapper<ClientEntity> mapper) : base(mapper) { }
         public int AddClient(ClientAddObject clientAddObject)
         {
             throw new NotImplementedException();
         }
 
-        public ClientObject? Get(int id)
+        public ClientEntity? Get(int id)
         {
             throw new NotImplementedException();
         }
 
-        public IEnumerable<ClientObject> GetByFirstName(string filterString)
+        public IEnumerable<ClientEntity> GetByFirstName(string filterString)
         {
-            return new List<ClientObject>();
+            return new List<ClientEntity>();
         }
 
-        public IEnumerable<ClientObject> GetByLastName(string filterString)
+        public IEnumerable<ClientEntity> GetByLastName(string filterString)
         {
-            return new List<ClientObject>();
+            return new List<ClientEntity>();
         }
 
-        public IEnumerable<ClientObject> GetByPassportNo(string filterString)
+        public IEnumerable<ClientEntity> GetByPassportNo(string filterString)
         {
-            return new List<ClientObject>();
+            return new List<ClientEntity>();
         }
 
         public void RemoveClient(int clientId)

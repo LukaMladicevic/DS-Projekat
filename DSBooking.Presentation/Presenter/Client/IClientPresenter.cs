@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Entity.Client;
 using DSBooking.Presentation.View.Client;
 
 namespace DSBooking.Presentation.Presenter.Client
@@ -16,10 +16,10 @@ namespace DSBooking.Presentation.Presenter.Client
         string FilterString { get; }
         void SelectFilterString(string filterString);
 
-        IEnumerable<ClientObject> Clients { get; }
+        IEnumerable<ClientEntity> Clients { get; }
         void ShowClients();
 
-        void SelectClient(ClientObject? c);
-        ClientObject? SelectedClient { get; }
+        void SelectClient(ClientEntity? c);
+        ClientEntity? SelectedClient { get; }
     }
 }
