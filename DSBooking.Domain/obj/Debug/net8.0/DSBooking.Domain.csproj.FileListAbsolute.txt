@@ -130,3 +130,15 @@ C:\Users\novak\Source\Repos\DS-ProjekatEM\DSBooking.Domain\obj\Debug\net8.0\DSBo
 C:\Users\novak\Source\Repos\DS-ProjekatEM\DSBooking.Domain\obj\Debug\net8.0\refint\DSBooking.Domain.dll
 C:\Users\novak\Source\Repos\DS-ProjekatEM\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.pdb
 C:\Users\novak\Source\Repos\DS-ProjekatEM\DSBooking.Domain\obj\Debug\net8.0\ref\DSBooking.Domain.dll
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.deps.json
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.dll
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\bin\Debug\net8.0\DSBooking.Domain.pdb
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.AssemblyInfoInputs.cache
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.AssemblyInfo.cs
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.csproj.CoreCompileInputs.cache
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.sourcelink.json
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.dll
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\obj\Debug\net8.0\refint\DSBooking.Domain.dll
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\obj\Debug\net8.0\DSBooking.Domain.pdb
+C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Domain\obj\Debug\net8.0\ref\DSBooking.Domain.dll

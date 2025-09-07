@@ -16,6 +16,7 @@ using DSBooking.Presentation.View.ClientAdd;
 using DSBooking.Presentation.View.Main;
 using DSBooking.Presentation.View.Package;
 using DSBooking.Presentation.View.Reservation;
+using DSBooking.Infrastructure.BackupDB;
 
 namespace DSBooking
 {
@@ -37,6 +38,13 @@ namespace DSBooking
             DbConnectionFactoryMapper mapper = new DbConnectionFactoryMapper(result.ConnectionString);
             IDbConnectionFactory connectionFactory = mapper.Map();
             DSBooking.Infrastructure.DbConnection.Initialize(connectionFactory);
+
+            //Backup
+
+            //Ne znam dal ovde treba backupPath ali neka ga za sad
+
+            string backupPath = "...path...";
+            BackupManager manager = new BackupManager(result.ConnectionString,backupPath);
 
             // Repositories
             TestClientRepository clientRepository = new TestClientRepository();

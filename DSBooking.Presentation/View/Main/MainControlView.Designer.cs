@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             agencyNameLabel = new Label();
             addClientButton = new Button();
             topPanel = new Panel();
@@ -38,6 +39,7 @@
             centerLayoutPanel = new TableLayoutPanel();
             panel1 = new Panel();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
+            DatabaseBackupTimer = new System.Windows.Forms.Timer(components);
             topPanel.SuspendLayout();
             bottomLayoutPanel.SuspendLayout();
             centerLayoutPanel.SuspendLayout();
@@ -164,6 +166,10 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
+            // DatabaseBackupTimer
+            // 
+            DatabaseBackupTimer.Tick += DatabaseBackupTimer_Tick;
+            // 
             // MainControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -193,5 +199,6 @@
         private ComboBox modeComboBox;
         private Button undoButton;
         private Button redoButton;
+        private System.Windows.Forms.Timer DatabaseBackupTimer;
     }
 }

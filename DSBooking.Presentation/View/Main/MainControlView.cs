@@ -21,6 +21,7 @@ namespace DSBooking.Presentation.View.Main
         IPackageControlView _packageControlView;
         IReservationControlView _reservationControlView;
         IClientAddFormView _clientAddFormView;
+        //System.Windows.Forms.Timer _timer;
 
         public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView, IClientAddFormView clientAddForm, string title)
         {
@@ -30,6 +31,11 @@ namespace DSBooking.Presentation.View.Main
             _clientAddFormView = clientAddForm;
 
             InitializeComponent();
+
+            //_timer = new System.Windows.Forms.Timer();
+            //_timer.Interval = (int)TimeSpan.FromHours(24).TotalMilliseconds;
+            //_timer.Tick += DatabaseBackupTimer_Tick;
+            //_timer.Start();
 
             centerLayoutPanel.Controls.Add(_clientControlView.Control);
 
@@ -69,6 +75,8 @@ namespace DSBooking.Presentation.View.Main
         public event EventHandler? OnViewLoad;
         public event EventHandler? UndoPerformed;
         public event EventHandler? RedoPerformed;
+        //public event EventHandler? DatabaseBackup;
+
 
         private void ShowPackages()
         {
@@ -129,6 +137,11 @@ namespace DSBooking.Presentation.View.Main
         private void redoButton_Click(object sender, EventArgs e)
         {
             RedoPerformed?.Invoke(this, EventArgs.Empty);
+        }
+
+        private void DatabaseBackupTimer_Tick(object sender, EventArgs e)
+        {
+            DatabaseBackup?.Invoke(this, EventArgs.Empty);
         }
     }
 }
