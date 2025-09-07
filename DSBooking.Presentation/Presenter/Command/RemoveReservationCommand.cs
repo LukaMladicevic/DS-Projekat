@@ -22,7 +22,7 @@ namespace DSBooking.Presentation.Presenter.Command
             ReservationObject reservation = _service.Get(id) ??
                 throw new NullReferenceException();
 
-            _addObject = new ReservationAddObject(reservation.DateOfReservation, reservation.ClientId, reservation.PackageId);
+            _addObject = new ReservationAddObject(reservation.DateOfReservation, reservation.Client.Id, reservation.Package.Id);
         }
 
         public void Execute()

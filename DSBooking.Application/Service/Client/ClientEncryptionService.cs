@@ -19,16 +19,13 @@ namespace DSBooking.Application.Service.Client
 
         public int AddClient(ClientAddObject client)
         {
-            String encryptedPassword = Encrypt(client.Password);
-
             var clientWithHashedPassword = new ClientAddObject(
                 client.FirstName,
                 client.LastName,
                 client.PassportNo,
                 client.DateOfBirth,
                 client.Email,
-                client.PhoneNo,
-                encryptedPassword
+                client.PhoneNo
             );
 
             _wrapped.AddClient(clientWithHashedPassword);

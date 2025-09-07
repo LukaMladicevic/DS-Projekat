@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Application\\DSBooking.Application.csproj": {}
+    "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Application\\DSBooking.Application.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Application\\DSBooking.Application.csproj": {
+    "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Application\\DSBooking.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Application\\DSBooking.Application.csproj",
+        "projectUniqueName": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Application\\DSBooking.Application.csproj",
         "projectName": "DSBooking.Application",
-        "projectPath": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Application\\DSBooking.Application.csproj",
-        "packagesPath": "C:\\Users\\Emilija\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Application\\obj\\",
+        "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Application\\DSBooking.Application.csproj",
+        "packagesPath": "C:\\Users\\novak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emilija\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\novak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,18 +26,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj": {
-                "projectPath": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj"
+              "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Domain\\DSBooking.Domain.csproj": {
+                "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Domain\\DSBooking.Domain.csproj"
               },
-              "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj": {
-                "projectPath": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj"
+              "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj": {
+                "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj"
               }
             }
           }
@@ -51,7 +50,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -72,24 +72,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj": {
+    "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Domain\\DSBooking.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Domain\\DSBooking.Domain.csproj",
         "projectName": "DSBooking.Domain",
-        "projectPath": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj",
-        "packagesPath": "C:\\Users\\Emilija\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Domain\\obj\\",
+        "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Domain\\DSBooking.Domain.csproj",
+        "packagesPath": "C:\\Users\\novak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emilija\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\novak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -98,7 +98,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -116,7 +115,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -137,24 +137,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj": {
+    "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj",
         "projectName": "DSBooking.Infrastructure",
-        "projectPath": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj",
-        "packagesPath": "C:\\Users\\Emilija\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Infrastructure\\obj\\",
+        "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Infrastructure\\DSBooking.Infrastructure.csproj",
+        "packagesPath": "C:\\Users\\novak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Emilija\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\novak\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -163,15 +163,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj": {
-                "projectPath": "C:\\Users\\Emilija\\source\\repos\\DS-Projekat\\DSBooking.Domain\\DSBooking.Domain.csproj"
+              "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Domain\\DSBooking.Domain.csproj": {
+                "projectPath": "C:\\Users\\novak\\Source\\Repos\\DS-ProjekatEM\\DSBooking.Domain\\DSBooking.Domain.csproj"
               }
             }
           }
@@ -185,7 +184,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.100"
       },
       "frameworks": {
         "net8.0": {
@@ -212,7 +212,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.101/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
