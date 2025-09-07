@@ -64,7 +64,17 @@ namespace DSBooking
 
             // MainView
 
-            MainControlView mainView = new MainControlView(clientControlView, packageControlView, reservationControlView, clientAddView, result.Name);
+            //MainControlView mainView = new MainControlView(clientControlView, packageControlView, reservationControlView, clientAddView, result.Name);
+            
+            MainControlViewBuilder builder = new MainControlViewBuilder();
+            MainControlView mainView = (
+                builder.SetClientControlView(clientControlView)
+                .SetPackageControlView(packageControlView)
+                .SetReservationControlView(reservationControlView)
+                .SetClientAddFormView(clientAddView)
+                .SetTitle(result.Name)
+                .Build())
+                ?? throw new NullReferenceException();
 
             // MainPresenter
 

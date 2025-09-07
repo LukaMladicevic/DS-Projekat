@@ -20,7 +20,9 @@ namespace DSBooking.Infrastructure.Factory
 
         public IDbConnection Create()
         {
-            return new SqlConnection(_connectionString);
+            return new SqlConnection();
+
+            //return new SqlConnection(_connectionString);
         }
     }
 }
