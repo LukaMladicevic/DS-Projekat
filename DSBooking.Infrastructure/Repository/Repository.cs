@@ -17,5 +17,57 @@ namespace DSBooking.Infrastructure.Repository
         {
             Mapper = mapper;
         }
+
+        private IDbCommand CreateCommand(string sql)
+        {
+            var cmd = DbConnection.Instance.Connection.CreateCommand();
+            cmd.CommandType = CommandType.Text;
+            cmd.CommandText = sql;
+            return cmd;
+        }
+
+        protected List<T> ExecuteQuery(string sql, Action<IDbCommand>? parameterize = null)
+        {
+            bool didOpen = DbConnection.Instance.Connection.State == ConnectionState.Closed;
+
+            try
+            {
+                if (didOpen)
+                    DbConnection.Instance.Connection.Open();
+
+                using var cmd = CreateCommand(sql);
+                parameterize?.Invoke(cmd);
+
+                using var reader = cmd.ExecuteReader();
+                var list = new List<T>();
+                while (reader.Read())
+                    list.Add(Mapper.Map(reader));
+
+                return list;
+            }
+            finally
+            {
+                if (didOpen && DbConnection.Instance.Connection.State != ConnectionState.Closed)
+                    DbConnection.Instance.Connection.Close();
+            }
+        }
+
+        protected int ExecuteNonQuery(string sql, Action<IDbCommand>? parameterize = null)
+        {
+            var didOpen = DbConnection.Instance.Connection.State == ConnectionState.Closed;
+            try
+            {
+                if (didOpen) DbConnection.Instance.Connection.Open();
+
+                using var cmd = CreateCommand(sql);
+                parameterize?.Invoke(cmd);
+                return cmd.ExecuteNonQuery();
+            }
+            finally
+            {
+                if (didOpen && DbConnection.Instance.Connection.State != ConnectionState.Closed)
+                    DbConnection.Instance.Connection.Close();
+            }
+        }
     }
 }

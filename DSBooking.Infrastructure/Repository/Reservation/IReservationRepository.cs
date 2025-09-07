@@ -16,6 +16,6 @@ namespace DSBooking.Infrastructure.Repository.Reservation
         
         // returns ID
         int AddReservation(ReservationAddObject reservationAddObject);
-        void RemoveReservation(int reservationId);
+        int RemoveReservation(int reservationId);
     }
 }

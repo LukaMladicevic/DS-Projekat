@@ -20,22 +20,162 @@ namespace DSBooking.Infrastructure.Repository.Reservation
 
         public ReservationObject? Get(int id)
         {
-            throw new NotImplementedException();
+            string sql = @"select
+                                r.id                    as ReservationId,
+                                r.date_of_reservation   as ReservationDate,
+
+                                c.id                    as ClientId,
+                                c.firstname             as FirstName,
+                                c.lastname              as LastName,
+                                c.passport_no           as PassportNumber,
+                                c.email_address         as Email,
+                                c.phone_no              as Phone,
+                                c.date_of_birth         as DateOfBirth,
+
+                                p.id                    as PackageId,
+                                p.name                  as PackageName,
+                                p.price                 as PackagePrice,
+                                p.package_type          as PackageType,
+                                d.name                  as DestinationName,
+                                t.name                  as TransportTypeName,
+                                a.name                  as AccommodationTypeName,
+                                aa.name                 as ActivityName,
+                                g.name                  as GuideName,
+                                p.length_in_days        as LengthInDays,
+                                s.name                  as ShipName,
+                                ro.name                 as RouteName,
+                                p.date_of_departure     as DepartureDate,
+                                cbt.name                as CabinTypeName
+                            from reservations r
+                            join clients c   ON r.client_id  = c.id
+                            join packages p  ON r.package_id = p.id
+                            join Destinations         d   ON p.destination_id         = d.id
+                            join TransportTypes       t   ON p.transport_type_id      = t.id
+                            join AccommodationTypes   a   ON p.accommodation_type_id  = a.id
+                            join AdditionalActivities aa  ON p.additional_activities_id = aa.id
+                            join Guides               g   ON p.guide_id               = g.id
+                            join Ships                s   ON p.ship_id                = s.id
+                            join Routes               ro  ON p.route_id               = ro.id
+                            join CabinTypes           cbt ON p.cabin_type_id          = cbt.id
+                            where r.id = @ReservationId;";
+
+            var results = ExecuteQuery(sql, cmd =>
+            {
+                var param = cmd.CreateParameter();
+                param.ParameterName = "@ReservationId";
+                param.Value = id;
+                cmd.Parameters.Add(param);
+            });
+
+            return results.Count > 0 ? results.FirstOrDefault() : null;
         }
 
         public IEnumerable<ReservationObject> GetAll()
         {
-            throw new NotImplementedException();
+            string sql = @"select
+                                r.id                    as ReservationId,
+                                r.date_of_reservation   as ReservationDate,
+
+                                c.id                    as ClientId,
+                                c.firstname             as FirstName,
+                                c.lastname              as LastName,
+                                c.passport_no           as PassportNumber,
+                                c.email_address         as Email,
+                                c.phone_no              as Phone,
+                                c.date_of_birth         as DateOfBirth,
+
+                                p.id                    as PackageId,
+                                p.name                  as PackageName,
+                                p.price                 as PackagePrice,
+                                p.package_type          as PackageType,
+                                d.name                  as DestinationName,
+                                t.name                  as TransportTypeName,
+                                a.name                  as AccommodationTypeName,
+                                aa.name                 as ActivityName,
+                                g.name                  as GuideName,
+                                p.length_in_days        as LengthInDays,
+                                s.name                  as ShipName,
+                                ro.name                 as RouteName,
+                                p.date_of_departure     as DepartureDate,
+                                cbt.name                as CabinTypeName
+                            FROM Reservations r
+                            JOIN Clients c   ON r.client_id  = c.id
+                            JOIN Packages p  ON r.package_id = p.id
+                            LEFT JOIN Destinations         d   ON p.destination_id         = d.id
+                            LEFT JOIN TransportTypes       t   ON p.transport_type_id      = t.id
+                            LEFT JOIN AccommodationTypes   a   ON p.accommodation_type_id  = a.id
+                            LEFT JOIN AdditionalActivities aa  ON p.additional_activities_id = aa.id
+                            LEFT JOIN Guides               g   ON p.guide_id               = g.id
+                            LEFT JOIN Ships                s   ON p.ship_id                = s.id
+                            LEFT JOIN Routes               ro  ON p.route_id               = ro.id
+                            LEFT JOIN CabinTypes           cbt ON p.cabin_type_id          = cbt.id;";
+
+            return ExecuteQuery(sql);
         }
 
         public IEnumerable<ReservationObject> GetForClient(int clientId)
         {
-            throw new NotImplementedException();
+            string sql = @"select
+                                r.id                    as ReservationId,
+                                r.date_of_reservation   as ReservationDate,
+
+                                c.id                    as ClientId,
+                                c.firstname             as FirstName,
+                                c.lastname              as LastName,
+                                c.passport_no           as PassportNumber,
+                                c.email_address         as Email,
+                                c.phone_no              as Phone,
+                                c.date_of_birth         as DateOfBirth,
+
+                                p.id                    as PackageId,
+                                p.name                  as PackageName,
+                                p.price                 as PackagePrice,
+                                p.package_type          as PackageType,
+                                d.name                  as DestinationName,
+                                t.name                  as TransportTypeName,
+                                a.name                  as AccommodationTypeName,
+                                aa.name                 as ActivityName,
+                                g.name                  as GuideName,
+                                p.length_in_days        as LengthInDays,
+                                s.name                  as ShipName,
+                                ro.name                 as RouteName,
+                                p.date_of_departure     as DepartureDate,
+                                cbt.name                as CabinTypeName
+                            FROM Reservations r
+                            JOIN Clients c   ON r.client_id  = c.id
+                            JOIN Packages p  ON r.package_id = p.id
+                            LEFT JOIN Destinations         d   ON p.destination_id         = d.id
+                            LEFT JOIN TransportTypes       t   ON p.transport_type_id      = t.id
+                            LEFT JOIN AccommodationTypes   a   ON p.accommodation_type_id  = a.id
+                            LEFT JOIN AdditionalActivities aa  ON p.additional_activities_id = aa.id
+                            LEFT JOIN Guides               g   ON p.guide_id               = g.id
+                            LEFT JOIN Ships                s   ON p.ship_id                = s.id
+                            LEFT JOIN Routes               ro  ON p.route_id               = ro.id
+                            LEFT JOIN CabinTypes           cbt ON p.cabin_type_id          = cbt.id
+                            WHERE r.client_id = @ClientId;";
+
+            return ExecuteQuery(sql, cmd =>
+            {
+                var param = cmd.CreateParameter();
+                param.ParameterName = "@ClientId";
+                param.Value = clientId;
+                cmd.Parameters.Add(param);
+            });
+
         }
 
-        public void RemoveReservation(int reservationId)
+        public int RemoveReservation(int reservationId)
         {
-            throw new NotImplementedException();
+            string sql = @"delete from reservations
+                           where id = @ReservationId";
+
+            return ExecuteNonQuery(sql, cmd =>
+            {
+                var param = cmd.CreateParameter();
+                param.ParameterName = "@ReservationId";
+                param.Value = reservationId;
+                cmd.Parameters.Add(param);
+            });
         }
     }
 }

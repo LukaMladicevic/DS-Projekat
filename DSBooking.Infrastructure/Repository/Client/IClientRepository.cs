@@ -17,6 +17,6 @@ namespace DSBooking.Infrastructure.Repository.Client
 
         // returns ID
         int AddClient(ClientAddObject clientAddObject);
-        void RemoveClient(int clientId);
+        int RemoveClient(int clientId);
     }
 }
