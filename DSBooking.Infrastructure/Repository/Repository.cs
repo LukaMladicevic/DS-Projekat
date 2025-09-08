@@ -52,7 +52,7 @@ namespace DSBooking.Infrastructure.Repository
             }
         }
 
-        protected void ExecuteNonQuery(string sql, Action<IDbCommand>? parameterize = null)
+        protected int ExecuteNonQuery(string sql, Action<IDbCommand>? parameterize = null)
         {
             var didOpen = DbConnection.Instance.Connection.State == ConnectionState.Closed;
             try
@@ -61,7 +61,8 @@ namespace DSBooking.Infrastructure.Repository
 
                 using var cmd = CreateCommand(sql);
                 parameterize?.Invoke(cmd);
-                cmd.ExecuteNonQuery();
+                int affectedRows = cmd.ExecuteNonQuery();
+                return affectedRows;
             }
             finally
             {

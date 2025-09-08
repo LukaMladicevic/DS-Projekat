@@ -30,14 +30,14 @@ namespace DSBooking.Infrastructure.Repository.Package
                            p.date_of_departure as DepartureDate,
                            c.name as CabinTypeName
                            from packages p join destinations d on p.destination_id = d.id
-                           join TransportTypes t on p.transport_type_id = t.id
-                           join AccomodationTypes a on p.accomodation_type_id = a.id
-                           join additionalactivites aa on p.additional_acttivities_id = aa.id
-                           join Guides g on p.guide_id = g.id
-                           join Ships s on p.ship_id = s.id
-                           join Routes r on p.route_id = r.id
-                           join CabinTypes c on p.cabin_type_id = c.id
-                           where id = @id";
+                           left join TransportTypes t on p.transport_type_id = t.id
+                           left join AccomodationTypes a on p.accomodation_type_id = a.id
+                           left join additionalactivites aa on p.additional_acttivities_id = aa.id
+                           left join Guides g on p.guide_id = g.id
+                           left join Ships s on p.ship_id = s.id
+                           left join Routes r on p.route_id = r.id
+                           left join CabinTypes c on p.cabin_type_id = c.id
+                           where p.id = @id";
 
             var results = ExecuteQuery(sql, cmd =>
             {
@@ -67,13 +67,13 @@ namespace DSBooking.Infrastructure.Repository.Package
                            p.date_of_departure as DepartureDate,
                            c.name as CabinTypeName
                            from packages p join destinations d on p.destination_id = d.id
-                           join TransportTypes t on p.transport_type_id = t.id
-                           join AccomodationTypes a on p.accomodation_type_id = a.id
-                           join additionalactivites aa on p.additional_acttivities_id = aa.id
-                           join Guides g on p.guide_id = g.id
-                           join Ships s on p.ship_id = s.id
-                           join Routes r on p.route_id = r.id
-                           join CabinTypes c on p.cabin_type_id = c.id";
+                           left join TransportTypes t on p.transport_type_id = t.id
+                           left join AccomodationTypes a on p.accomodation_type_id = a.id
+                           left join additionalactivites aa on p.additional_acttivities_id = aa.id
+                           left join Guides g on p.guide_id = g.id
+                           left join Ships s on p.ship_id = s.id
+                           left join Routes r on p.route_id = r.id
+                           left join CabinTypes c on p.cabin_type_id = c.id";
 
             return ExecuteQuery(sql);
         }
@@ -95,13 +95,13 @@ namespace DSBooking.Infrastructure.Repository.Package
                            p.date_of_departure as DepartureDate,
                            c.name as CabinTypeName
                            from packages p join destinations d on p.destination_id = d.id
-                           join TransportTypes t on p.transport_type_id = t.id
-                           join AccomodationTypes a on p.accomodation_type_id = a.id
-                           join additionalactivites aa on p.additional_acttivities_id = aa.id
-                           join Guides g on p.guide_id = g.id
-                           join Ships s on p.ship_id = s.id
-                           join Routes r on p.route_id = r.id
-                           join CabinTypes c on p.cabin_type_id = c.id
+                           left join TransportTypes t on p.transport_type_id = t.id
+                           left join AccomodationTypes a on p.accomodation_type_id = a.id
+                           left join additionalactivites aa on p.additional_acttivities_id = aa.id
+                           left join Guides g on p.guide_id = g.id
+                           left join Ships s on p.ship_id = s.id
+                           left join Routes r on p.route_id = r.id
+                           left join CabinTypes c on p.cabin_type_id = c.id
                            where p.id not in (
                                 select r.package_id
                                 from Reservations r

@@ -39,7 +39,7 @@ namespace DSBooking.Infrastructure.Repository.Client
                                   phone_no as Phone, 
                                   date_of_birth as DateOfBirth 
                            from clients 
-                           where id = @id;";
+                           where id = @Id;";
             var results = ExecuteQuery(sql, cmd =>
             {
                 var param = cmd.CreateParameter();
@@ -124,11 +124,11 @@ namespace DSBooking.Infrastructure.Repository.Client
             return results;
         }
 
-        public void RemoveClient(int clientId)
+        public int RemoveClient(int clientId)
         {
             string sql = @"DELETE FROM Clients WHERE id = @Id;";
 
-            ExecuteNonQuery(sql, cmd =>
+            return ExecuteNonQuery(sql, cmd =>
             {
                 var param = cmd.CreateParameter();
                 param.ParameterName = "@Id";

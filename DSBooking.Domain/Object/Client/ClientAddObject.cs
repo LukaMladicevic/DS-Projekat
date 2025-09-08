@@ -15,6 +15,7 @@ namespace DSBooking.Domain.Object.Client
         public string Email { get; }
         public string PhoneNo { get; }
 
+
         public ClientAddObject(string firstName, string lastName, string passportNo, DateTime dateOfBirth, string email, string phoneNo)
         {
             FirstName = firstName;

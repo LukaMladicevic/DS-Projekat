@@ -15,6 +15,6 @@ namespace DSBooking.Infrastructure.Repository.Client
         IEnumerable<ClientObject> GetByLastName(string filterString);
         IEnumerable<ClientObject> GetByPassportNo(string filterString);
         void AddClient(ClientAddObject clientAddObject);
-        void RemoveClient(int clientId);
+        int RemoveClient(int clientId);
     }
 }

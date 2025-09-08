@@ -45,13 +45,31 @@ namespace DSBooking.Infrastructure.Mappers
             return record.IsDBNull(ord) ? 0m : record.GetDecimal(ord);
         }
 
+        //protected DateTime GetDateTime(IDataRecord record, string columnName)
+        //{
+        //    var ord = Ordinal(record, columnName);
+        //    if (record.IsDBNull(ord))
+        //        throw new InvalidOperationException($"Column {columnName} is NULL but expected a DateTime.");
+
+        //    return record.GetDateTime(ord);
+        //}
+
         protected DateTime GetDateTime(IDataRecord record, string columnName)
         {
             var ord = Ordinal(record, columnName);
             if (record.IsDBNull(ord))
                 throw new InvalidOperationException($"Column {columnName} is NULL but expected a DateTime.");
 
-            return record.GetDateTime(ord);
+            // Use GetValue and Convert to handle DATE or DATETIME
+            var val = record.GetValue(ord);
+            return Convert.ToDateTime(val);
+        }
+
+
+        protected DateTime? GetDateTimeOrNull(IDataRecord record, string columnName)
+        {
+            var ord = Ordinal(record, columnName);
+            return record.IsDBNull(ord) ? null : record.GetDateTime(ord);
         }
     }
 }

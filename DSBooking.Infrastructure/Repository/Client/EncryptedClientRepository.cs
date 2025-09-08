@@ -74,9 +74,9 @@ namespace DSBooking.Infrastructure.Repository.Client
             return decrypted;
         }
 
-        public void RemoveClient(int clientId)
+        public int RemoveClient(int clientId)
         {
-            _wrapped.RemoveClient(clientId);
+            return _wrapped.RemoveClient(clientId);
         }
     }
 }

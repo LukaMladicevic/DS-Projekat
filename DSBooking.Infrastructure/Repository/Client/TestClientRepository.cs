@@ -29,7 +29,7 @@ namespace DSBooking.Infrastructure.Repository.Client
             throw new NotImplementedException();
         }
 
-        public void RemoveClient(int clientId)
+        public int RemoveClient(int clientId)
         {
             throw new NotImplementedException();
         }
