@@ -91,6 +91,8 @@ namespace DSBooking.Presentation.Presenter.Main
         protected override void DoOnClientFilterStringChange(string filterString)
         {
             ClientPresenter.SelectFilterString(filterString);
+            ClientPresenter.SelectFilterMode(ClientPresenter.SelectedFilterMode);
+            ClientPresenter.ShowClients();
         }
         protected override void DoOnClientFilterModeChange(ClientViewFilterMode filterMode)
         {

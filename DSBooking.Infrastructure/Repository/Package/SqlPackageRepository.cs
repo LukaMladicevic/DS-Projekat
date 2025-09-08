@@ -15,8 +15,8 @@ namespace DSBooking.Infrastructure.Repository.Package
 
         public PackageObject? Get(int id)
         {
-            string sql = @"select id as PackageId,
-                           name as PackageName,
+            string sql = @"select p.id as PackageId,
+                           p.name as PackageName,
                            p.price as PackagePrice,
                            p.package_type as PackageType,
                            d.name as DestinationName,
@@ -24,15 +24,15 @@ namespace DSBooking.Infrastructure.Repository.Package
                            a.name as AccommodationTypeName,
                            aa.name as ActivityName,
                            g.name as GuideName,
-                           length_in_days,
+                           p.length_in_days as LengthInDays,
                            s.name as ShipName,
                            r.name as RouteName,
-                           date_of_departure as DepartureDate,
+                           p.date_of_departure as DepartureDate,
                            c.name as CabinTypeName
-                           from packages p join Destionations d on p.destination_id = d.id
+                           from packages p join destinations d on p.destination_id = d.id
                            join TransportTypes t on p.transport_type_id = t.id
                            join AccomodationTypes a on p.accomodation_type_id = a.id
-                           join AdditionalActivites aa on p.additional_acttivities_id = aa.id
+                           join additionalactivites aa on p.additional_acttivities_id = aa.id
                            join Guides g on p.guide_id = g.id
                            join Ships s on p.ship_id = s.id
                            join Routes r on p.route_id = r.id
@@ -52,8 +52,8 @@ namespace DSBooking.Infrastructure.Repository.Package
 
         public IEnumerable<PackageObject> GetAll()
         {
-            string sql = @"select id as PackageId,
-                           name as PackageName,
+            string sql = @"select p.id as PackageId,
+                           p.name as PackageName,
                            p.price as PackagePrice,
                            p.package_type as PackageType,
                            d.name as DestinationName,
@@ -61,15 +61,15 @@ namespace DSBooking.Infrastructure.Repository.Package
                            a.name as AccommodationTypeName,
                            aa.name as ActivityName,
                            g.name as GuideName,
-                           length_in_days,
+                           p.length_in_days as LengthInDays,
                            s.name as ShipName,
                            r.name as RouteName,
-                           date_of_departure as DepartureDate,
+                           p.date_of_departure as DepartureDate,
                            c.name as CabinTypeName
-                           from packages p join Destionations d on p.destination_id = d.id
+                           from packages p join destinations d on p.destination_id = d.id
                            join TransportTypes t on p.transport_type_id = t.id
                            join AccomodationTypes a on p.accomodation_type_id = a.id
-                           join AdditionalActivites aa on p.additional_acttivities_id = aa.id
+                           join additionalactivites aa on p.additional_acttivities_id = aa.id
                            join Guides g on p.guide_id = g.id
                            join Ships s on p.ship_id = s.id
                            join Routes r on p.route_id = r.id
@@ -80,8 +80,8 @@ namespace DSBooking.Infrastructure.Repository.Package
 
         public IEnumerable<PackageObject> GetAllAvailableForClient(int clientId)
         {
-            string sql = @"select id as PackageId,
-                           name as PackageName,
+            string sql = @"select p.id as PackageId,
+                           p.name as PackageName,
                            p.price as PackagePrice,
                            p.package_type as PackageType,
                            d.name as DestinationName,
@@ -89,15 +89,15 @@ namespace DSBooking.Infrastructure.Repository.Package
                            a.name as AccommodationTypeName,
                            aa.name as ActivityName,
                            g.name as GuideName,
-                           length_in_days,
+                           p.length_in_days as LengthInDays,
                            s.name as ShipName,
                            r.name as RouteName,
-                           date_of_departure as DepartureDate,
+                           p.date_of_departure as DepartureDate,
                            c.name as CabinTypeName
-                           from packages p join Destionations d on p.destination_id = d.id
+                           from packages p join destinations d on p.destination_id = d.id
                            join TransportTypes t on p.transport_type_id = t.id
                            join AccomodationTypes a on p.accomodation_type_id = a.id
-                           join AdditionalActivites aa on p.additional_acttivities_id = aa.id
+                           join additionalactivites aa on p.additional_acttivities_id = aa.id
                            join Guides g on p.guide_id = g.id
                            join Ships s on p.ship_id = s.id
                            join Routes r on p.route_id = r.id

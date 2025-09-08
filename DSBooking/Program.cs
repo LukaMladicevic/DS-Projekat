@@ -12,7 +12,8 @@ namespace DSBooking
         {
             ApplicationConfiguration.Initialize();
 
-            InitFacade initFacade = new InitFacade("config.txt");
+            InitFacade initFacade = new InitFacade(@"C:\Users\Emilija\source\repos\DS-Projekat\DS_Projekat\configLITE.txt");
+
             MainControlView mainView = initFacade.Initialize();
 
             System.Windows.Forms.Application.Run(mainView);

@@ -47,9 +47,9 @@
             // 
             agencyNameLabel.AutoSize = true;
             agencyNameLabel.Font = new Font("Segoe UI", 30F);
-            agencyNameLabel.Location = new Point(12, 19);
+            agencyNameLabel.Location = new Point(14, 25);
             agencyNameLabel.Name = "agencyNameLabel";
-            agencyNameLabel.Size = new Size(218, 54);
+            agencyNameLabel.Size = new Size(272, 67);
             agencyNameLabel.TabIndex = 2;
             agencyNameLabel.Text = "DSBooking";
             // 
@@ -57,10 +57,10 @@
             // 
             addClientButton.Anchor = AnchorStyles.None;
             addClientButton.Font = new Font("Segoe UI", 18F);
-            addClientButton.Location = new Point(863, 20);
-            addClientButton.Margin = new Padding(50, 20, 50, 20);
+            addClientButton.Location = new Point(987, 27);
+            addClientButton.Margin = new Padding(57, 27, 57, 27);
             addClientButton.Name = "addClientButton";
-            addClientButton.Size = new Size(289, 57);
+            addClientButton.Size = new Size(330, 75);
             addClientButton.TabIndex = 0;
             addClientButton.Text = "Dodaj klijenta...";
             addClientButton.UseVisualStyleBackColor = true;
@@ -71,9 +71,11 @@
             topPanel.Controls.Add(agencyNameLabel);
             topPanel.Dock = DockStyle.Top;
             topPanel.Location = new Point(0, 0);
+            topPanel.Margin = new Padding(3, 4, 3, 4);
             topPanel.Name = "topPanel";
-            topPanel.Size = new Size(1222, 93);
+            topPanel.Size = new Size(1397, 124);
             topPanel.TabIndex = 3;
+            topPanel.Paint += topPanel_Paint;
             // 
             // bottomLayoutPanel
             // 
@@ -81,15 +83,16 @@
             bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
             bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
-            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
+            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 23F));
             bottomLayoutPanel.Controls.Add(modeComboBox, 0, 0);
             bottomLayoutPanel.Controls.Add(addClientButton, 2, 0);
             bottomLayoutPanel.Dock = DockStyle.Bottom;
-            bottomLayoutPanel.Location = new Point(0, 466);
+            bottomLayoutPanel.Location = new Point(0, 622);
+            bottomLayoutPanel.Margin = new Padding(3, 4, 3, 4);
             bottomLayoutPanel.Name = "bottomLayoutPanel";
             bottomLayoutPanel.RowCount = 1;
             bottomLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            bottomLayoutPanel.Size = new Size(1222, 97);
+            bottomLayoutPanel.Size = new Size(1397, 129);
             bottomLayoutPanel.TabIndex = 0;
             // 
             // modeComboBox
@@ -99,11 +102,11 @@
             modeComboBox.Font = new Font("Segoe UI", 24F);
             modeComboBox.FormattingEnabled = true;
             modeComboBox.IntegralHeight = false;
-            modeComboBox.ItemHeight = 45;
-            modeComboBox.Location = new Point(108, 22);
-            modeComboBox.Margin = new Padding(50, 20, 50, 20);
+            modeComboBox.ItemHeight = 54;
+            modeComboBox.Location = new Point(123, 33);
+            modeComboBox.Margin = new Padding(57, 27, 57, 27);
             modeComboBox.Name = "modeComboBox";
-            modeComboBox.Size = new Size(211, 53);
+            modeComboBox.Size = new Size(241, 62);
             modeComboBox.TabIndex = 1;
             modeComboBox.SelectedIndexChanged += modeComboBox_SelectedIndexChanged;
             // 
@@ -115,20 +118,23 @@
             centerLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 45F));
             centerLayoutPanel.Controls.Add(panel1, 1, 0);
             centerLayoutPanel.Dock = DockStyle.Fill;
-            centerLayoutPanel.Location = new Point(0, 93);
+            centerLayoutPanel.Location = new Point(0, 124);
+            centerLayoutPanel.Margin = new Padding(3, 4, 3, 4);
             centerLayoutPanel.Name = "centerLayoutPanel";
-            centerLayoutPanel.Padding = new Padding(50, 0, 50, 0);
+            centerLayoutPanel.Padding = new Padding(57, 0, 57, 0);
             centerLayoutPanel.RowCount = 1;
             centerLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            centerLayoutPanel.Size = new Size(1222, 373);
+            centerLayoutPanel.Size = new Size(1397, 498);
             centerLayoutPanel.TabIndex = 4;
             // 
             // panel1
             // 
-            panel1.Location = new Point(557, 3);
+            panel1.Location = new Point(637, 4);
+            panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(106, 367);
+            panel1.Size = new Size(121, 489);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
             // 
             // sqlCommand1
             // 
@@ -137,12 +143,13 @@
             // 
             // MainControlView
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1222, 563);
+            ClientSize = new Size(1397, 751);
             Controls.Add(centerLayoutPanel);
             Controls.Add(topPanel);
             Controls.Add(bottomLayoutPanel);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "MainControlView";
             Text = "MainView";
             Load += MainView_Load;

@@ -1,0 +1,2 @@
+DSBOOKING
+Server=(localdb)\novak;Database=SchoolDB;Trusted_Connection=True;

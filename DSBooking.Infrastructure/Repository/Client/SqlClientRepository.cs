@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Reflection.Metadata.Ecma335;
 using System.Text;
@@ -46,6 +47,9 @@ namespace DSBooking.Infrastructure.Repository.Client
                 param.Value = id;
                 cmd.Parameters.Add(param);
             });
+            Debug.WriteLine("Number of clients returned: " + results.Count());
+
+
             return results.Count > 0 ? results.FirstOrDefault() : null;
         }
 
@@ -68,6 +72,7 @@ namespace DSBooking.Infrastructure.Repository.Client
                 param.Value = "%" + filterString + "%";
                 cmd.Parameters.Add(param);
             });
+            Debug.WriteLine("Number of clients returned: " + results.Count());
 
             return results;
         }
@@ -91,6 +96,7 @@ namespace DSBooking.Infrastructure.Repository.Client
                 param.Value = "%" + filterString + "%";
                 cmd.Parameters.Add(param);
             });
+            Debug.WriteLine("Number of clients returned: " + results.Count());
 
             return results;
         }
@@ -114,7 +120,7 @@ namespace DSBooking.Infrastructure.Repository.Client
                 param.Value = "%" + filterString + "%";
                 cmd.Parameters.Add(param);
             });
-
+            Debug.WriteLine("Number of clients returned: " + results.Count());
             return results;
         }
 

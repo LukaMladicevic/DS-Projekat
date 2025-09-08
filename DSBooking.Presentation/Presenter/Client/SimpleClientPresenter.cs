@@ -38,6 +38,7 @@ namespace DSBooking.Presentation.Presenter.Client
                 default:
                     throw new NotImplementedException();
             }
+
         }
 
         public override void SelectFilterString(string filterString)

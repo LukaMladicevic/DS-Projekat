@@ -132,6 +132,16 @@ namespace DSBooking.Presentation.View.Main
             }
         }
 
+        private void topPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
         //private void DatabaseBackupTimer_Tick(object sender, EventArgs e)
         //{
         //    DatabaseBackup?.Invoke(this, EventArgs.Empty);

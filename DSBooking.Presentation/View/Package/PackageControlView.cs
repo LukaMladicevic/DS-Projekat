@@ -36,5 +36,10 @@ namespace DSBooking.Presentation.View.Package
         {
             OnViewLoad?.Invoke(this, EventArgs.Empty);
         }
+
+        private void packageDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

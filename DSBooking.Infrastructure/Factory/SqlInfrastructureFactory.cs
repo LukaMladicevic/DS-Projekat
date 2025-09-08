@@ -8,6 +8,9 @@ using System.Threading.Tasks;
 using DSBooking.Infrastructure.Backup;
 using Microsoft.Data.SqlClient;
 
+//using Microsoft.Data.SqlClient;
+using MySql.Data.MySqlClient;
+
 namespace DSBooking.Infrastructure.Factory
 {
     public class SqlInfrastructureFactory : IDbInfrastructureFactory
@@ -26,7 +29,7 @@ namespace DSBooking.Infrastructure.Factory
 
         public IDbConnection CreateConnection()
         {
-            return new SqlConnection();
+            return new MySqlConnection(_connectionString);
 
             //return new SqlConnection(_connectionString);
         }

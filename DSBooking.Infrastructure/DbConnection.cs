@@ -2,6 +2,7 @@
 using System.Data;
 using DSBooking.Infrastructure.Backup;
 using DSBooking.Infrastructure.Factory;
+using System.Diagnostics; // <-- important
 
 namespace DSBooking.Infrastructure
 {
@@ -30,8 +31,10 @@ namespace DSBooking.Infrastructure
             {
                 if (_instance != null)
                     throw new InvalidOperationException("DbConnection is already initialized.");
-
+                //MessageBox.Show("InitFacade konekcija");
+                Debug.WriteLine("Before creating connection...");
                 IDbConnection connection = factory.CreateConnection();
+                Debug.WriteLine("after creating connection...");
                 IDbBackupProvider backupProvider = factory.CreateBackupProvider();
 
                 _instance = new DbConnection(connection, backupProvider);

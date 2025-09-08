@@ -15,10 +15,21 @@ namespace DSBooking.Presentation.View.Client
 {
     public partial class ClientControlView : UserControl, IClientControlView
     {
+        private readonly BindingSource _bindingSource = new BindingSource();
         public ClientControlView()
         {
-            InitializeComponent();
 
+            InitializeComponent();
+            clientsDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            clientsDataGridView.MultiSelect = false;
+            clientsDataGridView.ReadOnly = true; // optional, prevents editing
+            clientsDataGridView.RowHeadersVisible = false; // optional, hide headers
+            clientsDataGridView.AutoGenerateColumns = true;
+            clientsDataGridView.DataSource = _bindingSource;
+
+
+            //clientsDataGridView.CellClick += clientsDataGridView_CellClick;
+            //clientsDataGridView.SelectionChanged += ClientsDataGridView_SelectionChanged;
             clientsDataGridView.ScrollBars = ScrollBars.None;
             clientsDataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
 
@@ -48,8 +59,26 @@ namespace DSBooking.Presentation.View.Client
 
         public void ShowClients(IEnumerable<ClientObject> clients)
         {
-            clientsDataGridView.DataSource = clients;
+            //clientsDataGridView.DataSource = clients;
+            //clientsDataGridView.Refresh();
+            _bindingSource.DataSource = clients?.ToList();
             clientsDataGridView.Refresh();
+        }
+
+        private void ClientsDataGridView_SelectionChanged(object? sender, EventArgs e)
+        {
+            // CurrentRow is null when no rows are present
+            MessageBox.Show("Cell cliecked"); ;
+            var row = clientsDataGridView.CurrentRow;
+            if (row == null) return;
+
+            var client = row.DataBoundItem as ClientObject;
+            if (client != null)
+            {
+                // optional debug:
+                // MessageBox.Show($"Selected client: {client.FirstName} {client.LastName}");
+                OnClientSelection?.Invoke(this, client);
+            }
         }
 
         private void ClientControlView_Load(object sender, EventArgs e)
@@ -68,6 +97,22 @@ namespace DSBooking.Presentation.View.Client
         private void searchTextBox_TextChanged(object sender, EventArgs e)
         {
             OnFilterStringChange?.Invoke(this, searchTextBox.Text);
+        }
+
+        private void clientsDataGridView_CellClick(object? sender, DataGridViewCellEventArgs e)
+        {
+            MessageBox.Show("Cell cliecked"); ;
+
+            if (e.RowIndex >= 0 && e.RowIndex < clientsDataGridView.Rows.Count)
+            {
+                // Get the ClientObject bound to this row
+                var client = clientsDataGridView.Rows[e.RowIndex].DataBoundItem as ClientObject;
+                if (client != null)
+                {
+                    OnClientSelection?.Invoke(this, client);
+                    HighlightClient(client); // optional: highlight in the grid
+                }
+            }
         }
     }
 }

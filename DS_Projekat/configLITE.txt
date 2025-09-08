@@ -1,0 +1,2 @@
+DSBooking
+Data Source=C:\Users\Emilija\Documents\database\BookingDb.db

@@ -20,11 +20,12 @@ namespace DSBooking.Infrastructure.Factory
 
         public IDbBackupProvider CreateBackupProvider()
         {
-            throw new NotImplementedException();
+            return new SqlBackupProvider();
         }
 
         public IDbConnection CreateConnection()
         {
+
             return new SqliteConnection(_connectionString);
         }
     }
