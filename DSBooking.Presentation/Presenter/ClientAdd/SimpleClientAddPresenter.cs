@@ -44,11 +44,13 @@ namespace DSBooking.Presentation.Presenter.ClientAdd
             }
         }
 
-        public override void DoOnClientAddSubmitted(ClientAddObject addObject)
+        public override bool DoOnClientAddSubmitted(ClientAddObject addObject)
         {
             AddResult addResult = Service.AddClient(addObject);
 
             MarkAll(addResult);
+
+            return addResult.IsSuccess();
         }
     }
 }

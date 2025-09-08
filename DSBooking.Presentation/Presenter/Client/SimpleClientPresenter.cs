@@ -12,8 +12,15 @@ namespace DSBooking.Presentation.Presenter.Client
 {
     public class SimpleClientPresenter : ClientPresenter
     {
+        private Dictionary<ClientViewFilterMode, IFilterStrategy> _filterStrategies;
+
         public SimpleClientPresenter(IClientView clientView, IClientService clientService) : base(clientView, clientService)
         {
+            _filterStrategies = new Dictionary<ClientViewFilterMode, IFilterStrategy>();
+
+            _filterStrategies.Add(ClientViewFilterMode.FilterFirstName, new FirstNameFilterStrategy(clientService));
+            _filterStrategies.Add(ClientViewFilterMode.FilterLastName, new LastNameFilterStrategy(clientService));
+            _filterStrategies.Add(ClientViewFilterMode.FilterPassportNo, new PassportFilterStrategy(clientService));
         }
 
         public override void SelectClient(ClientObject? c)
@@ -25,40 +32,17 @@ namespace DSBooking.Presentation.Presenter.Client
         public override void SelectFilterMode(ClientViewFilterMode mode)
         {
             SelectedFilterMode = mode;
-            switch (mode)
-            {
-                case ClientViewFilterMode.FilterFirstName:
-                    Clients = Service.GetByFirstName(FilterString);
-                    break;
-                case ClientViewFilterMode.FilterLastName:
-                    Clients = Service.GetByLastName(FilterString);
-                    break;
-                case ClientViewFilterMode.FilterPassportNo:
-                    Clients = Service.GetByPassportNo(FilterString);
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
+
+
+            Clients = _filterStrategies[SelectedFilterMode].Filter(FilterString);
 
         }
 
         public override void SelectFilterString(string filterString)
         {
             FilterString = filterString;
-            switch (SelectedFilterMode)
-            {
-                case ClientViewFilterMode.FilterFirstName:
-                    Clients = Service.GetByFirstName(FilterString);
-                    break;
-                case ClientViewFilterMode.FilterLastName:
-                    Clients = Service.GetByLastName(FilterString);
-                    break;
-                case ClientViewFilterMode.FilterPassportNo:
-                    Clients = Service.GetByPassportNo(FilterString);
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
+
+            Clients = _filterStrategies[SelectedFilterMode].Filter(filterString);
         }
 
         public override void ShowClients()

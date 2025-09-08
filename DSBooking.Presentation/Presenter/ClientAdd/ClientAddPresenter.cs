@@ -21,6 +21,6 @@ namespace DSBooking.Presentation.Presenter.ClientAdd
             Service = clientService;
         }
 
-        public abstract void DoOnClientAddSubmitted(ClientAddObject addObject);
+        public abstract bool DoOnClientAddSubmitted(ClientAddObject addObject);
     }
 }

@@ -67,9 +67,9 @@ namespace DSBooking.Presentation.Presenter.Main
         }
         protected override void DoOnClientAddSubmitted(ClientAddObject newClient)
         {
-            ClientAddPresenter.DoOnClientAddSubmitted(newClient);
+            bool success = ClientAddPresenter.DoOnClientAddSubmitted(newClient);
 
-            MainView.CloseAddClientDialog();
+            if(success) MainView.CloseAddClientDialog();
         }
 
         protected override void DoOnClientAddCancelled()

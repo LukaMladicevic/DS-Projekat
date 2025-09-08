@@ -107,7 +107,7 @@ namespace DSBooking.Infrastructure.Repository.Client
                                   passport_no as PassportNumber, 
                                   date_of_birth as DateOfBirth,
                                   email_address as Email, 
-                                  phone_no as Phone, 
+                                  phone_no as Phone
                            from clients 
                            where lastname like @lastname;";
 
@@ -133,7 +133,7 @@ namespace DSBooking.Infrastructure.Repository.Client
                                   date_of_birth as DateOfBirth,
                                   passport_no as PassportNumber, 
                                   email_address as Email, 
-                                  phone_no as Phone, 
+                                  phone_no as Phone
                            from clients 
                            where passport_no like @passport_no;";
 
