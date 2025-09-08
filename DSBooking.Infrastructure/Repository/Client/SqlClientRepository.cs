@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using DSBooking.Domain.Object.Client;
 using DSBooking.Infrastructure.Mappers;
+using ZstdSharp.Unsafe;
 
 namespace DSBooking.Infrastructure.Repository.Client
 {
@@ -16,17 +17,33 @@ namespace DSBooking.Infrastructure.Repository.Client
         public SqlClientRepository(ClientMapper mapper) : base(mapper) { }
         public void AddClient(ClientAddObject clientAddObject)
         {
-            string sql = @"INSERT INTO Clients (firstname, lastname, passport_no, email_address, phone_no, date_of_birth)
-                          VALUES (@FirstName, @LastName, @PassportNo, @Email, @PhoneNo, @DateOfBirth);";
+            string sql = @"INSERT INTO Clients (firstname, lastname, date_of_birth, passport_no, email_address, phone_no)
+                          VALUES (@FirstName, @LastName, @DateOfBirth, @PassportNo, @Email, @PhoneNo);";
             ExecuteNonQuery(sql, cmd =>
             {
                 var p1 = cmd.CreateParameter(); p1.ParameterName = "@FirstName"; p1.Value = clientAddObject.FirstName; cmd.Parameters.Add(p1);
                 var p2 = cmd.CreateParameter(); p2.ParameterName = "@LastName"; p2.Value = clientAddObject.LastName; cmd.Parameters.Add(p2);
                 var p3 = cmd.CreateParameter(); p3.ParameterName = "@PassportNo"; p3.Value = clientAddObject.PassportNo; cmd.Parameters.Add(p3);
-                var p4 = cmd.CreateParameter(); p4.ParameterName = "@Email"; p4.Value = clientAddObject.Email; cmd.Parameters.Add(p4);
-                var p5 = cmd.CreateParameter(); p5.ParameterName = "@PhoneNo"; p5.Value = clientAddObject.PhoneNo; cmd.Parameters.Add(p5);
-                var p6 = cmd.CreateParameter(); p6.ParameterName = "@DateOfBirth"; p6.Value = clientAddObject.DateOfBirth; cmd.Parameters.Add(p6);
+                var p4 = cmd.CreateParameter(); p4.ParameterName = "@DateOfBirth"; p4.Value = clientAddObject.DateOfBirth; cmd.Parameters.Add(p4);
+                var p5 = cmd.CreateParameter(); p5.ParameterName = "@Email"; p5.Value = clientAddObject.Email; cmd.Parameters.Add(p5);
+                var p6 = cmd.CreateParameter(); p6.ParameterName = "@PhoneNo"; p6.Value = clientAddObject.PhoneNo; cmd.Parameters.Add(p6);
             });
+        }
+
+        private IEnumerable<ClientObject> GetAll()
+        {
+            string sql = @"select id as ClientId, 
+                                  firstname as FirstName, 
+                                  lastname as LastName, 
+                                  date_of_birth as DateOfBirth,
+                                  passport_no as PassportNumber, 
+                                  email_address as Email, 
+                                  phone_no as Phone
+                           from clients;";
+
+            var results = ExecuteQuery(sql);
+
+            return results;
         }
 
         public ClientObject? Get(int id)
@@ -34,10 +51,10 @@ namespace DSBooking.Infrastructure.Repository.Client
             string sql = @"select id as ClientId, 
                                   firstname as FirstName, 
                                   lastname as LastName, 
+                                  date_of_birth as DateOfBirth,
                                   passport_no as PassportNumber, 
                                   email_address as Email, 
-                                  phone_no as Phone, 
-                                  date_of_birth as DateOfBirth 
+                                  phone_no as Phone
                            from clients 
                            where id = @Id;";
             var results = ExecuteQuery(sql, cmd =>
@@ -55,13 +72,15 @@ namespace DSBooking.Infrastructure.Repository.Client
 
         public IEnumerable<ClientObject> GetByFirstName(string filterString)
         {
+            if (filterString == string.Empty)
+                return GetAll();
             string sql = @"select id as ClientId, 
                                   firstname as FirstName, 
                                   lastname as LastName, 
+                                  date_of_birth as DateOfBirth,
                                   passport_no as PassportNumber, 
                                   email_address as Email, 
-                                  phone_no as Phone, 
-                                  date_of_birth as DateOfBirth 
+                                  phone_no as Phone
                            from clients 
                            where firstname like @firstname;";
 
@@ -79,13 +98,16 @@ namespace DSBooking.Infrastructure.Repository.Client
 
         public IEnumerable<ClientObject> GetByLastName(string filterString)
         {
+            if(filterString == string.Empty)
+                return GetAll();
+
             string sql = @"select id as ClientId, 
                                   firstname as FirstName, 
                                   lastname as LastName, 
                                   passport_no as PassportNumber, 
+                                  date_of_birth as DateOfBirth,
                                   email_address as Email, 
                                   phone_no as Phone, 
-                                  date_of_birth as DateOfBirth 
                            from clients 
                            where lastname like @lastname;";
 
@@ -103,13 +125,15 @@ namespace DSBooking.Infrastructure.Repository.Client
 
         public IEnumerable<ClientObject> GetByPassportNo(string filterString)
         {
+            if (filterString == string.Empty)
+                return GetAll();
             string sql = @"select id as ClientId, 
                                   firstname as FirstName, 
                                   lastname as LastName, 
+                                  date_of_birth as DateOfBirth,
                                   passport_no as PassportNumber, 
                                   email_address as Email, 
                                   phone_no as Phone, 
-                                  date_of_birth as DateOfBirth 
                            from clients 
                            where passport_no like @passport_no;";
 

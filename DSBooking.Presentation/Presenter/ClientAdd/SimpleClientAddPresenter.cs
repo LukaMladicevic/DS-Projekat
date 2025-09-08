@@ -10,6 +10,7 @@ using DSBooking.Domain.Error.Client;
 using DSBooking.Domain.Object.Client;
 using DSBooking.Presentation.View.Client;
 using DSBooking.Presentation.View.ClientAdd;
+using DSBooking.Presentation.View.Main;
 
 namespace DSBooking.Presentation.Presenter.ClientAdd
 {

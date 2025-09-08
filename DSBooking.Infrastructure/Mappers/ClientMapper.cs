@@ -12,12 +12,21 @@ namespace DSBooking.Infrastructure.Mappers
     {
         public ClientObject Map(IDataRecord record)
         {
+            DateTime date;
+            try
+            {
+                date = GetDateTime(record, "DateOfBirth");
+            }
+            catch(Exception ex)
+            {
+                date = DateTime.MinValue;
+            }
             return new ClientObject(
                 GetInt(record, "ClientId"),
                 GetString(record, "FirstName"),
                 GetString(record, "LastName"),
                 GetString(record, "PassportNumber"),
-                GetDateTime(record, "DateOfBirth"),
+                date,
                 GetString(record, "Email"),
                 GetString(record, "Phone")
             );

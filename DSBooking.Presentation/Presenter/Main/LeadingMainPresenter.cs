@@ -47,6 +47,8 @@ namespace DSBooking.Presentation.Presenter.Main
 
         protected override void DoOnViewLoad()
         {
+            ClientPresenter.SelectFilterMode(ClientViewFilterMode.FilterFirstName);
+            ClientPresenter.SelectFilterString("");
             ClientPresenter.ShowClients();
             ClientPresenter.SelectClient(ClientPresenter.SelectedClient);
 
@@ -66,6 +68,8 @@ namespace DSBooking.Presentation.Presenter.Main
         protected override void DoOnClientAddSubmitted(ClientAddObject newClient)
         {
             ClientAddPresenter.DoOnClientAddSubmitted(newClient);
+
+            MainView.CloseAddClientDialog();
         }
 
         protected override void DoOnClientAddCancelled()
@@ -91,12 +95,13 @@ namespace DSBooking.Presentation.Presenter.Main
         protected override void DoOnClientFilterStringChange(string filterString)
         {
             ClientPresenter.SelectFilterString(filterString);
-            ClientPresenter.SelectFilterMode(ClientPresenter.SelectedFilterMode);
             ClientPresenter.ShowClients();
         }
         protected override void DoOnClientFilterModeChange(ClientViewFilterMode filterMode)
         {
             ClientPresenter.SelectFilterMode(filterMode);
+            ClientPresenter.ShowClients();
+
         }
     }
 }

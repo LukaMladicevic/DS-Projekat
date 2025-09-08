@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DSBooking.Application.Service.Client;
 using DSBooking.Domain.Object.Client;
 using DSBooking.Presentation.View.Client;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 
 namespace DSBooking.Presentation.Presenter.Client
 {
@@ -44,6 +45,20 @@ namespace DSBooking.Presentation.Presenter.Client
         public override void SelectFilterString(string filterString)
         {
             FilterString = filterString;
+            switch (SelectedFilterMode)
+            {
+                case ClientViewFilterMode.FilterFirstName:
+                    Clients = Service.GetByFirstName(FilterString);
+                    break;
+                case ClientViewFilterMode.FilterLastName:
+                    Clients = Service.GetByLastName(FilterString);
+                    break;
+                case ClientViewFilterMode.FilterPassportNo:
+                    Clients = Service.GetByPassportNo(FilterString);
+                    break;
+                default:
+                    throw new NotImplementedException();
+            }
         }
 
         public override void ShowClients()

@@ -38,10 +38,12 @@ namespace DSBooking.Infrastructure.Repository
                 using var cmd = CreateCommand(sql);
                 parameterize?.Invoke(cmd);
 
-                using var reader = cmd.ExecuteReader();
                 var list = new List<T>();
+
+                using var reader = cmd.ExecuteReader();
                 while (reader.Read())
                     list.Add(Mapper.Map(reader));
+
 
                 return list;
             }

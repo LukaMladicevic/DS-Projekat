@@ -1,2 +1,2 @@
 DSTravel
-server=123
+Data Source=C:\Users\novak\source\repos\DS-ProjekatEMILIJA\DSBooking.Database\db_sqlite.db

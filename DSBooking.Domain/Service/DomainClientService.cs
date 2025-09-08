@@ -28,7 +28,7 @@ namespace DSBooking.Domain.Service
                 errors.Add(new InvalidEmailError());
             if(clientAddObject.PhoneNo == string.Empty)
                 errors.Add(new InvalidPhoneNoError());
-            if(clientAddObject.PassportNo == string.Empty)
+            if((clientAddObject.PassportNo == string.Empty) || (clientAddObject.PassportNo.Length != 13))
                 errors.Add(new InvalidPassportNoError());
 
             return errors;

@@ -27,10 +27,10 @@ namespace DSBooking.Infrastructure.Repository.Reservation
                                 c.id                    as ClientId,
                                 c.firstname             as FirstName,
                                 c.lastname              as LastName,
+                                c.date_of_birth         as DateOfBirth,
                                 c.passport_no           as PassportNumber,
                                 c.email_address         as Email,
                                 c.phone_no              as Phone,
-                                c.date_of_birth         as DateOfBirth,
 
                                 p.id                    as PackageId,
                                 p.name                  as PackageName,
@@ -47,16 +47,16 @@ namespace DSBooking.Infrastructure.Repository.Reservation
                                 p.date_of_departure     as DepartureDate,
                                 cbt.name                as CabinTypeName
                             from reservations r
-                            join clients c   ON r.client_id  = c.id
-                            join packages p  ON r.package_id = p.id
-                            join Destinations         d   ON p.destination_id         = d.id
-                            join TransportTypes       t   ON p.transport_type_id      = t.id
-                            join AccommodationTypes   a   ON p.accommodation_type_id  = a.id
-                            join AdditionalActivities aa  ON p.additional_activities_id = aa.id
-                            join Guides               g   ON p.guide_id               = g.id
-                            join Ships                s   ON p.ship_id                = s.id
-                            join Routes               ro  ON p.route_id               = ro.id
-                            join CabinTypes           cbt ON p.cabin_type_id          = cbt.id
+                            left join clients c   ON r.client_id  = c.id
+                            left join packages p  ON r.package_id = p.id
+                            left join Destinations         d   ON p.destination_id         = d.id
+                            left join TransportTypes       t   ON p.transport_type_id      = t.id
+                            left join AccommodationTypes   a   ON p.accommodation_type_id  = a.id
+                            left join AdditionalActivities aa  ON p.additional_activities_id = aa.id
+                            left join Guides               g   ON p.guide_id               = g.id
+                            left join Ships                s   ON p.ship_id                = s.id
+                            left join Routes               ro  ON p.route_id               = ro.id
+                            left join CabinTypes           cbt ON p.cabin_type_id          = cbt.id
                             where r.id = @ReservationId;";
 
             var results = ExecuteQuery(sql, cmd =>
@@ -79,10 +79,10 @@ namespace DSBooking.Infrastructure.Repository.Reservation
                                 c.id                    as ClientId,
                                 c.firstname             as FirstName,
                                 c.lastname              as LastName,
+                                c.date_of_birth         as DateOfBirth,
                                 c.passport_no           as PassportNumber,
                                 c.email_address         as Email,
                                 c.phone_no              as Phone,
-                                c.date_of_birth         as DateOfBirth,
 
                                 p.id                    as PackageId,
                                 p.name                  as PackageName,
@@ -122,10 +122,10 @@ namespace DSBooking.Infrastructure.Repository.Reservation
                                 c.id                    as ClientId,
                                 c.firstname             as FirstName,
                                 c.lastname              as LastName,
+                                c.date_of_birth         as DateOfBirth,
                                 c.passport_no           as PassportNumber,
                                 c.email_address         as Email,
                                 c.phone_no              as Phone,
-                                c.date_of_birth         as DateOfBirth,
 
                                 p.id                    as PackageId,
                                 p.name                  as PackageName,

@@ -31,8 +31,8 @@ namespace DSBooking.Infrastructure.Repository.Package
                            c.name as CabinTypeName
                            from packages p join destinations d on p.destination_id = d.id
                            left join TransportTypes t on p.transport_type_id = t.id
-                           left join AccomodationTypes a on p.accomodation_type_id = a.id
-                           left join additionalactivites aa on p.additional_acttivities_id = aa.id
+                           left join AccommodationTypes a on p.accommodation_type_id = a.id
+                           left join AdditionalActivities aa on p.additional_activities_id = aa.id
                            left join Guides g on p.guide_id = g.id
                            left join Ships s on p.ship_id = s.id
                            left join Routes r on p.route_id = r.id
@@ -68,8 +68,8 @@ namespace DSBooking.Infrastructure.Repository.Package
                            c.name as CabinTypeName
                            from packages p join destinations d on p.destination_id = d.id
                            left join TransportTypes t on p.transport_type_id = t.id
-                           left join AccomodationTypes a on p.accomodation_type_id = a.id
-                           left join additionalactivites aa on p.additional_acttivities_id = aa.id
+                           left join AccommodationTypes a on p.accommodation_type_id = a.id
+                           left join AdditionalActivities aa on p.additional_activities_id = aa.id
                            left join Guides g on p.guide_id = g.id
                            left join Ships s on p.ship_id = s.id
                            left join Routes r on p.route_id = r.id
@@ -96,8 +96,8 @@ namespace DSBooking.Infrastructure.Repository.Package
                            c.name as CabinTypeName
                            from packages p join destinations d on p.destination_id = d.id
                            left join TransportTypes t on p.transport_type_id = t.id
-                           left join AccomodationTypes a on p.accomodation_type_id = a.id
-                           left join additionalactivites aa on p.additional_acttivities_id = aa.id
+                           left join AccommodationTypes a on p.accommodation_type_id = a.id
+                           left join AdditionalActivities aa on p.additional_activities_id = aa.id
                            left join Guides g on p.guide_id = g.id
                            left join Ships s on p.ship_id = s.id
                            left join Routes r on p.route_id = r.id

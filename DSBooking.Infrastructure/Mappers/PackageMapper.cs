@@ -10,10 +10,10 @@ namespace DSBooking.Infrastructure.Mappers
 {
     public enum PackageType
     {
-        Seaside = 1,          
-        Mountain = 2,     
-        Travel = 3,   
-        Cruise = 4        
+        Seaside = 1,
+        Mountain = 2,
+        Travel = 3,
+        Cruise = 4
     }
     public class PackageMapper : BaseMapper, IMapper<PackageObject>
     {
@@ -74,7 +74,7 @@ namespace DSBooking.Infrastructure.Mappers
                     );
 
                 default:
-                    throw new InvalidOperationException($"Unknown package type: {type}");
+                    return new TravelPackageObject(0, string.Empty, 0, string.Empty, string.Empty, string.Empty, string.Empty, 0);
             }
         }
     }
