@@ -4,29 +4,29 @@ namespace DSBooking.Infrastructure.Repository.Client
 {
     public class TestClientRepository : IClientRepository
     {
-        public int AddClient(ClientAddObject clientAddObject)
+        public void AddClient(ClientAddObject clientAddObject)
         {
             throw new NotImplementedException();
         }
 
         public ClientObject? Get(int id)
         {
-            return null;
+            throw new NotImplementedException();
         }
 
         public IEnumerable<ClientObject> GetByFirstName(string filterString)
         {
-            return new List<ClientObject>();
+            throw new NotImplementedException();
         }
 
         public IEnumerable<ClientObject> GetByLastName(string filterString)
         {
-            return new List<ClientObject>();
+            throw new NotImplementedException();
         }
 
         public IEnumerable<ClientObject> GetByPassportNo(string filterString)
         {
-            return new List<ClientObject>();
+            throw new NotImplementedException();
         }
 
         public void RemoveClient(int clientId)

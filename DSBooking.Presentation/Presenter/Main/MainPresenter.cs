@@ -1,125 +1,73 @@
-﻿using DSBooking.Application.Service.Client;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using DSBooking.Application.Service.Client;
 using DSBooking.Application.Service.Reservation;
+using System.Xml.Linq;
 using DSBooking.Domain.Object.Client;
-using DSBooking.Domain.Object.Package;
-using DSBooking.Domain.Object.Reservation;
-using DSBooking.Presentation.Presenter.Client;
-using DSBooking.Presentation.Presenter.Command;
 using DSBooking.Presentation.Presenter.Package;
 using DSBooking.Presentation.Presenter.Reservation;
 using DSBooking.Presentation.View.Main;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
+using DSBooking.Presentation.Presenter.Client;
+using DSBooking.Domain.Object.Reservation;
+using DSBooking.Domain.Object.Package;
+using DSBooking.Presentation.View.Client;
+using DSBooking.Presentation.Presenter.ClientAdd;
 
 namespace DSBooking.Presentation.Presenter.Main
 {
-    public class MainPresenter : IMainPresenter
+    public abstract class MainPresenter
     {
-        IMainView _mainView;
-        IClientPresenter _clientPresenter;
-        IPackagePresenter _packagePresenter;
-        IReservationPresenter _reservationPresenter;
+        protected IMainView MainView { get; private set; }
+        protected ClientPresenter ClientPresenter { get; private set; }
+        protected PackagePresenter PackagePresenter { get; private set; }
+        protected SimpleReservationPresenter ReservationPresenter { get; private set; }
 
-        IClientService _clientService;
-        IReservationService _reservationService;
+        protected ClientAddPresenter ClientAddPresenter { get; private set; }
 
-        MainViewMode _mode;
+        protected IClientService ClientService { get; private set; }
+        protected IReservationService ReservationService { get; private set; }
 
-        CommandManager _commandManager;
+        protected MainViewMode Mode { get; set; }
 
-        public MainPresenter(IMainView mainView, IClientPresenter clientPresenter, IPackagePresenter packagePresenter, IReservationPresenter reservationPresenter, IClientService clientService, IReservationService reservationService)
+        // TEMPLATE METHOD PATTERN
+        protected MainPresenter(IMainView mainView, ClientPresenter clientPresenter, PackagePresenter packagePresenter, SimpleReservationPresenter reservationPresenter, ClientAddPresenter clientAddPresenter, IClientService clientService, IReservationService reservationService)
         {
-            _mainView = mainView;
-            _clientPresenter = clientPresenter;
-            _reservationPresenter = reservationPresenter;
-            _packagePresenter = packagePresenter;
-            _clientService = clientService;
-            _reservationService = reservationService;
-            _commandManager = new CommandManager();
+            MainView = mainView;
+            ClientPresenter = clientPresenter;
+            ReservationPresenter = reservationPresenter;
+            PackagePresenter = packagePresenter;
+            ClientAddPresenter = clientAddPresenter;
+            ClientService = clientService;
+            ReservationService = reservationService;
+            Mode = MainViewMode.ShowPackages;
 
-            _mode = MainViewMode.ShowPackages;
+            MainView.OnViewLoad += (_, _) => DoOnViewLoad();
+            MainView.OnModeChange += (_, mode) => DoOnModeChange(mode);
+            MainView.OnClientAddViewOpen += (_, _) => DoOnClientAddViewOpen();
+            MainView.ClientAddView.ClientAddSubmitted += (_, newClient) => DoOnClientAddSubmitted(newClient);
+            MainView.ClientAddView.ClientAddCancelled += (_, _) => DoOnClientAddCancelled();
 
-            _mainView.OnModeChange += (_, mode) => OnModeChange(mode);
-            _mainView.OnViewLoad += (_, _) => ShowOnViewLoad();
-            _mainView.OnClientAddViewOpen += (_, _) => _mainView.ShowAddClientDialog();
-            _mainView.ClientAddView.ClientAddSubmitted += (_, newClient) => OnClientAddSubmitted(newClient);
-            _mainView.UndoPerformed += (_, _) => _commandManager.Undo();
-            _mainView.RedoPerformed += (_, _) => _commandManager.Redo();
+            MainView.ReservationView.OnSelectedReservation += (_, reservation) => DoOnSelectedReservation(reservation);
 
-            _mainView.ReservationView.OnSelectedReservation += (_, reservation) => OnSelectedReservation(reservation);
+            MainView.PackageView.OnSelectedPackage += (_, package) => DoOnSelectedPackage(package);
 
-            _mainView.PackageView.OnSelectedPackage += (_, package) => OnSelectedPackage(package);
-
-            _mainView.ClientView.OnClientSelection += (_, client) => SelectClient(client);
-            _mainView.ClientView.OnFilterChange += (_, filterString) => _clientPresenter.SelectFilterString(filterString);
-            _mainView.ClientView.OnFilterModeChange += (_, mode) => _clientPresenter.SelectFilterMode(mode);
+            MainView.ClientView.OnClientSelection += (_, client) => DoOnSelectedClient(client);
+            MainView.ClientView.OnFilterStringChange += (_, filterString) => DoOnClientFilterStringChange(filterString);
+            MainView.ClientView.OnFilterModeChange += (_, mode) => DoOnClientFilterModeChange(mode);
         }
 
-        private void OnClientAddSubmitted(ClientAddObject newClient)
-        {
-            AddClientCommand command = new AddClientCommand(_clientService, newClient);
-            _commandManager.ExecuteCommand(command);
-        }
-
-        private void OnSelectedReservation(ReservationObject reservation)
-        {
-            RemoveReservationCommand command = new RemoveReservationCommand(_reservationService, reservation.Id);
-            _commandManager.ExecuteCommand(command);
-        }
-
-        private void OnSelectedPackage(PackageObject package)
-        {
-            if (_clientPresenter.SelectedClient == null) throw new NullReferenceException();
-            ReservationAddObject addObject = new ReservationAddObject(DateTime.Now, _clientPresenter.SelectedClient.Id, package.Id);
-            AddReservationCommand command = new AddReservationCommand(_reservationService, addObject);
-            _commandManager.ExecuteCommand(command);
-        }
-
-        private void ShowOnViewLoad()
-        {
-            _clientPresenter.ShowClients();
-            _clientPresenter.SelectClient(_clientPresenter.SelectedClient);
-
-            _mainView.ShowForMode(_mode);
-            _packagePresenter.ShowAll();
-        }
-
-        private void OnModeChange(MainViewMode mode)
-        {
-            _mode = mode;
-            ShowPackagesOrReservations();
-        }
-
-        private void SelectClient(ClientObject? client)
-        {
-            _clientPresenter.SelectClient(client);
-            ShowPackagesOrReservations();
-        }
-
-        private void ShowPackagesOrReservations()
-        {
-            ClientObject? client = _clientPresenter.SelectedClient;
-            _mainView.ShowForMode(_mode);
-            if (_mode == MainViewMode.ShowPackages)
-            {
-                if (client != null)
-                    _packagePresenter.ShowForClient(client.Id);
-                else
-                    _packagePresenter.ShowAll();
-            }
-            else
-            {
-                if(client != null)
-                    _reservationPresenter.ShowForClient(client.Id);
-                else
-                    _reservationPresenter.ShowAll();
-            }
-        }
-
+        protected abstract void DoOnViewLoad();
+        protected abstract void DoOnModeChange(MainViewMode mainViewMode);
+        protected abstract void DoOnClientAddViewOpen();
+        protected abstract void DoOnClientAddSubmitted(ClientAddObject newClient);
+        protected abstract void DoOnClientAddCancelled();
+        protected abstract void DoOnSelectedReservation(ReservationObject reservation);
+        protected abstract void DoOnSelectedPackage(PackageObject package);
+        protected abstract void DoOnSelectedClient(ClientObject client);
+        protected abstract void DoOnClientFilterStringChange(string filterString);
+        protected abstract void DoOnClientFilterModeChange(ClientViewFilterMode filterMode);
     }
 }

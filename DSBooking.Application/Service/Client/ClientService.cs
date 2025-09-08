@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DSBooking.Domain.Error;
 using DSBooking.Domain.Object.Client;
+using DSBooking.Domain.Service;
 using DSBooking.Infrastructure.Repository.Client;
 
 namespace DSBooking.Application.Service.Client
@@ -11,15 +13,22 @@ namespace DSBooking.Application.Service.Client
     public class ClientService : IClientService
     {
         IClientRepository _clientRepository;
+        DomainClientService _domainService;
 
         public ClientService(IClientRepository clientRepository)
         {
             _clientRepository = clientRepository;
+            _domainService = new DomainClientService();
         }
 
-        public int AddClient(ClientAddObject client)
+        public AddResult AddClient(ClientAddObject client)
         {
-            return _clientRepository.AddClient(client);
+            IEnumerable<DomainError> errors = _domainService.CheckClientAddObject(client);
+
+            if(!errors.Any())
+                _clientRepository.AddClient(client);
+
+            return new AddResult(errors);
         }
 
         public IEnumerable<ClientObject> GetByFirstName(string filterString)

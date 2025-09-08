@@ -13,8 +13,7 @@ namespace DSBooking.Application.Service.Client
         IEnumerable<ClientObject> GetByLastName(string filterString);
         IEnumerable<ClientObject> GetByPassportNo(string filterString);
 
-        // returns ID
-        int AddClient(ClientAddObject client);
+        AddResult AddClient(ClientAddObject client);
         void RemoveClient(int clientId);
     }
 }

@@ -10,12 +10,13 @@ using DSBooking.Presentation.View.Reservation;
 
 namespace DSBooking.Presentation.View.Main
 {
+    // BUILDER PATTERN
     public class MainControlViewBuilder
     {
         private IClientControlView? _clientControlView;
         private IPackageControlView? _packageControlView;
         private IReservationControlView? _reservationControlView;
-        private IClientAddFormView? _clientAddFormView;
+        private IClientAddControlView? _clientAddFormView;
         private string? _title;
 
         public MainControlViewBuilder SetClientControlView(IClientControlView clientControlView)
@@ -36,7 +37,7 @@ namespace DSBooking.Presentation.View.Main
             return this;
         }
 
-        public MainControlViewBuilder SetClientAddFormView(IClientAddFormView clientAddFormView)
+        public MainControlViewBuilder SetClientAddFormView(IClientAddControlView clientAddFormView)
         {
             _clientAddFormView = clientAddFormView;
             return this;

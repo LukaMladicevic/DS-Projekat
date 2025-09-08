@@ -1,49 +1,19 @@
-﻿using DSBooking.Application.Service.Reservation;
-using DSBooking.Domain.Object.Client;
-using DSBooking.Domain.Object.Reservation;
-using DSBooking.Presentation.View.Reservation;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DSBooking.Application.Service.Reservation;
+using DSBooking.Domain.Object.Reservation;
+using DSBooking.Presentation.View.Reservation;
 
 namespace DSBooking.Presentation.Presenter.Reservation
 {
-    public class ReservationPresenter : IReservationPresenter
+    public abstract class ReservationPresenter
     {
-        IReservationView _view;
-        IReservationService _service;
+        public IEnumerable<ReservationObject> Reservations { get; protected set; } = Enumerable.Empty<ReservationObject>();
+        public abstract void ShowAll();
+        public abstract void ShowForClient(int clientId);
 
-        IEnumerable<ReservationObject> _reservations;
-
-        public ReservationPresenter(IReservationView view, IReservationService service)
-        {
-            _view = view;
-            _service = service;
-
-            _reservations = new List<ReservationObject>();
-        }
-
-        public IEnumerable<ReservationObject> Reservations => _reservations;
-
-
-        public void ShowAll()
-        {
-            IEnumerable<ReservationObject> reservations = _service.GetAll();
-
-            _reservations = reservations;
-
-            _view.ShowReservations(reservations);
-        }
-
-        public void ShowForClient(int clientId)
-        {
-            IEnumerable<ReservationObject> reservations = _service.GetForClient(clientId);
-
-            _reservations = reservations;
-
-            _view.ShowReservations(reservations);
-        }
     }
 }

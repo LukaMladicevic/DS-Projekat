@@ -14,8 +14,7 @@ namespace DSBooking.Application.Service.Reservation
 
         ReservationObject? Get(int id);
 
-        // returns ID
-        int AddReservation(ReservationAddObject reservationAddObject);
+        AddResult AddReservation(ReservationAddObject reservationAddObject);
         void RemoveReservation(int reservationId);
     }
 }

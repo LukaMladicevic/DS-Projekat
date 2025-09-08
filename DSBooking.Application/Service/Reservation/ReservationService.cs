@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DSBooking.Domain.Error;
 using DSBooking.Domain.Object.Reservation;
 using DSBooking.Infrastructure.Repository.Reservation;
 
@@ -27,9 +28,11 @@ namespace DSBooking.Application.Service.Reservation
             return _reservationRepository.GetForClient(clientId);
         }
 
-        public int AddReservation(ReservationAddObject reservationAddObject)
+        public AddResult AddReservation(ReservationAddObject reservationAddObject)
         {
-            return _reservationRepository.AddReservation(reservationAddObject);
+            _reservationRepository.AddReservation(reservationAddObject);
+
+            return new AddResult(Enumerable.Empty<DomainError>());
         }
 
         public void RemoveReservation(int reservationId)

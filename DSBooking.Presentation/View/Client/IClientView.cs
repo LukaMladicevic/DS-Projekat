@@ -12,7 +12,7 @@ namespace DSBooking.Presentation.View.Client
     {
         event EventHandler<ClientObject>? OnClientSelection;
 
-        event EventHandler<string>? OnFilterChange;
+        event EventHandler<string>? OnFilterStringChange;
 
         event EventHandler<ClientViewFilterMode>? OnFilterModeChange;
 

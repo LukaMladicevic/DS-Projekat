@@ -1,44 +1,54 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Data;
-using System.Dynamic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using DSBooking.Infrastructure.Backup;
 using DSBooking.Infrastructure.Factory;
-using Microsoft.Data.SqlClient;
 
 namespace DSBooking.Infrastructure
 {
     public class DbConnection
     {
-        private static DbConnection? _instance = null;
-        private IDbConnection _connection;
+        private static volatile DbConnection? _instance = null;
+        private static readonly object _sync = new object();
 
-        public static void Initialize(IDbConnectionFactory factory)
+        private readonly IDbConnection _connection;
+        private readonly IDbBackupProvider _backupProvider;
+
+        private DbConnection(IDbConnection connection, IDbBackupProvider backupProvider)
         {
-            IDbConnection connection = factory.Create();
-            _instance = new DbConnection(connection);
+            _connection = connection ?? throw new ArgumentNullException(nameof(connection));
+            _backupProvider = backupProvider ?? throw new ArgumentNullException(nameof(backupProvider));
         }
-        
+
+        public static void Initialize(IDbInfrastructureFactory factory)
+        {
+            if (factory == null) throw new ArgumentNullException(nameof(factory));
+
+            if (_instance != null)
+                throw new InvalidOperationException("DbConnection is already initialized.");
+
+            lock (_sync)
+            {
+                if (_instance != null)
+                    throw new InvalidOperationException("DbConnection is already initialized.");
+
+                IDbConnection connection = factory.CreateConnection();
+                IDbBackupProvider backupProvider = factory.CreateBackupProvider();
+
+                _instance = new DbConnection(connection, backupProvider);
+            }
+        }
+
         internal static DbConnection Instance
         {
-            get { return _instance ?? throw new DbConnectionNotInitializedException(); }
+            get
+            {
+                if (_instance == null) throw new DbConnectionNotInitializedException();
+                return _instance;
+            }
         }
 
-        internal IDbConnection Connection
-        {
-            // using (connection = DbConnection.Connection)
-            // {
-            //   
-            // } ???
-            get { return _connection; }
-        }
+        internal IDbConnection Connection => _connection;
 
-        private DbConnection(IDbConnection connection)
-        {
-            _connection = connection;
-        }
+        internal IDbBackupProvider BackupProvider => _backupProvider;
     }
-
 }

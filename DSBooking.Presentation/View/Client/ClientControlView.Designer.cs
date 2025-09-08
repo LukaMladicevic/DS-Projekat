@@ -90,6 +90,7 @@
             searchTextBox.Name = "searchTextBox";
             searchTextBox.Size = new Size(150, 36);
             searchTextBox.TabIndex = 2;
+            searchTextBox.TextChanged += searchTextBox_TextChanged;
             // 
             // ClientControlView
             // 

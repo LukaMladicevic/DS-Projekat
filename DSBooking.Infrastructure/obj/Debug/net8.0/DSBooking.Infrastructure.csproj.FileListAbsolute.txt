@@ -190,3 +190,19 @@ C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBo
 C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Infrastructure\obj\Debug\net8.0\refint\DSBooking.Infrastructure.dll
 C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.pdb
 C:\Users\lukam\OneDrive\Desktop\Faks\DS Projekat\DSProjekat17.8\DS-Projekat\DSBooking.Infrastructure\obj\Debug\net8.0\ref\DSBooking.Infrastructure.dll
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.AssemblyInfo.cs
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.sourcelink.json
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.dll
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\refint\DSBooking.Infrastructure.dll
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\DSBooking.Infrastructure.pdb
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\bin\Debug\net8.0\DSBooking.Infrastructure.deps.json
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\bin\Debug\net8.0\DSBooking.Infrastructure.dll
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\bin\Debug\net8.0\DSBooking.Infrastructure.pdb
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\bin\Debug\net8.0\DSBooking.Domain.dll
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\bin\Debug\net8.0\DSBooking.Domain.pdb
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\DSBookin.7FCA1B55.Up2Date
+C:\Users\novak\Source\Repos\DS-ProjekatEMI\DSBooking.Infrastructure\obj\Debug\net8.0\ref\DSBooking.Infrastructure.dll

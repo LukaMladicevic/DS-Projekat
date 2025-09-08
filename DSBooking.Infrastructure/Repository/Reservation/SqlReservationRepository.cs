@@ -11,9 +11,9 @@ namespace DSBooking.Infrastructure.Repository.Reservation
 {
     public class SqlReservationRepository : Repository<ReservationObject>, IReservationRepository
     {
-        public SqlReservationRepository(IMapper<ReservationObject> mapper) : base(mapper) { }
+        public SqlReservationRepository(ReservationMapper mapper) : base(mapper) { }
 
-        public int AddReservation(ReservationAddObject reservationAddObject)
+        public void AddReservation(ReservationAddObject reservationAddObject)
         {
             throw new NotImplementedException();
         }
@@ -164,12 +164,12 @@ namespace DSBooking.Infrastructure.Repository.Reservation
 
         }
 
-        public int RemoveReservation(int reservationId)
+        public void RemoveReservation(int reservationId)
         {
             string sql = @"delete from reservations
                            where id = @ReservationId";
 
-            return ExecuteNonQuery(sql, cmd =>
+            ExecuteNonQuery(sql, cmd =>
             {
                 var param = cmd.CreateParameter();
                 param.ParameterName = "@ReservationId";

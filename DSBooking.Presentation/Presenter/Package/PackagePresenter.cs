@@ -10,39 +10,21 @@ using DSBooking.Presentation.View.Package;
 
 namespace DSBooking.Presentation.Presenter.Package
 {
-    public class PackagePresenter : IPackagePresenter
+    public abstract class PackagePresenter
     {
-        IPackageView _view;
-        IPackageService _service;
+        public IEnumerable<PackageObject> Packages { get; protected set; } = Enumerable.Empty<PackageObject>();
+        public abstract void ShowForClient(int clientId);
+        public abstract void ShowAll();
 
-        IEnumerable<PackageObject> _packages;
+        protected IPackageView View { get; private set; }
+        protected IPackageService Service { get; private set; }
 
         public PackagePresenter(IPackageView view, IPackageService service)
         {
-            _view = view;
-            _service = service;
+            View = view;
+            Service = service;
 
-            _packages = new List<PackageObject>();
-        }
-
-        public IEnumerable<PackageObject> Packages => _packages;
-
-        public void ShowAll()
-        {
-            IEnumerable<PackageObject> packages = _service.GetAll();
-
-            _packages = packages;
-
-            _view.ShowPackages(packages);
-        }
-
-        public void ShowForClient(int clientId)
-        {
-            IEnumerable<PackageObject> packages = _service.GetAllAvailableForClient(clientId);
-
-            _packages = packages;
-
-            _view.ShowPackages(packages);
+            Packages = new List<PackageObject>();
         }
     }
 }

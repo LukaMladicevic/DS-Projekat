@@ -39,7 +39,7 @@ namespace DSBooking.Presentation.View.Client
         public event EventHandler? OnViewLoad;
         public event EventHandler<ClientViewFilterMode>? OnFilterModeChange;
 
-        public event EventHandler<string>? OnFilterChange;
+        public event EventHandler<string>? OnFilterStringChange;
 
         public void HighlightClient(ClientObject? client)
         {
@@ -63,6 +63,11 @@ namespace DSBooking.Presentation.View.Client
             {
                 OnFilterModeChange?.Invoke(this, mode);
             }
+        }
+
+        private void searchTextBox_TextChanged(object sender, EventArgs e)
+        {
+            OnFilterStringChange?.Invoke(this, searchTextBox.Text);
         }
     }
 }

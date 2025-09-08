@@ -34,8 +34,6 @@
             topPanel = new Panel();
             bottomLayoutPanel = new TableLayoutPanel();
             modeComboBox = new ComboBox();
-            undoButton = new Button();
-            redoButton = new Button();
             centerLayoutPanel = new TableLayoutPanel();
             panel1 = new Panel();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
@@ -47,7 +45,6 @@
             // 
             // agencyNameLabel
             // 
-            agencyNameLabel.Anchor = AnchorStyles.None;
             agencyNameLabel.AutoSize = true;
             agencyNameLabel.Font = new Font("Segoe UI", 30F);
             agencyNameLabel.Location = new Point(12, 19);
@@ -80,15 +77,13 @@
             // 
             // bottomLayoutPanel
             // 
-            bottomLayoutPanel.ColumnCount = 4;
+            bottomLayoutPanel.ColumnCount = 3;
             bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
-            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
-            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 15F));
+            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 30F));
             bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
+            bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 20F));
             bottomLayoutPanel.Controls.Add(modeComboBox, 0, 0);
-            bottomLayoutPanel.Controls.Add(addClientButton, 3, 0);
-            bottomLayoutPanel.Controls.Add(undoButton, 1, 0);
-            bottomLayoutPanel.Controls.Add(redoButton, 2, 0);
+            bottomLayoutPanel.Controls.Add(addClientButton, 2, 0);
             bottomLayoutPanel.Dock = DockStyle.Bottom;
             bottomLayoutPanel.Location = new Point(0, 466);
             bottomLayoutPanel.Name = "bottomLayoutPanel";
@@ -111,32 +106,6 @@
             modeComboBox.Size = new Size(211, 53);
             modeComboBox.TabIndex = 1;
             modeComboBox.SelectedIndexChanged += modeComboBox_SelectedIndexChanged;
-            // 
-            // undoButton
-            // 
-            undoButton.Anchor = AnchorStyles.None;
-            undoButton.Font = new Font("Segoe UI", 18F);
-            undoButton.Location = new Point(447, 20);
-            undoButton.Margin = new Padding(20);
-            undoButton.Name = "undoButton";
-            undoButton.Size = new Size(143, 57);
-            undoButton.TabIndex = 2;
-            undoButton.Text = "Poništi";
-            undoButton.UseVisualStyleBackColor = true;
-            undoButton.Click += undoButton_Click;
-            // 
-            // redoButton
-            // 
-            redoButton.Anchor = AnchorStyles.None;
-            redoButton.Font = new Font("Segoe UI", 18F);
-            redoButton.Location = new Point(630, 20);
-            redoButton.Margin = new Padding(20);
-            redoButton.Name = "redoButton";
-            redoButton.Size = new Size(143, 57);
-            redoButton.TabIndex = 3;
-            redoButton.Text = "Ponovi";
-            redoButton.UseVisualStyleBackColor = true;
-            redoButton.Click += redoButton_Click;
             // 
             // centerLayoutPanel
             // 
@@ -166,10 +135,6 @@
             sqlCommand1.CommandTimeout = 30;
             sqlCommand1.EnableOptimizedParameterBinding = false;
             // 
-            // DatabaseBackupTimer
-            // 
-            DatabaseBackupTimer.Tick += DatabaseBackupTimer_Tick;
-            // 
             // MainControlView
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -197,8 +162,6 @@
         private Panel panel1;
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private ComboBox modeComboBox;
-        private Button undoButton;
-        private Button redoButton;
         private System.Windows.Forms.Timer DatabaseBackupTimer;
     }
 }

@@ -12,13 +12,12 @@ namespace DSBooking.Infrastructure.Repository.Client
 {
     public class SqlClientRepository : Repository<ClientObject>, IClientRepository
     {
-        public SqlClientRepository(IMapper<ClientObject> mapper) : base(mapper) { }
-        public int AddClient(ClientAddObject clientAddObject)
+        public SqlClientRepository(ClientMapper mapper) : base(mapper) { }
+        public void AddClient(ClientAddObject clientAddObject)
         {
             string sql = @"INSERT INTO Clients (firstname, lastname, passport_no, email_address, phone_no, date_of_birth)
                           VALUES (@FirstName, @LastName, @PassportNo, @Email, @PhoneNo, @DateOfBirth);";
-
-            return ExecuteNonQuery(sql, cmd =>
+            ExecuteNonQuery(sql, cmd =>
             {
                 var p1 = cmd.CreateParameter(); p1.ParameterName = "@FirstName"; p1.Value = clientAddObject.FirstName; cmd.Parameters.Add(p1);
                 var p2 = cmd.CreateParameter(); p2.ParameterName = "@LastName"; p2.Value = clientAddObject.LastName; cmd.Parameters.Add(p2);
@@ -119,11 +118,11 @@ namespace DSBooking.Infrastructure.Repository.Client
             return results;
         }
 
-        public int RemoveClient(int clientId)
+        public void RemoveClient(int clientId)
         {
             string sql = @"DELETE FROM Clients WHERE id = @Id;";
 
-            return ExecuteNonQuery(sql, cmd =>
+            ExecuteNonQuery(sql, cmd =>
             {
                 var param = cmd.CreateParameter();
                 param.ParameterName = "@Id";

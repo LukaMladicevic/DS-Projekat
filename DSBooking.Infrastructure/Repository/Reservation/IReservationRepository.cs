@@ -13,9 +13,7 @@ namespace DSBooking.Infrastructure.Repository.Reservation
         IEnumerable<ReservationObject> GetAll();
 
         ReservationObject? Get(int id);
-        
-        // returns ID
-        int AddReservation(ReservationAddObject reservationAddObject);
-        int RemoveReservation(int reservationId);
+        void AddReservation(ReservationAddObject reservationAddObject);
+        void RemoveReservation(int reservationId);
     }
 }

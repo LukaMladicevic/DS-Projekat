@@ -11,7 +11,7 @@ namespace DSBooking.Infrastructure.Repository.Package
 {
     public class SqlPackageRepository : Repository<PackageObject>, IPackageRepository
     {
-        public SqlPackageRepository(IMapper<PackageObject> mapper) : base(mapper) { }
+        public SqlPackageRepository(PackageMapper Mapper) : base(Mapper) { }
 
         public PackageObject? Get(int id)
         {

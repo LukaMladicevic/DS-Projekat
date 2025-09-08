@@ -20,10 +20,10 @@ namespace DSBooking.Presentation.View.Main
         IClientControlView _clientControlView;
         IPackageControlView _packageControlView;
         IReservationControlView _reservationControlView;
-        IClientAddFormView _clientAddFormView;
+        IClientAddControlView _clientAddFormView;
         //System.Windows.Forms.Timer _timer;
 
-        public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView, IClientAddFormView clientAddForm, string title)
+        public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView, IClientAddControlView clientAddForm, string title)
         {
             _clientControlView = clientView;
             _packageControlView = packageView;
@@ -73,8 +73,6 @@ namespace DSBooking.Presentation.View.Main
         public event EventHandler? OnClientAddViewOpen;
         public event EventHandler<MainViewMode>? OnModeChange;
         public event EventHandler? OnViewLoad;
-        public event EventHandler? UndoPerformed;
-        public event EventHandler? RedoPerformed;
         //public event EventHandler? DatabaseBackup;
 
 
@@ -114,9 +112,14 @@ namespace DSBooking.Presentation.View.Main
             else ShowReservations();
         }
 
-        public DialogResult ShowAddClientDialog()
+        public void ShowAddClientDialog()
         {
-            return _clientAddFormView.Form.ShowDialog();
+            _clientAddFormView.Control.Show();
+        }
+
+        public void CloseAddClientDialog()
+        {
+            _clientAddFormView.Control.Hide();
         }
 
         private void modeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -129,19 +132,9 @@ namespace DSBooking.Presentation.View.Main
             }
         }
 
-        private void undoButton_Click(object sender, EventArgs e)
-        {
-            UndoPerformed?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void redoButton_Click(object sender, EventArgs e)
-        {
-            RedoPerformed?.Invoke(this, EventArgs.Empty);
-        }
-
-        private void DatabaseBackupTimer_Tick(object sender, EventArgs e)
-        {
-            DatabaseBackup?.Invoke(this, EventArgs.Empty);
-        }
+        //private void DatabaseBackupTimer_Tick(object sender, EventArgs e)
+        //{
+        //    DatabaseBackup?.Invoke(this, EventArgs.Empty);
+        //}
     }
 }

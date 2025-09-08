@@ -9,61 +9,31 @@ using DSBooking.Presentation.View.Client;
 
 namespace DSBooking.Presentation.Presenter.Client
 {
-    public class ClientPresenter : IClientPresenter
+    public abstract class ClientPresenter
     {
-        IClientView _view;
-        IClientService _service;
+        protected IClientView View { get; private set; }
+        protected IClientService Service { get; private set; }
 
         public ClientPresenter(IClientView clientView, IClientService clientService)
         {
-            _view = clientView;
-            _service = clientService;
+            View = clientView;
+            Service = clientService;
 
             Clients = new List<ClientObject>();
             SelectedClient = null;
             FilterString = "";
         }
-        public IEnumerable<ClientObject> Clients { get; private set; }
 
-        public ClientObject? SelectedClient { get; private set; }
+        public ClientViewFilterMode SelectedFilterMode { get; protected set; }
+        public abstract void SelectFilterMode(ClientViewFilterMode mode);
 
-        public ClientViewFilterMode SelectedFilterMode { get; private set; }
+        public string FilterString { get; protected set; } = string.Empty;
+        public abstract void SelectFilterString(string filterString);
 
-        public string FilterString { get; private set; }
+        public IEnumerable<ClientObject> Clients { get; protected set; } = Enumerable.Empty<ClientObject>();
+        public abstract void ShowClients();
 
-        public void SelectClient(ClientObject? c)
-        {
-            SelectedClient = c;
-            _view.HighlightClient(c);
-        }
-
-        public void SelectFilterMode(ClientViewFilterMode mode)
-        {
-            SelectedFilterMode = mode;
-            switch (mode)
-            {
-                case ClientViewFilterMode.FilterFirstName:
-                    Clients = _service.GetByFirstName(FilterString);
-                    break;
-                case ClientViewFilterMode.FilterLastName:
-                    Clients = _service.GetByLastName(FilterString);
-                    break;
-                case ClientViewFilterMode.FilterPassportNo:
-                    Clients = _service.GetByPassportNo(FilterString);
-                    break;
-                default:
-                    throw new NotImplementedException();
-            }
-        }
-
-        public void SelectFilterString(string filterString)
-        {
-            FilterString = filterString;
-        }
-
-        public void ShowClients()
-        {
-            _view.ShowClients(Clients);
-        }
+        public abstract void SelectClient(ClientObject? c);
+        public ClientObject? SelectedClient { get; protected set; }
     }
 }

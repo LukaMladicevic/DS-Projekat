@@ -12,10 +12,10 @@ namespace DSBooking.Infrastructure.Mappers
 {
     public class ReservationMapper : BaseMapper, IMapper<ReservationObject>
     {
-        private IMapper<ClientObject> _clientMapper;
-        private IMapper<PackageObject> _packageMapper;
+        private ClientMapper _clientMapper;
+        private PackageMapper _packageMapper;
 
-        public ReservationMapper(IMapper<ClientObject> clientMapper, IMapper<PackageObject> packageMapper)
+        public ReservationMapper(ClientMapper clientMapper, PackageMapper packageMapper)
         {
             _clientMapper = clientMapper;
             _packageMapper = packageMapper;

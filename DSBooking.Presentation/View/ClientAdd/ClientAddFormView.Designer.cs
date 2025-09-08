@@ -1,6 +1,6 @@
 ﻿namespace DSBooking.Presentation.View.ClientAdd
 {
-    partial class ClientAddFormView
+    partial class ClientAddControlView
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientAddFormView));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ClientAddControlView));
             tableLayoutPanel2 = new TableLayoutPanel();
             discardButton = new Button();
             confirmButton = new Button();
@@ -61,6 +61,7 @@
             resources.ApplyResources(discardButton, "discardButton");
             discardButton.Name = "discardButton";
             discardButton.UseVisualStyleBackColor = true;
+            discardButton.Click += discardButton_Click;
             // 
             // confirmButton
             // 
@@ -148,14 +149,14 @@
             dateOfBirthPicker.Name = "dateOfBirthPicker";
             dateOfBirthPicker.ShowUpDown = true;
             // 
-            // ClientAddFormView
+            // ClientAddControlView
             // 
             resources.ApplyResources(this, "$this");
             AutoScaleMode = AutoScaleMode.Font;
             ControlBox = false;
             Controls.Add(inputLayoutPanel);
             Controls.Add(tableLayoutPanel2);
-            Name = "ClientAddFormView";
+            Name = "ClientAddControlView";
             tableLayoutPanel2.ResumeLayout(false);
             inputLayoutPanel.ResumeLayout(false);
             inputLayoutPanel.PerformLayout();

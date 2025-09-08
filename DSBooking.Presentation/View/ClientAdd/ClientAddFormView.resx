@@ -361,9 +361,6 @@
   <data name="phoneNoTextBox.TabIndex" type="System.Int32, mscorlib">
     <value>6</value>
   </data>
-  <data name="phoneNoTextBox.Text" xml:space="preserve">
-    <value> </value>
-  </data>
   <data name="&gt;&gt;phoneNoTextBox.Name" xml:space="preserve">
     <value>phoneNoTextBox</value>
   </data>
@@ -686,7 +683,7 @@
     <value>Dodaj klijenta...</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ClientAddFormView</value>
+    <value>ClientAddControlView</value>
   </data>
   <data name="&gt;&gt;$this.Type" xml:space="preserve">
     <value>System.Windows.Forms.Form, System.Windows.Forms, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
