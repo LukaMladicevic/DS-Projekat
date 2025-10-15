@@ -34,6 +34,7 @@
             topPanel = new Panel();
             bottomLayoutPanel = new TableLayoutPanel();
             modeComboBox = new ComboBox();
+            showToggleButton = new Button();
             centerLayoutPanel = new TableLayoutPanel();
             panel1 = new Panel();
             sqlCommand1 = new Microsoft.Data.SqlClient.SqlCommand();
@@ -85,6 +86,7 @@
             bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
             bottomLayoutPanel.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 23F));
             bottomLayoutPanel.Controls.Add(modeComboBox, 0, 0);
+            bottomLayoutPanel.Controls.Add(showToggleButton, 1, 0);
             bottomLayoutPanel.Controls.Add(addClientButton, 2, 0);
             bottomLayoutPanel.Dock = DockStyle.Bottom;
             bottomLayoutPanel.Location = new Point(0, 622);
@@ -110,6 +112,18 @@
             modeComboBox.TabIndex = 1;
             modeComboBox.SelectedIndexChanged += modeComboBox_SelectedIndexChanged;
             // 
+            // showToggleButton
+            // 
+            showToggleButton.Anchor = AnchorStyles.None;
+            showToggleButton.Font = new Font("Segoe UI", 14F);
+            showToggleButton.Location = new Point(587, 40);
+            showToggleButton.Name = "showToggleButton";
+            showToggleButton.Size = new Size(220, 48);
+            showToggleButton.TabIndex = 2;
+            showToggleButton.Text = "Show Reservations";
+            showToggleButton.UseVisualStyleBackColor = true;
+            showToggleButton.Click += showToggleButton_Click;
+            // 
             // centerLayoutPanel
             // 
             centerLayoutPanel.ColumnCount = 3;
@@ -126,6 +140,7 @@
             centerLayoutPanel.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
             centerLayoutPanel.Size = new Size(1397, 498);
             centerLayoutPanel.TabIndex = 4;
+            centerLayoutPanel.Paint += centerLayoutPanel_Paint;
             // 
             // panel1
             // 
@@ -170,5 +185,8 @@
         private Microsoft.Data.SqlClient.SqlCommand sqlCommand1;
         private ComboBox modeComboBox;
         private System.Windows.Forms.Timer DatabaseBackupTimer;
+
+        // NEW: toggle button field
+        private Button showToggleButton;
     }
 }

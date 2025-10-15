@@ -1,2 +1,2 @@
 DSBOOKING
-ConnectionString=Server=(localdb)\novak;Database=SchoolDB;Trusted_Connection=True;
+C:\Users\Emilija\source\repos\DS-Projekat\DSBooking.Database\db_sqlite.db

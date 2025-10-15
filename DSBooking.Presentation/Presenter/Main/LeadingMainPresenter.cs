@@ -31,9 +31,9 @@ namespace DSBooking.Presentation.Presenter.Main
             MainView.ShowForMode(Mode);
             if (Mode == MainViewMode.ShowPackages)
             {
-                if (client != null)
-                    PackagePresenter.ShowForClient(client.Id);
-                else
+                //if (client != null)
+                //    PackagePresenter.ShowForClient(client.Id);
+                //else
                     PackagePresenter.ShowAll();
             }
             else
@@ -69,7 +69,13 @@ namespace DSBooking.Presentation.Presenter.Main
         {
             bool success = ClientAddPresenter.DoOnClientAddSubmitted(newClient);
 
-            if(success) MainView.CloseAddClientDialog();
+            if (success)
+            {
+                MainView.CloseAddClientDialog();
+                ClientPresenter.ShowClients();
+                ShowPackagesOrReservations();
+            }
+
         }
 
         protected override void DoOnClientAddCancelled()
@@ -80,16 +86,22 @@ namespace DSBooking.Presentation.Presenter.Main
         protected override void DoOnSelectedReservation(ReservationObject reservation)
         {
             ReservationService.RemoveReservation(reservation.Id);
+            ShowPackagesOrReservations();
         }
         protected override void DoOnSelectedPackage(PackageObject package)
         {
             if (ClientPresenter.SelectedClient == null) return;
 
             ReservationService.AddReservation(new ReservationAddObject(DateTime.Now, ClientPresenter.SelectedClient.Id, package.Id));
+            ShowPackagesOrReservations();
         }
         protected override void DoOnSelectedClient(ClientObject client)
         {
             ClientPresenter.SelectClient(client);
+
+            MainView.ClientView.SetSelectedClientLabel($"{client.FirstName} {client.LastName}");
+            MainView.ClientView.HighlightClient(client);
+
             ShowPackagesOrReservations();
         }
         protected override void DoOnClientFilterStringChange(string filterString)

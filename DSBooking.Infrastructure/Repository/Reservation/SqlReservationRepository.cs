@@ -15,7 +15,32 @@ namespace DSBooking.Infrastructure.Repository.Reservation
 
         public void AddReservation(ReservationAddObject reservationAddObject)
         {
-            throw new NotImplementedException();
+            if (reservationAddObject == null)
+                throw new ArgumentNullException(nameof(reservationAddObject));
+
+            string sql = @"
+                INSERT INTO Reservations (client_id, package_id, date_of_reservation)
+                VALUES (@ClientId, @PackageId, @ReservationDate);
+            ";
+
+            ExecuteNonQuery(sql, cmd =>
+            {
+                var p1 = cmd.CreateParameter();
+                p1.ParameterName = "@ReservationDate";
+                p1.Value = reservationAddObject.DateOfReservation; 
+                p1.DbType = System.Data.DbType.DateTime; 
+                cmd.Parameters.Add(p1);
+
+                var p2 = cmd.CreateParameter();
+                p2.ParameterName = "@ClientId";
+                p2.Value = reservationAddObject.ClientId;
+                cmd.Parameters.Add(p2);
+
+                var p3 = cmd.CreateParameter();
+                p3.ParameterName = "@PackageId";
+                p3.Value = reservationAddObject.PackageId;
+                cmd.Parameters.Add(p3);
+            });
         }
 
         public ReservationObject? Get(int id)

@@ -96,5 +96,15 @@ namespace DSBooking.Presentation.View.ClientAdd
         {
             ClientAddCancelled?.Invoke(this, EventArgs.Empty);
         }
+
+        private void ClientAddControlView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void inputLayoutPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

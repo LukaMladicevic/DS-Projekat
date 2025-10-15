@@ -32,6 +32,7 @@
             tableLayoutPanel1 = new TableLayoutPanel();
             filterComboBox = new ComboBox();
             searchTextBox = new TextBox();
+            selectedClientLabel = new Label();
             ((System.ComponentModel.ISupportInitialize)clientsDataGridView).BeginInit();
             tableLayoutPanel1.SuspendLayout();
             SuspendLayout();
@@ -96,12 +97,22 @@
             searchTextBox.TabIndex = 2;
             searchTextBox.TextChanged += searchTextBox_TextChanged;
             // 
+            // selectedClientLabel
+            // 
+            selectedClientLabel.AutoSize = true;
+            selectedClientLabel.Location = new Point(8, 8);
+            selectedClientLabel.Name = "selectedClientLabel";
+            selectedClientLabel.Size = new Size(149, 20);
+            selectedClientLabel.TabIndex = 3;
+            selectedClientLabel.Text = "Selected client: None";
+            // 
             // ClientControlView
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Control;
             BorderStyle = BorderStyle.FixedSingle;
+            Controls.Add(selectedClientLabel);
             Controls.Add(tableLayoutPanel1);
             Controls.Add(clientsDataGridView);
             Margin = new Padding(0);
@@ -112,6 +123,7 @@
             tableLayoutPanel1.ResumeLayout(false);
             tableLayoutPanel1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -119,5 +131,6 @@
         private TableLayoutPanel tableLayoutPanel1;
         private ComboBox filterComboBox;
         private TextBox searchTextBox;
+        private Label selectedClientLabel;
     }
 }

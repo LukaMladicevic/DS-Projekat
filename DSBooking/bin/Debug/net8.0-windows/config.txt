@@ -1,2 +1,2 @@
 DSTravel
-Data Source=C:\Users\novak\source\repos\DS-ProjekatEMILIJA\DSBooking.Database\db_sqlite.db
+Data Source=C:\Users\Emilija\source\repos\DS-Projekat\DSBooking.Database\db_sqlite.db;

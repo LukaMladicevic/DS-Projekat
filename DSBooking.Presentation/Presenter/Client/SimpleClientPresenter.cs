@@ -47,6 +47,7 @@ namespace DSBooking.Presentation.Presenter.Client
 
         public override void ShowClients()
         {
+            Clients = _filterStrategies[SelectedFilterMode].Filter(FilterString);
             View.ShowClients(Clients);
         }
     }

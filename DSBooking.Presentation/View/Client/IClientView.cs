@@ -15,6 +15,7 @@ namespace DSBooking.Presentation.View.Client
         event EventHandler<string>? OnFilterStringChange;
 
         event EventHandler<ClientViewFilterMode>? OnFilterModeChange;
+        void SetSelectedClientLabel(string text);
 
         void ShowClients(IEnumerable<ClientObject> clients);
         void HighlightClient(ClientObject? client);

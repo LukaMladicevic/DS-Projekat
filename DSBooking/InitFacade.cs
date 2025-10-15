@@ -40,7 +40,6 @@ namespace DSBooking
         {
             ConfigFileParser parser = new ConfigFileParser(_configFilepath);
             ConfigFileParseResult result = parser.Parse();
-
             DbInfrastructureMapper mapper = new DbInfrastructureMapper(result.ConnectionString);
             IDbInfrastructureFactory connectionFactory = mapper.Map();
             DSBooking.Infrastructure.DbConnection.Initialize(connectionFactory);
@@ -57,13 +56,13 @@ namespace DSBooking
 
             // Repositories
             SqlClientRepository _clientRepository = new SqlClientRepository(clientMapper);
-            EncryptedClientRepository encryptedClientRepository = new EncryptedClientRepository(_clientRepository, encryptor);
+            //EncryptedClientRepository encryptedClientRepository = new EncryptedClientRepository(_clientRepository, encryptor);
             SqlPackageRepository packageRepository = new SqlPackageRepository(packageMapper);
             SqlReservationRepository reservationRepository = new SqlReservationRepository(reservationMapper);
 
             // Services
 
-            ClientService clientService = new ClientService(encryptedClientRepository);
+            ClientService clientService = new ClientService(_clientRepository);
             PackageService packageService = new PackageService(packageRepository);
             ReservationService reservationService = new ReservationService(reservationRepository);
 
@@ -84,7 +83,6 @@ namespace DSBooking
             // MainView
 
             //MainControlView mainView = new MainControlView(clientControlView, packageControlView, reservationControlView, clientAddView, result.Name);
-
             MainControlViewBuilder mainViewBuilder = new MainControlViewBuilder();
             MainControlView mainView = (
                 mainViewBuilder.SetClientControlView(clientControlView)

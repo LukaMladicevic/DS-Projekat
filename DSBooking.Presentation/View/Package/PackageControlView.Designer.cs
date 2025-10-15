@@ -46,7 +46,7 @@
             packageDataGridView.RowHeadersWidth = 51;
             packageDataGridView.Size = new Size(1200, 915);
             packageDataGridView.TabIndex = 0;
-            packageDataGridView.CellContentClick += packageDataGridView_CellContentClick;
+            packageDataGridView.CellContentClick += packageDataGridView_CellContentClick_1;
             // 
             // PackageControlView
             // 

@@ -86,6 +86,7 @@
             inputLayoutPanel.Controls.Add(phoneNoLabel, 0, 5);
             inputLayoutPanel.Controls.Add(dateOfBirthPicker, 1, 3);
             inputLayoutPanel.Name = "inputLayoutPanel";
+            inputLayoutPanel.Paint += inputLayoutPanel_Paint;
             // 
             // firstNameTextBox
             // 
@@ -157,6 +158,7 @@
             Controls.Add(inputLayoutPanel);
             Controls.Add(tableLayoutPanel2);
             Name = "ClientAddControlView";
+            Load += ClientAddControlView_Load;
             tableLayoutPanel2.ResumeLayout(false);
             inputLayoutPanel.ResumeLayout(false);
             inputLayoutPanel.PerformLayout();

@@ -1,12 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Diagnostics;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using DSBooking.Presentation.View.Client;
 using DSBooking.Presentation.View.ClientAdd;
@@ -55,7 +49,9 @@ namespace DSBooking.Presentation.View.Main
             modeComboBox.ValueMember = "Key";
             modeComboBox.SelectedIndex = 0;
 
-            ShowForMode(MainViewMode.ShowPackages); // Just in case the presenter doesn't set it
+            UpdateToggleButtonText();
+
+            ShowForMode(MainViewMode.ShowPackages); 
             this.Text = title;
             agencyNameLabel.Text = title;
         }
@@ -110,6 +106,8 @@ namespace DSBooking.Presentation.View.Main
         {
             if (mode == MainViewMode.ShowPackages) ShowPackages();
             else ShowReservations();
+
+            UpdateToggleButtonText();
         }
 
         public void ShowAddClientDialog()
@@ -126,10 +124,22 @@ namespace DSBooking.Presentation.View.Main
         {
             if (modeComboBox.SelectedValue is MainViewMode mode)
             {
-                //var res = MessageBox.Show(mode.ToString(), "Potvrda", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
                 OnModeChange?.Invoke(this, mode);
+
+                UpdateToggleButtonText();
             }
+        }
+
+        private void showToggleButton_Click(object sender, EventArgs e)
+        {
+            modeComboBox.SelectedIndex = modeComboBox.SelectedIndex == 0 ? 1 : 0;
+        }
+
+        private void UpdateToggleButtonText()
+        {
+            if (showToggleButton == null) return; 
+
+            showToggleButton.Text = (modeComboBox.SelectedIndex == 0) ? "Show Reservations" : "Show Packages";
         }
 
         private void topPanel_Paint(object sender, PaintEventArgs e)
@@ -138,6 +148,11 @@ namespace DSBooking.Presentation.View.Main
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void centerLayoutPanel_Paint(object sender, PaintEventArgs e)
         {
 
         }

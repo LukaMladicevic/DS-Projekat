@@ -38,6 +38,19 @@ namespace DSBooking.Presentation.Presenter.Reservation
 
             Reservations = reservations;
 
+            //var sb = new StringBuilder();
+            //sb.AppendLine($"ClientId: {clientId}");
+            //foreach (var reservation in reservations)
+            //{
+            //    sb.AppendLine($"Reservation ID: {reservation.Id}");
+            //    sb.AppendLine($"Client: {reservation.Client.FirstName} {reservation.Client.LastName}");
+            //    sb.AppendLine($"Package: {reservation.Package.Name}");
+            //    sb.AppendLine($"Type: {reservation.Package.PackageTypeName}");
+            //    sb.AppendLine(new string('-', 40));
+            //}
+
+            //MessageBox.Show(sb.ToString(), "Reservations Debug");
+
             _view.ShowReservations(reservations);
         }
     }
