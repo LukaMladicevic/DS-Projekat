@@ -13,7 +13,7 @@ namespace DSBooking.Domain.Object.Package
         public double Price { get; }
         public string PackageTypeName { get; }
 
-        public PackageObject(int id, string name, double price, string packageTypeName)
+        protected PackageObject(int id, string name, double price, string packageTypeName)
         {
             Id = id;
             Name = name;

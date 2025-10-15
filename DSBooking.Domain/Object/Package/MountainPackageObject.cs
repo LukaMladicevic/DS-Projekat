@@ -13,12 +13,54 @@ namespace DSBooking.Domain.Object.Package
         public string AccommodationTypeName { get; }
         public string AdditionalActivities { get; }
 
-        public MountainPackageObject(int id, string name, double price, string packageTypeName, string destinationName, string travelTypeName, string accommodationTypeName, string additionalActivities) : base(id, name, price, packageTypeName)
+        private MountainPackageObject(int id, string name, double price, string packageTypeName, string destinationName, string travelTypeName, string accommodationTypeName, string additionalActivities)
+            : base(id, name, price, packageTypeName)
         {
             DestinationName = destinationName;
             TravelTypeName = travelTypeName;
             AccommodationTypeName = accommodationTypeName;
             AdditionalActivities = additionalActivities;
+        }
+
+        public class Builder : PackageBuilder<Builder>
+        {
+            private string destinationName;
+            private string travelTypeName;
+            private string accommodationTypeName;
+            private string additionalActivities;
+
+            public Builder WithDestinationName(string destinationName)
+            {
+                this.destinationName = destinationName;
+                return this;
+            }
+
+            public Builder WithTravelTypeName(string travelTypeName)
+            {
+                this.travelTypeName = travelTypeName;
+                return this;
+            }
+
+            public Builder WithAccommodationTypeName(string accommodationTypeName)
+            {
+                this.accommodationTypeName = accommodationTypeName;
+                return this;
+            }
+
+            public Builder WithAdditionalActivities(string additionalActivities)
+            {
+                this.additionalActivities = additionalActivities;
+                return this;
+            }
+
+            public override PackageObject Build()
+            {
+                // Add validation if needed, e.g., check required fields
+                if (string.IsNullOrEmpty(destinationName)) throw new ArgumentException("DestinationName is required.");
+                // Similarly for other fields...
+
+                return new MountainPackageObject(id, name, price, packageTypeName, destinationName, travelTypeName, accommodationTypeName, additionalActivities);
+            }
         }
     }
 }

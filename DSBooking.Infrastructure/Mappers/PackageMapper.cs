@@ -27,54 +27,63 @@ namespace DSBooking.Infrastructure.Mappers
             switch (type)
             {
                 case PackageType.Seaside:
-                    return new SeasidePackageObject(
-                        id,
-                        name,
-                        (double)price,
-                        type.ToString(),
-                        GetString(record, "DestinationName"),
-                        GetString(record, "TransportTypeName"),
-                        GetString(record, "AccommodationTypeName")
-                    );
+                    return new SeasidePackageObject.Builder()
+                        .WithId(id)
+                        .WithName(name)
+                        .WithPrice((double)price)
+                        .WithPackageTypeName(type.ToString())
+                        .WithDestinationName(GetString(record, "DestinationName"))
+                        .WithTravelTypeName(GetString(record, "TransportTypeName"))
+                        .WithAccommodationTypeName(GetString(record, "AccommodationTypeName"))
+                        .Build();
 
                 case PackageType.Mountain:
-                    return new MountainPackageObject(
-                        id,
-                        name,
-                        (double)price,
-                        type.ToString(),
-                        GetString(record, "DestinationName"),
-                        GetString(record, "TransportTypeName"),
-                        GetString(record, "AccommodationTypeName"),
-                        GetString(record, "ActivityName")
-                    );
+                    return new MountainPackageObject.Builder()
+                        .WithId(id)
+                        .WithName(name)
+                        .WithPrice((double)price)
+                        .WithPackageTypeName(type.ToString())
+                        .WithDestinationName(GetString(record, "DestinationName"))
+                        .WithTravelTypeName(GetString(record, "TransportTypeName")) 
+                        .WithAccommodationTypeName(GetString(record, "AccommodationTypeName"))
+                        .WithAdditionalActivities(GetString(record, "ActivityName")) 
+                        .Build();
 
                 case PackageType.Cruise:
-                    return new CruisePackageObject(
-                        id,
-                        name,
-                        (double)price,
-                        type.ToString(),
-                        GetString(record, "ShipName"),
-                        GetString(record, "RouteName"),
-                        GetDateTime(record, "DepartureDate"),
-                        GetString(record, "CabinTypeName")
-                    );
+                    return new CruisePackageObject.Builder()
+                        .WithId(id)
+                        .WithName(name)
+                        .WithPrice((double)price)
+                        .WithPackageTypeName(type.ToString())
+                        .WithShipName(GetString(record, "ShipName"))
+                        .WithRouteName(GetString(record, "RouteName"))
+                        .WithDepartureDate(GetDateTime(record, "DepartureDate"))
+                        .WithCabinTypeName(GetString(record, "CabinTypeName"))
+                        .Build();
 
                 case PackageType.Travel:
-                    return new TravelPackageObject(
-                        id,
-                        name,
-                        (double)price,
-                        type.ToString(),
-                        GetString(record, "DestinationName"),
-                        GetString(record, "TransportTypeName"),
-                        GetString(record, "GuideName"),
-                        GetInt(record, "LengthInDays")
-                    );
+                    return new TravelPackageObject.Builder()
+                        .WithId(id)
+                        .WithName(name)
+                        .WithPrice((double)price)
+                        .WithPackageTypeName(type.ToString())
+                        .WithDestinationName(GetString(record, "DestinationName"))
+                        .WithTravelTypeName(GetString(record, "TransportTypeName")) // Assuming "TransportTypeName" is the DB field for TravelTypeName
+                        .WithGuideName(GetString(record, "GuideName"))
+                        .WithDuration(GetInt(record, "LengthInDays")) // Assuming "LengthInDays" is the DB field for Duration
+                        .Build();
 
                 default:
-                    return new TravelPackageObject(0, string.Empty, 0, string.Empty, string.Empty, string.Empty, string.Empty, 0);
+                    return new TravelPackageObject.Builder()
+                        .WithId(0)
+                        .WithName(string.Empty)
+                        .WithPrice(0)
+                        .WithPackageTypeName(string.Empty)
+                        .WithDestinationName(string.Empty)
+                        .WithTravelTypeName(string.Empty)
+                        .WithGuideName(string.Empty)
+                        .WithDuration(0)
+                        .Build();
             }
         }
     }
