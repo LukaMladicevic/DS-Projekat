@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 using DSBooking.Domain.Object.Package;
 using DSBooking.Infrastructure.Repository.Package;
 using System.Diagnostics;
+using DSBooking.Domain.Error;
+using DSBooking.Domain.Object.Reservation;
+using DSBooking.Infrastructure.Repository.Reservation;
 
 namespace DSBooking.Application.Service.Package
 {
@@ -16,6 +19,13 @@ namespace DSBooking.Application.Service.Package
         {
             _packageRepository = packageRepository;
         }
+
+        public AddResult AddPackage(PackageObject packageObject)
+        {
+            _packageRepository.AddPackage(packageObject);
+            return new AddResult(Enumerable.Empty<DomainError>());
+        }
+
         public IEnumerable<PackageObject> GetAll()
         {
 

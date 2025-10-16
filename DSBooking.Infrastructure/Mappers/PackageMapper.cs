@@ -68,9 +68,9 @@ namespace DSBooking.Infrastructure.Mappers
                         .WithPrice((double)price)
                         .WithPackageTypeName(type.ToString())
                         .WithDestinationName(GetString(record, "DestinationName"))
-                        .WithTravelTypeName(GetString(record, "TransportTypeName")) // Assuming "TransportTypeName" is the DB field for TravelTypeName
+                        .WithTravelTypeName(GetString(record, "TransportTypeName"))
                         .WithGuideName(GetString(record, "GuideName"))
-                        .WithDuration(GetInt(record, "LengthInDays")) // Assuming "LengthInDays" is the DB field for Duration
+                        .WithDuration(GetInt(record, "LengthInDays"))
                         .Build();
 
                 default:

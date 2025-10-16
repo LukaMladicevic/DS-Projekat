@@ -63,7 +63,7 @@
             addClientButton.Name = "addClientButton";
             addClientButton.Size = new Size(330, 75);
             addClientButton.TabIndex = 0;
-            addClientButton.Text = "Dodaj klijenta...";
+            addClientButton.Text = "Add";
             addClientButton.UseVisualStyleBackColor = true;
             addClientButton.Click += addClientButton_Click;
             // 

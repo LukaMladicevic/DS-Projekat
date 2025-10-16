@@ -8,5 +8,7 @@ namespace DSBooking.Infrastructure.Repository.Package
 
         IEnumerable<PackageObject> GetAll();
         IEnumerable<PackageObject> GetAllAvailableForClient(int clientId);
+
+        public int AddPackage(PackageObject package);
     }
 }

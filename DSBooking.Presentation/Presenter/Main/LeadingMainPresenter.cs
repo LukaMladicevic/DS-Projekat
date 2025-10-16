@@ -6,6 +6,7 @@ using DSBooking.Domain.Object.Reservation;
 using DSBooking.Presentation.Presenter.Client;
 using DSBooking.Presentation.Presenter.ClientAdd;
 using DSBooking.Presentation.Presenter.Package;
+using DSBooking.Presentation.Presenter.PackageAdd;
 using DSBooking.Presentation.Presenter.Reservation;
 using DSBooking.Presentation.View.Client;
 using DSBooking.Presentation.View.Main;
@@ -21,7 +22,7 @@ namespace DSBooking.Presentation.Presenter.Main
 {
     public class LeadingMainPresenter : MainPresenter
     {
-        public LeadingMainPresenter(IMainView mainView, ClientPresenter clientPresenter, PackagePresenter packagePresenter, SimpleReservationPresenter reservationPresenter, ClientAddPresenter clientAddPresenter, IClientService clientService, IReservationService reservationService) : base(mainView, clientPresenter, packagePresenter, reservationPresenter, clientAddPresenter, clientService, reservationService)
+        public LeadingMainPresenter(IMainView mainView, ClientPresenter clientPresenter, PackagePresenter packagePresenter, SimpleReservationPresenter reservationPresenter, PackageAddPresenter packageAddPresenter, ClientAddPresenter clientAddPresenter, IClientService clientService, IReservationService reservationService) : base(mainView, clientPresenter, packagePresenter, reservationPresenter, packageAddPresenter, clientAddPresenter, clientService, reservationService)
         {
         }
 
@@ -114,6 +115,29 @@ namespace DSBooking.Presentation.Presenter.Main
             ClientPresenter.SelectFilterMode(filterMode);
             ClientPresenter.ShowClients();
 
+        }
+
+        protected override void DoOnPackageAddViewOpen()
+        {
+            MainView.ShowAddPackageDialog();
+        }
+
+        protected override void DoOnPackageAddSubmitted()
+        {
+            bool success = PackageAddPresenter.DoOnPackageAddSubmitted(); // presenter builds via builders
+
+            if (success)
+            {
+                MainView.CloseAddPackageDialog();
+                // refresh packages so new one is visible
+                PackagePresenter.ShowAll();
+                ShowPackagesOrReservations();
+            }
+        }
+
+        protected override void DoOnPackageAddCancelled()
+        {
+            MainView.CloseAddPackageDialog();
         }
     }
 }

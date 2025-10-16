@@ -48,15 +48,6 @@ namespace DSBooking.Presentation.View.Client
 
             clientsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
-                Name = "Id",
-                HeaderText = "ID",
-                DataPropertyName = "Id",
-                ReadOnly = true,
-                Width = 50
-            });
-
-            clientsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
-            {
                 Name = "FirstName",
                 HeaderText = "First name",
                 DataPropertyName = "FirstName",
@@ -71,11 +62,35 @@ namespace DSBooking.Presentation.View.Client
                 ReadOnly = true
             });
 
+            clientsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "Email",
+                HeaderText = "Email address",
+                DataPropertyName = "Email",
+                ReadOnly = true
+            });
+
+            clientsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "PhoneNo",
+                HeaderText = "Phone number",
+                DataPropertyName = "PhoneNo",
+                ReadOnly = true
+            });
+
+            clientsDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "DOB",
+                HeaderText = "Date of birth",
+                DataPropertyName = "DateOfBirth",
+                ReadOnly = true
+            });
+
             var detailsCol = new DataGridViewButtonColumn
             {
                 Name = "DetailsButton",
-                HeaderText = "Action",
-                Text = "Details",
+                HeaderText = "",
+                Text = "Show",
                 UseColumnTextForButtonValue = true,
                 ReadOnly = false,
                 Width = 80

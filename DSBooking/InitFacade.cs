@@ -23,6 +23,8 @@ using DSBooking.Presentation.View.Package;
 using DSBooking.Presentation.View.Reservation;
 using DSBooking.Infrastructure.Mappers;
 using DSBooking.Infrastructure.Encryptor;
+using DSBooking.Presentation.View.PackageAdd;
+using DSBooking.Presentation.Presenter.PackageAdd;
 
 namespace DSBooking
 {
@@ -72,6 +74,7 @@ namespace DSBooking
             PackageControlView packageControlView = new PackageControlView();
             ReservationControlView reservationControlView = new ReservationControlView();
             ClientAddControlView clientAddView = new ClientAddControlView();
+            PackageAddControlView packageAddControlView = new PackageAddControlView();
 
             // Presenters
 
@@ -79,6 +82,7 @@ namespace DSBooking
             SimplePackagePresenter packagePresenter = new SimplePackagePresenter(packageControlView, packageService);
             SimpleReservationPresenter reservationPresenter = new SimpleReservationPresenter(reservationControlView, reservationService);
             SimpleClientAddPresenter clientAddPresenter = new SimpleClientAddPresenter(clientAddView, clientService);
+            SimplePackageAddPresenter packageAddPresenter = new SimplePackageAddPresenter(packageAddControlView, packageService);
 
             // MainView
 
@@ -89,13 +93,14 @@ namespace DSBooking
                 .SetPackageControlView(packageControlView)
                 .SetReservationControlView(reservationControlView)
                 .SetClientAddFormView(clientAddView)
+                .SetPackageAddFormView(packageAddControlView)
                 .SetTitle(result.Name)
                 .Build())
                 ?? throw new NullReferenceException();
 
             // LeadingMainPresenter
 
-            LeadingMainPresenter mainPresenter = new LeadingMainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter, clientAddPresenter, clientService, reservationService);
+            LeadingMainPresenter mainPresenter = new LeadingMainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter, packageAddPresenter, clientAddPresenter, clientService, reservationService);
 
             return mainView;
         }

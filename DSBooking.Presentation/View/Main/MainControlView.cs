@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using DSBooking.Presentation.View.Client;
 using DSBooking.Presentation.View.ClientAdd;
 using DSBooking.Presentation.View.Package;
+using DSBooking.Presentation.View.PackageAdd;
 using DSBooking.Presentation.View.Reservation;
 
 namespace DSBooking.Presentation.View.Main
@@ -15,14 +16,17 @@ namespace DSBooking.Presentation.View.Main
         IPackageControlView _packageControlView;
         IReservationControlView _reservationControlView;
         IClientAddControlView _clientAddFormView;
+        IPackageAddControlView _packageAddFormView;
         //System.Windows.Forms.Timer _timer;
+        private ContextMenuStrip addContextMenu;
 
-        public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView, IClientAddControlView clientAddForm, string title)
+        public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView, IClientAddControlView clientAddForm, IPackageAddControlView packageAddForm, string title)
         {
             _clientControlView = clientView;
             _packageControlView = packageView;
             _reservationControlView = reservationView;
             _clientAddFormView = clientAddForm;
+            _packageAddFormView = packageAddForm;
 
             InitializeComponent();
 
@@ -30,6 +34,21 @@ namespace DSBooking.Presentation.View.Main
             //_timer.Interval = (int)TimeSpan.FromHours(24).TotalMilliseconds;
             //_timer.Tick += DatabaseBackupTimer_Tick;
             //_timer.Start();
+
+            addContextMenu = new ContextMenuStrip();
+            var addClientItem = new ToolStripMenuItem("Add Client");
+            var addPackageItem = new ToolStripMenuItem("Add Package");
+            addClientItem.Click += (s, e) => OnClientAddViewOpen?.Invoke(this, EventArgs.Empty);
+            addPackageItem.Click += (s, e) => OnPackageAddViewOpen?.Invoke(this, EventArgs.Empty);
+            addContextMenu.Items.Add(addClientItem);
+            addContextMenu.Items.Add(addPackageItem);
+
+            addClientButton.Click -= addClientButton_Click; // detach existing handler
+            addClientButton.Click += (s, e) =>
+            {
+                // open menu anchored to the button
+                addContextMenu.Show(addClientButton, new Point(0, addClientButton.Height));
+            };
 
             centerLayoutPanel.Controls.Add(_clientControlView.Control);
 
@@ -57,6 +76,7 @@ namespace DSBooking.Presentation.View.Main
         }
 
         public Control Control => this;
+        public IPackageAddControlView PackageAddView => _packageAddFormView; // NEW
 
         public IClientView ClientView => _clientControlView;
 
@@ -69,6 +89,8 @@ namespace DSBooking.Presentation.View.Main
         public event EventHandler? OnClientAddViewOpen;
         public event EventHandler<MainViewMode>? OnModeChange;
         public event EventHandler? OnViewLoad;
+        public event EventHandler? OnPackageAddViewOpen;
+
         //public event EventHandler? DatabaseBackup;
 
 
@@ -115,9 +137,19 @@ namespace DSBooking.Presentation.View.Main
             _clientAddFormView.Control.Show();
         }
 
+        public void ShowAddPackageDialog()
+        {
+            _packageAddFormView.Control?.Show();
+        }
+
         public void CloseAddClientDialog()
         {
             _clientAddFormView.Control.Hide();
+        }
+
+        public void CloseAddPackageDialog()
+        {
+            _packageAddFormView.Control?.Hide();
         }
 
         private void modeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -156,6 +188,7 @@ namespace DSBooking.Presentation.View.Main
         {
 
         }
+
 
         //private void DatabaseBackupTimer_Tick(object sender, EventArgs e)
         //{

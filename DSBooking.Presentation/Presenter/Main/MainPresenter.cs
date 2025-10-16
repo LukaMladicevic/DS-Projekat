@@ -15,6 +15,7 @@ using DSBooking.Domain.Object.Reservation;
 using DSBooking.Domain.Object.Package;
 using DSBooking.Presentation.View.Client;
 using DSBooking.Presentation.Presenter.ClientAdd;
+using DSBooking.Presentation.Presenter.PackageAdd;
 
 namespace DSBooking.Presentation.Presenter.Main
 {
@@ -24,7 +25,7 @@ namespace DSBooking.Presentation.Presenter.Main
         protected ClientPresenter ClientPresenter { get; private set; }
         protected PackagePresenter PackagePresenter { get; private set; }
         protected SimpleReservationPresenter ReservationPresenter { get; private set; }
-
+        protected PackageAddPresenter PackageAddPresenter { get; private set; }
         protected ClientAddPresenter ClientAddPresenter { get; private set; }
 
         protected IClientService ClientService { get; private set; }
@@ -33,12 +34,13 @@ namespace DSBooking.Presentation.Presenter.Main
         protected MainViewMode Mode { get; set; }
 
         // TEMPLATE METHOD PATTERN
-        protected MainPresenter(IMainView mainView, ClientPresenter clientPresenter, PackagePresenter packagePresenter, SimpleReservationPresenter reservationPresenter, ClientAddPresenter clientAddPresenter, IClientService clientService, IReservationService reservationService)
+        protected MainPresenter(IMainView mainView, ClientPresenter clientPresenter, PackagePresenter packagePresenter, SimpleReservationPresenter reservationPresenter, PackageAddPresenter packageAddPresenter, ClientAddPresenter clientAddPresenter, IClientService clientService, IReservationService reservationService)
         {
             MainView = mainView;
             ClientPresenter = clientPresenter;
             ReservationPresenter = reservationPresenter;
             PackagePresenter = packagePresenter;
+            PackageAddPresenter = packageAddPresenter;
             ClientAddPresenter = clientAddPresenter;
             ClientService = clientService;
             ReservationService = reservationService;
@@ -46,9 +48,14 @@ namespace DSBooking.Presentation.Presenter.Main
 
             MainView.OnViewLoad += (_, _) => DoOnViewLoad();
             MainView.OnModeChange += (_, mode) => DoOnModeChange(mode);
+            MainView.OnPackageAddViewOpen += (_, _) => DoOnPackageAddViewOpen();
             MainView.OnClientAddViewOpen += (_, _) => DoOnClientAddViewOpen();
             MainView.ClientAddView.ClientAddSubmitted += (_, newClient) => DoOnClientAddSubmitted(newClient);
             MainView.ClientAddView.ClientAddCancelled += (_, _) => DoOnClientAddCancelled();
+
+            // hook package view submit/cancel
+            MainView.PackageAddView.PackageAddSubmitted += (_, _) => DoOnPackageAddSubmitted(); // NEW
+            MainView.PackageAddView.PackageAddCancelled += (_, _) => DoOnPackageAddCancelled();   // NEW
 
             MainView.ReservationView.OnSelectedReservation += (_, reservation) => DoOnSelectedReservation(reservation);
 
@@ -64,6 +71,9 @@ namespace DSBooking.Presentation.Presenter.Main
         protected abstract void DoOnClientAddViewOpen();
         protected abstract void DoOnClientAddSubmitted(ClientAddObject newClient);
         protected abstract void DoOnClientAddCancelled();
+        protected abstract void DoOnPackageAddViewOpen();
+        protected abstract void DoOnPackageAddSubmitted();
+        protected abstract void DoOnPackageAddCancelled();
         protected abstract void DoOnSelectedReservation(ReservationObject reservation);
         protected abstract void DoOnSelectedPackage(PackageObject package);
         protected abstract void DoOnSelectedClient(ClientObject client);

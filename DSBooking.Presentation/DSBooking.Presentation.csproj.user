@@ -11,6 +11,9 @@
     <Compile Update="View\Main\MainControlView.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="View\PackageAdd\PackageAddControlView.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="View\Package\PackageControlView.cs">
       <SubType>UserControl</SubType>
     </Compile>

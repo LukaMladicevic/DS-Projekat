@@ -12,5 +12,6 @@ namespace DSBooking.Application.Service.Package
     {
         IEnumerable<PackageObject> GetAllAvailableForClient(int clientId);
         IEnumerable<PackageObject> GetAll();
+        AddResult AddPackage(PackageObject packageObject);
     }
 }

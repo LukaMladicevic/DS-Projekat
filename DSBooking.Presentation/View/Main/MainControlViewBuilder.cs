@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DSBooking.Presentation.View.Client;
 using DSBooking.Presentation.View.ClientAdd;
 using DSBooking.Presentation.View.Package;
+using DSBooking.Presentation.View.PackageAdd;
 using DSBooking.Presentation.View.Reservation;
 
 namespace DSBooking.Presentation.View.Main
@@ -17,11 +18,18 @@ namespace DSBooking.Presentation.View.Main
         private IPackageControlView? _packageControlView;
         private IReservationControlView? _reservationControlView;
         private IClientAddControlView? _clientAddFormView;
+        private IPackageAddControlView? _packageAddControlView;
         private string? _title;
 
         public MainControlViewBuilder SetClientControlView(IClientControlView clientControlView)
         {
             _clientControlView = clientControlView;
+            return this;
+        }
+
+        public MainControlViewBuilder SetPackageAddFormView(IPackageAddControlView packageAddControlView)
+        {
+            _packageAddControlView = packageAddControlView;
             return this;
         }
 
@@ -54,6 +62,7 @@ namespace DSBooking.Presentation.View.Main
                 _packageControlView == null ||
                 _reservationControlView == null ||
                 _clientAddFormView == null ||
+                _packageAddControlView == null ||
                 string.IsNullOrWhiteSpace(_title))
             {
                 return null;
@@ -64,6 +73,7 @@ namespace DSBooking.Presentation.View.Main
                 _packageControlView,
                 _reservationControlView,
                 _clientAddFormView,
+                _packageAddControlView,
                 _title
             );
         }

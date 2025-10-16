@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using DSBooking.Presentation.View.Client;
 using DSBooking.Presentation.View.ClientAdd;
 using DSBooking.Presentation.View.Package;
+using DSBooking.Presentation.View.PackageAdd;
 using DSBooking.Presentation.View.Reservation;
 
 namespace DSBooking.Presentation.View.Main
@@ -16,14 +17,18 @@ namespace DSBooking.Presentation.View.Main
         event EventHandler? OnClientAddViewOpen;
         // action - reserve or remove reservation
         event EventHandler<MainViewMode>? OnModeChange;
+        event EventHandler? OnPackageAddViewOpen;
 
         void ShowForMode(MainViewMode mode);
         void ShowAddClientDialog();
         void CloseAddClientDialog();
+        void ShowAddPackageDialog();    // NEW
+        void CloseAddPackageDialog();   // NEW
 
         IClientView ClientView { get; }
         IReservationView ReservationView { get; }
         IPackageView PackageView { get; }
         IClientAddView ClientAddView { get; }
+        IPackageAddControlView PackageAddView { get; }
     }
 }

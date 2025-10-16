@@ -9,6 +9,11 @@ namespace DSBooking.Infrastructure.Repository.Package
 {
     public class TestPackageRepository : IPackageRepository
     {
+        public int AddPackage(PackageObject package)
+        {
+            throw new NotImplementedException();
+        }
+
         public PackageObject? Get(int id)
         {
             return null;

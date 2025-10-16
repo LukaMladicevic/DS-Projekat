@@ -42,19 +42,19 @@ namespace DSBooking.Presentation.View.Reservation
 
             reservationsGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
-                Name = "Id",
-                HeaderText = "ID",
-                DataPropertyName = "Id",
-                ReadOnly = true,
-                Width = 50
-            });
-
-            reservationsGridView.Columns.Add(new DataGridViewTextBoxColumn
-            {
                 Name = "GuestName",
                 HeaderText = "Guest",
                 DataPropertyName = "GuestName",
                 ReadOnly = true
+            });
+
+            reservationsGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "PackageName",
+                HeaderText = "Package name",
+                DataPropertyName = "PackageName",
+                ReadOnly = true,
+                Width = 120
             });
 
             reservationsGridView.Columns.Add(new DataGridViewTextBoxColumn
@@ -66,10 +66,11 @@ namespace DSBooking.Presentation.View.Reservation
                 Width = 120
             });
 
+
             var deleteCol = new DataGridViewButtonColumn
             {
                 Name = "DeleteButton",
-                HeaderText = "Action",
+                HeaderText = "",
                 Text = "Delete",
                 UseColumnTextForButtonValue = true,
                 ReadOnly = false,

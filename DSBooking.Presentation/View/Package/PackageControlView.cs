@@ -28,14 +28,14 @@ namespace DSBooking.Presentation.View.Package
 
             packageDataGridView.Columns.Clear();
 
-            packageDataGridView.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "Id",
-                HeaderText = "ID",
-                DataPropertyName = "Id",
-                ReadOnly = true,
-                Width = 50
-            });
+            //packageDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            //{
+            //    Name = "Id",
+            //    HeaderText = "ID",
+            //    DataPropertyName = "Id",
+            //    ReadOnly = true,
+            //    Width = 50
+            //});
 
             packageDataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -45,13 +45,13 @@ namespace DSBooking.Presentation.View.Package
                 ReadOnly = true
             });
 
-            packageDataGridView.Columns.Add(new DataGridViewTextBoxColumn
-            {
-                Name = "Description",
-                HeaderText = "Description",
-                DataPropertyName = "Description", 
-                ReadOnly = true
-            });
+            //packageDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            //{
+            //    Name = "Description",
+            //    HeaderText = "Description",
+            //    DataPropertyName = "Description", 
+            //    ReadOnly = true
+            //});
 
             packageDataGridView.Columns.Add(new DataGridViewTextBoxColumn
             {
@@ -62,11 +62,20 @@ namespace DSBooking.Presentation.View.Package
                 Width = 80
             });
 
+            packageDataGridView.Columns.Add(new DataGridViewTextBoxColumn
+            {
+                Name = "PackageType",
+                HeaderText = "Package Type",
+                DataPropertyName = "PackageTypeName",
+                ReadOnly = true,
+                Width = 50
+            });
+
             var bookCol = new DataGridViewButtonColumn
             {
                 Name = "BookButton",
-                HeaderText = "Action",
-                Text = "Book",
+                HeaderText = "",
+                Text = "Reserve",
                 UseColumnTextForButtonValue = true,
                 ReadOnly = false,
                 Width = 100
