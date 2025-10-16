@@ -25,6 +25,7 @@ using DSBooking.Infrastructure.Mappers;
 using DSBooking.Infrastructure.Encryptor;
 using DSBooking.Presentation.View.PackageAdd;
 using DSBooking.Presentation.Presenter.PackageAdd;
+using DSBooking.Infrastructure.Backup.Service;
 
 namespace DSBooking
 {
@@ -67,6 +68,7 @@ namespace DSBooking
             ClientService clientService = new ClientService(_clientRepository);
             PackageService packageService = new PackageService(packageRepository);
             ReservationService reservationService = new ReservationService(reservationRepository);
+            IBackupService backupService = new BackupService();
 
             // Views
 
@@ -100,7 +102,7 @@ namespace DSBooking
 
             // LeadingMainPresenter
 
-            LeadingMainPresenter mainPresenter = new LeadingMainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter, packageAddPresenter, clientAddPresenter, clientService, reservationService);
+            LeadingMainPresenter mainPresenter = new LeadingMainPresenter(mainView, clientPresenter, packagePresenter, reservationPresenter, packageAddPresenter, clientAddPresenter, clientService, reservationService, backupService);
 
             return mainView;
         }

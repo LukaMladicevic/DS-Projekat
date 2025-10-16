@@ -3,6 +3,7 @@ using DSBooking.Application.Service.Reservation;
 using DSBooking.Domain.Object.Client;
 using DSBooking.Domain.Object.Package;
 using DSBooking.Domain.Object.Reservation;
+using DSBooking.Infrastructure.Backup.Service;
 using DSBooking.Presentation.Presenter.Client;
 using DSBooking.Presentation.Presenter.ClientAdd;
 using DSBooking.Presentation.Presenter.Package;
@@ -22,7 +23,7 @@ namespace DSBooking.Presentation.Presenter.Main
 {
     public class LeadingMainPresenter : MainPresenter
     {
-        public LeadingMainPresenter(IMainView mainView, ClientPresenter clientPresenter, PackagePresenter packagePresenter, SimpleReservationPresenter reservationPresenter, PackageAddPresenter packageAddPresenter, ClientAddPresenter clientAddPresenter, IClientService clientService, IReservationService reservationService) : base(mainView, clientPresenter, packagePresenter, reservationPresenter, packageAddPresenter, clientAddPresenter, clientService, reservationService)
+        public LeadingMainPresenter(IMainView mainView, ClientPresenter clientPresenter, PackagePresenter packagePresenter, SimpleReservationPresenter reservationPresenter, PackageAddPresenter packageAddPresenter, ClientAddPresenter clientAddPresenter, IClientService clientService, IReservationService reservationService, IBackupService backupService) : base(mainView, clientPresenter, packagePresenter, reservationPresenter, packageAddPresenter, clientAddPresenter, clientService, reservationService, backupService)
         {
         }
 
@@ -114,7 +115,6 @@ namespace DSBooking.Presentation.Presenter.Main
         {
             ClientPresenter.SelectFilterMode(filterMode);
             ClientPresenter.ShowClients();
-
         }
 
         protected override void DoOnPackageAddViewOpen()
@@ -124,12 +124,11 @@ namespace DSBooking.Presentation.Presenter.Main
 
         protected override void DoOnPackageAddSubmitted()
         {
-            bool success = PackageAddPresenter.DoOnPackageAddSubmitted(); // presenter builds via builders
+            bool success = PackageAddPresenter.DoOnPackageAddSubmitted(); 
 
             if (success)
             {
                 MainView.CloseAddPackageDialog();
-                // refresh packages so new one is visible
                 PackagePresenter.ShowAll();
                 ShowPackagesOrReservations();
             }
@@ -138,6 +137,19 @@ namespace DSBooking.Presentation.Presenter.Main
         protected override void DoOnPackageAddCancelled()
         {
             MainView.CloseAddPackageDialog();
+        }
+
+        protected override void DoOnBackupRequested()
+        {
+            try
+            {
+                string createdPath = BackupService.Backup();
+                MessageBox.Show($"Backup completed:\n{createdPath}", "Backup", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Backup failed: {ex.Message}", "Backup error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

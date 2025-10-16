@@ -20,6 +20,9 @@ namespace DSBooking.Presentation.View.Main
         //System.Windows.Forms.Timer _timer;
         private ContextMenuStrip addContextMenu;
 
+        private Button backupButton;
+        public event EventHandler? OnBackupRequested;
+
         public MainControlView(IClientControlView clientView, IPackageControlView packageView, IReservationControlView reservationView, IClientAddControlView clientAddForm, IPackageAddControlView packageAddForm, string title)
         {
             _clientControlView = clientView;
@@ -29,6 +32,7 @@ namespace DSBooking.Presentation.View.Main
             _packageAddFormView = packageAddForm;
 
             InitializeComponent();
+            InitializeBackupButton();
 
             //_timer = new System.Windows.Forms.Timer();
             //_timer.Interval = (int)TimeSpan.FromHours(24).TotalMilliseconds;
@@ -43,7 +47,7 @@ namespace DSBooking.Presentation.View.Main
             addContextMenu.Items.Add(addClientItem);
             addContextMenu.Items.Add(addPackageItem);
 
-            addClientButton.Click -= addClientButton_Click; // detach existing handler
+            addClientButton.Click -= addClientButton_Click; 
             addClientButton.Click += (s, e) =>
             {
                 // open menu anchored to the button
@@ -73,6 +77,21 @@ namespace DSBooking.Presentation.View.Main
             ShowForMode(MainViewMode.ShowPackages); 
             this.Text = title;
             agencyNameLabel.Text = title;
+        }
+
+        private void InitializeBackupButton()
+        {
+            backupButton = new Button
+            {
+                Text = "Backup DB",
+                AutoSize = true,
+                Visible = true
+            };
+
+            backupButton.Click += (s, e) => OnBackupRequested?.Invoke(this, EventArgs.Empty);
+
+            topPanel.Controls.Add(backupButton);
+            backupButton.BringToFront();
         }
 
         public Control Control => this;
@@ -119,7 +138,7 @@ namespace DSBooking.Presentation.View.Main
             OnViewLoad?.Invoke(this, EventArgs.Empty);
         }
 
-        private void addClientButton_Click(object sender, EventArgs e)
+        private void addClientButton_Click(object? sender, EventArgs e)
         {
             OnClientAddViewOpen?.Invoke(this, EventArgs.Empty);
         }

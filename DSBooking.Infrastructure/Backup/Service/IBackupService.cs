@@ -4,11 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DSBooking.Infrastructure.Backup
+namespace DSBooking.Infrastructure.Backup.Service
 {
-    public interface IDbBackupProvider
-    {
-        // return abs path
+     public interface IBackupService
+     { 
         string Backup(string? backupFolder = null);
-    }
+     }
 }

@@ -17,28 +17,24 @@ namespace DSBooking.Presentation.View.PackageAdd
         {
             InitializeComponent();
 
-            // Button behaviour
             this.AcceptButton = confirmButton;
             this.CancelButton = discardButton;
 
             this.Text = "Add Package";
 
-            // Fill package-type combo (example items)
             try
             {
                 packageTypeComboBox.Items.Clear();
                 packageTypeComboBox.Items.AddRange(new object[] { "Seaside", "Mountain", "Travel", "Cruise" });
                 packageTypeComboBox.SelectedIndex = 0;
             }
-            catch { /* harmless at design-time */ }
+            catch {}
         }
 
         private void PackageAddControlView_Load(object sender, EventArgs e)
         {
-            // nothing by default
         }
 
-        // --- properties that read the control values ---
         public string PackageName => nameTextBox.Text;
         string IPackageAddView.Name => nameTextBox.Text;
         //public string Name => nameTextBox.Text;
@@ -61,11 +57,9 @@ namespace DSBooking.Presentation.View.PackageAdd
 
         public Control Control => this;
 
-        // events the presenter/consumer can subscribe to
         public event EventHandler? PackageAddSubmitted;
         public event EventHandler? PackageAddCancelled;
 
-        // --- marking methods (simple label color change) ---
         public void MarkName(PackageAddViewMarkOption option) => MarkLabel(nameLabel, option);
         public void MarkPrice(PackageAddViewMarkOption option) => MarkLabel(priceLabel, option);
         public void MarkPackageType(PackageAddViewMarkOption option) => MarkLabel(packageTypeLabel, option);
@@ -90,7 +84,6 @@ namespace DSBooking.Presentation.View.PackageAdd
             lbl.ForeColor = option == PackageAddViewMarkOption.Incorrect ? Color.Red : Color.Black;
         }
 
-        // --- button handlers ---
         private void confirmButton_Click(object sender, EventArgs e)
         {
             PackageAddSubmitted?.Invoke(this, EventArgs.Empty);
@@ -105,7 +98,6 @@ namespace DSBooking.Presentation.View.PackageAdd
         {
             if (disposing)
             {
-                // dispose managed controls properly (designer fields)
                 components?.Dispose();
             }
             base.Dispose(disposing);

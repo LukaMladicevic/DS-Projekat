@@ -24,14 +24,12 @@ namespace DSBooking.Infrastructure.Factory
 
         public IDbBackupProvider CreateBackupProvider()
         {
-            return new SqlBackupProvider();
+            return new SqlBackupProvider(_connectionString, System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Backups"));
         }
 
         public IDbConnection CreateConnection()
         {
             return new MySqlConnection(_connectionString);
-
-            //return new SqlConnection(_connectionString);
         }
     }
 }

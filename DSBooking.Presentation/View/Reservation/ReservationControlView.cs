@@ -164,9 +164,6 @@ namespace DSBooking.Presentation.View.Reservation
 
             if (col.Name == "DeleteButton")
             {
-                // previously cast to ReservationObject which is wrong:
-                // var res = grid.Rows[e.RowIndex].DataBoundItem as ReservationObject;
-
                 var row = grid.Rows[e.RowIndex].DataBoundItem as ReservationRow;
                 if (row != null && row.Original != null)
                 {

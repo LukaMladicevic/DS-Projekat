@@ -15,15 +15,14 @@ namespace DSBooking.Presentation.View.Main
     public interface IMainView : IView
     {
         event EventHandler? OnClientAddViewOpen;
-        // action - reserve or remove reservation
         event EventHandler<MainViewMode>? OnModeChange;
         event EventHandler? OnPackageAddViewOpen;
-
+        event EventHandler? OnBackupRequested;
         void ShowForMode(MainViewMode mode);
         void ShowAddClientDialog();
         void CloseAddClientDialog();
-        void ShowAddPackageDialog();    // NEW
-        void CloseAddPackageDialog();   // NEW
+        void ShowAddPackageDialog();    
+        void CloseAddPackageDialog();   
 
         IClientView ClientView { get; }
         IReservationView ReservationView { get; }

@@ -17,7 +17,7 @@ namespace DSBooking.Infrastructure.Mappers
             {
                 date = GetDateTime(record, "DateOfBirth");
             }
-            catch(Exception ex)
+            catch(Exception)
             {
                 date = DateTime.MinValue;
             }

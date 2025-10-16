@@ -19,7 +19,6 @@ namespace DSBooking.Presentation.Presenter.PackageAdd
 
         private void MarkAll(AddResult addResult)
         {
-            // Reset all marks to correct first
             View.MarkName(PackageAddViewMarkOption.Correct);
             View.MarkPrice(PackageAddViewMarkOption.Correct);
             View.MarkPackageType(PackageAddViewMarkOption.Correct);
@@ -38,10 +37,8 @@ namespace DSBooking.Presentation.Presenter.PackageAdd
 
             View.MarkAdditionalActivities(PackageAddViewMarkOption.Correct);
 
-            // Mark fields according to errors returned by service
             foreach (var err in addResult.AddObjectErrors)
             {
-                // Adjust these types to the actual error classes in your domain.
                 if (err is InvalidPackageNameError) View.MarkName(PackageAddViewMarkOption.Incorrect);
                 else if (err is InvalidPriceError) View.MarkPrice(PackageAddViewMarkOption.Incorrect);
                 else if (err is InvalidPackageTypeError) View.MarkPackageType(PackageAddViewMarkOption.Incorrect);
@@ -64,7 +61,6 @@ namespace DSBooking.Presentation.Presenter.PackageAdd
 
         public override bool DoOnPackageAddSubmitted()
         {
-            // Build correct concrete PackageObject via builder according to package type.
             PackageObject packageObject;
 
             string packageType = (View.PackageTypeName ?? string.Empty).Trim();
@@ -76,7 +72,7 @@ namespace DSBooking.Presentation.Presenter.PackageAdd
                     var builder = new CruisePackageObject.Builder()
                         .WithName(View.Name)
                         .WithPrice(View.Price)
-                        .WithPackageTypeName(View.PackageTypeName)
+                        .WithPackageTypeName(View.PackageTypeName ?? string.Empty)
                         .WithShipName(View.ShipName)
                         .WithRouteName(View.RouteName)
                         .WithDepartureDate(View.DepartureDate)
@@ -89,7 +85,7 @@ namespace DSBooking.Presentation.Presenter.PackageAdd
                     var builder = new SeasidePackageObject.Builder()
                         .WithName(View.Name)
                         .WithPrice(View.Price)
-                        .WithPackageTypeName(View.PackageTypeName)
+                        .WithPackageTypeName(View.PackageTypeName ?? string.Empty)
                         .WithDestinationName(View.DestinationName)
                         .WithTravelTypeName(View.TransportTypeName)
                         .WithAccommodationTypeName(View.AccommodationTypeName);
@@ -101,7 +97,7 @@ namespace DSBooking.Presentation.Presenter.PackageAdd
                     var builder = new MountainPackageObject.Builder()
                         .WithName(View.Name)
                         .WithPrice(View.Price)
-                        .WithPackageTypeName(View.PackageTypeName)
+                        .WithPackageTypeName(View.PackageTypeName ?? string.Empty)
                         .WithDestinationName(View.DestinationName)
                         .WithTravelTypeName(View.TransportTypeName)
                         .WithAccommodationTypeName(View.AccommodationTypeName)
@@ -114,7 +110,7 @@ namespace DSBooking.Presentation.Presenter.PackageAdd
                     var builder = new TravelPackageObject.Builder()
                         .WithName(View.Name)
                         .WithPrice(View.Price)
-                        .WithPackageTypeName(View.PackageTypeName)
+                        .WithPackageTypeName(View.PackageTypeName ?? string.Empty)
                         .WithDestinationName(View.DestinationName)
                         .WithTravelTypeName(View.TransportTypeName)
                         .WithGuideName(View.GuideName)
@@ -124,28 +120,21 @@ namespace DSBooking.Presentation.Presenter.PackageAdd
                 }
                 else
                 {
-                    // Unknown package type -> mark package type field and abort
                     View.MarkPackageType(PackageAddViewMarkOption.Incorrect);
                     return false;
                 }
             }
             catch (ArgumentException)
             {
-                // Builder validation failed (missing/invalid required fields).
-                // Mark package type as incorrect and fail. For better UX you can catch specific messages
-                // and map to more precise field marks.
                 View.MarkPackageType(PackageAddViewMarkOption.Incorrect);
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                // Unexpected error while building
-                // Optionally log ex
                 View.MarkPackageType(PackageAddViewMarkOption.Incorrect);
                 return false;
             }
 
-            // Call service
             AddResult addResult;
             try
             {
@@ -153,15 +142,12 @@ namespace DSBooking.Presentation.Presenter.PackageAdd
             }
             catch (Exception)
             {
-                // service-level exception -> fail (you can expose an error message via view if desired)
-                // Mark all fields as incorrect as a safe fallback (or add a separate View.ShowError method)
                 View.MarkName(PackageAddViewMarkOption.Incorrect);
                 View.MarkPrice(PackageAddViewMarkOption.Incorrect);
                 View.MarkPackageType(PackageAddViewMarkOption.Incorrect);
                 return false;
             }
 
-            // Map validation errors from service to view
             MarkAll(addResult);
 
             return addResult.IsSuccess();
