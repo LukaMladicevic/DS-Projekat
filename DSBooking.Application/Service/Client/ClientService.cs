@@ -35,7 +35,7 @@ namespace DSBooking.Application.Service.Client
             {
                 Debug.WriteLine("AddClient called for: " + client.FirstName + " " + client.LastName);
 
-                IEnumerable<DomainError> errors = _domainService.CheckClientAddObject(client);
+                IEnumerable<DomainError> errors = _domainService.CheckObject(client);
 
                 if (!errors.Any())
 
